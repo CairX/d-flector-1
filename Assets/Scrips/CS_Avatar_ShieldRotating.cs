@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SheildRotating : MonoBehaviour {
+public class CS_Avatar_ShieldRotating : MonoBehaviour {
 
     public int rotatinSpeed;
 
