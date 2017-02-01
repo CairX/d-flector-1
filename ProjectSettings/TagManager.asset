@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Projectile
+  - Boundary
+  - Shield
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Shield
+  - Player
   - 
   - 
   - 
@@ -40,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1010721535
+    locked: 0
+  - name: Items
+    uniqueID: 576077717
     locked: 0
