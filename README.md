@@ -7,24 +7,27 @@ The project is an assignment for the course [Game Design 2: Game Development (5S
 
 ### Naming
 #### Files
-- CamelCase, capitalize the first letter and separating words. Ex "FileName.txt"
+- CamelCase, capitalize the first letter and separating words. Ex _FileName.txt_
+
+#### Unity Tags
+- CamelCase, capitalize the first letter and separating words. Ex _ExampleTag_
 
 #### Classes
-- CamelCase, the class name. Ex. "NewClassName"
-- camelCase, property names. Ex "newProperty"
-- Properties that are static should be all capitalized and seprated with underscore "_". Ex "STATIC_PROPERTY"
+- CamelCase, class names. Ex. _ClassName_
+- mixedCase, class properties. Ex _classProperty_
+- Properties that are static should be all capitalized and separated with underscore. Ex _STATIC_PROPERTY_
 - Names should be descriptive.
-- Names shouldn't be abbriviated.
+- Names should not be abbreviated.
 
-### Code standards
+### Code Standards
 - Follow naming conventions.
 - Properties should be private to the extent it makes sense.
 	- Properties that should be accessible through the editor need to be public.
-- Use Unity util methods and const variables when possible.
+- Use Unity utility methods and constant variables when possible.
 - Remove unused variables and properties.
 - Comment only when explaining complex logic.
 
-### Code review
+### Code Review
 - Can you understand the changes, does the code do what is intended?
 - Does the code follow the "Code standards"?
 - Is there any redundant or duplicate code?
@@ -34,15 +37,14 @@ The project is an assignment for the course [Game Design 2: Game Development (5S
 - Do loops have a set length and correct termination conditions?
 - Can any logging or debugging code be removed?
 
-### Commit standards
-- A commit should isolate ONE change when possible! It is better with a lot of smaller commits than a few large ones, because nobody likes huge merge conflicts!
-- Commit messsages should describe what you have changed. If you need to describe more then one change or find yourself using an "and" you can probably break your commit into smaller parts.
-- Limit the subject line to 50 characters
-- Capitalize the subject line
-- Do not end the subject line with a period
-- Use the imperative mood in the subject line (more information: http://chris.beams.io/posts/git-commit/#imperative)
+### Commit Messages
+- Commit messages should isolate one change when possible. If you are adding an _and_ to the message you can probably split the commit up into several commits. Remember that it's better with a lot of smaller commits than with a few large onces.
+- Commit messages should explain what and why you have changed something rather than how. The actual content of the commit already explains _how_ so you don't have to do it again.
+- Limit the subject line to 50 characters.
+- Capitalize the subject line.
+- Do not end the subject line with a period.
+- Use the imperative mood in the subject line (more information: http://chris.beams.io/posts/git-commit/#imperative).
 	- What is within the quotes is the subject line and the prefix is how it should be read, read the link for a detailed description.
 	- Example of good: If applied, this commit will "Refactor subsystem X for readability"
 	- Example of bad: If applied, this commit will "Fixed bug with Y"
-- Use the body to explain what and why vs. how
-- Example of how commit messages have a tendency to deteriorate, https://xkcd.com/1296/
+- Example of how commit messages have a tendency to deteriorate, [xkcd: Git commit](https://xkcd.com/1296/).
