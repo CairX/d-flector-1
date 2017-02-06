@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CS_Projectile_Movement : MonoBehaviour
 {
-    private Collider2D coll;
     private Rigidbody2D rb;
     private Vector2 direction;
 
@@ -15,7 +14,6 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     void Start()
     {
-        coll = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
 

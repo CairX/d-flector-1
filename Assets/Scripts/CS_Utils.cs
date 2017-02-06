@@ -35,7 +35,7 @@ public class CS_Utils : MonoBehaviour {
 
     public static float PointToDegree(Vector2 point)
     {
-        float degree = Mathf.Atan2(point.x, point.y) * Mathf.Rad2Deg;
+        float degree = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg;
         return Mod(degree, 360);
     }
 
