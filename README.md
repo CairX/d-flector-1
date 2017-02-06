@@ -7,16 +7,14 @@ The project is an assignment for the course [Game Design 2: Game Development (5S
 
 ### Naming
 #### Files
-- CamelCase, capitalize the first letter and separating words. Ex _FileName.txt_
+- Sprites: Spr\_"whos"\_"insert porpus of sprite"
+- Animation: An\_"whos"\_"insert action of animation"
+- Concept Art: CoArt\_"instert name"
+- Code: C\_"instert what its for"\_"what it do"
+- If serverel of object (like enemies) specify which
 
 #### Unity Tags
 - CamelCase, capitalize the first letter and separating words. Ex _ExampleTag_
-
-Sprites : Spr_"whos"_"insert porpus of sprite"
-Animation : An_"whos"_"insert action of animation"
-Consept Art : CoArt_"instert name"
-Code : C_"instert what its for"_"what it do"
-if serverel of objekt (like enemys) specifi whitch 
 
 #### Classes
 - CamelCase, class names. Ex. _ClassName_
