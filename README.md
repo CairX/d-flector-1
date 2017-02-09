@@ -7,11 +7,12 @@ The project is an assignment for the course [Game Design 2: Game Development (5S
 
 ### Naming
 #### Files
-- Sprites: Spr\_"whos"\_"insert porpus of sprite"
+- Sprites: Spr\_"whos"\_"insert purpose of sprite"
 - Animation: An\_"whos"\_"insert action of animation"
-- Concept Art: CoArt\_"instert name"
-- Code: C\_"instert what its for"\_"what it do"
-- If serverel of object (like enemies) specify which
+- Concept Art: CoArt\_"insert name"
+- Code: CS\_"insert what it's for"\_"what it does"
+- Prefab: Obj\_"type of object"
+- If there several objects of the same type (for example enemies) then specify
 
 #### Unity Tags
 - CamelCase, capitalize the first letter and separating words. Ex _ExampleTag_
