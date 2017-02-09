@@ -37,10 +37,13 @@ public class CS_Avatar_Health : MonoBehaviour {
             timer = invincibleTime;
             UnityEditor.EditorUtility.CopySerialized(invincibleSpriteRender, spriteRenderer);
             changeSprite = true;
-        } else if (timer <= 0 && index == healthSpriteRenders.Length - 1)
+        }
+        else if (timer <= 0 && index == healthSpriteRenders.Length - 1)
         {
             UnityEditor.EditorUtility.CopySerialized(healthSpriteRenders[index], spriteRenderer);
             changeSprite = false;
+
+            CS_Notifications.Instance.Post(this, "OnGameOver", null);
         }
     }
 }
