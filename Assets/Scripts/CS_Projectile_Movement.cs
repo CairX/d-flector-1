@@ -12,8 +12,14 @@ public class CS_Projectile_Movement : MonoBehaviour
     public float speed;
     public int health;
 
+    public AudioClip netBouns;
+    public AudioClip shieldBouns;
+
+    AudioSource speaker;
+
     void Start()
     {
+        speaker = this.GetComponent<AudioSource>();
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(sr.color.r, sr.color.g - 1f, sr.color.b + 100f, sr.color.a);
         Debug.Log(sr.color.r + " R " + sr.color.g + " G " + sr.color.b + " B " +  sr.color.a + " A ");
@@ -59,6 +65,22 @@ public class CS_Projectile_Movement : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log(collision.gameObject.tag);
+            if (collision.gameObject.tag == "shield")
+            {
+                speaker.PlayOneShot(shieldBouns);
+            }
+            else if (collision.gameObject.tag == "player")
+            {
+                speaker.PlayOneShot(shieldBouns);
+            }
+            else if (collision.gameObject.tag == "net")
+            {
+                speaker.PlayOneShot(netBouns);
+            }
         }
     }
 
