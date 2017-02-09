@@ -21,16 +21,16 @@ public class CS_Projectile_SpawnerTargetInit : MonoBehaviour {
 
     void Update()
     {
+        float angle = CS_Utils.PointToDegree(target.position - spawnLocation.position);
+        if (rotateSpawnLocation)
+        {
+            spawnLocation.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
+        }
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
             CS_Projectile_Movement i = Instantiate(projectile, spawnLocation.position, spawnLocation.rotation);
-            float angle = CS_Utils.PointToDegree(target.position - spawnLocation.position);
             i.angle = angle;
-            if (rotateSpawnLocation)
-            {
-                spawnLocation.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
-            }
             i.speed = projectileSpeed;
             timer = spawnRate;
         }

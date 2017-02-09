@@ -14,10 +14,16 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     void Start()
     {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.color = new Color(sr.color.r, sr.color.g - 1f, sr.color.b + 100f, sr.color.a);
+        Debug.Log(sr.color.r + " R " + sr.color.g + " G " + sr.color.b + " B " +  sr.color.a + " A ");
+
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
 
         UpdateDirection(angle);
+
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)

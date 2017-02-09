@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_Avatar_ShieldRotating : MonoBehaviour {
+public class CS_Avatar_ShieldRotating : MonoBehaviour
+{
 
-    public int rotatinSpeed;
+    public float rotatinSpeed;
 
-    void Start () {
-		
-	}
-	
-	void Update () {
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
         this.transform.Rotate(Vector3.forward, rotatinSpeed, 0);
     }
 }
