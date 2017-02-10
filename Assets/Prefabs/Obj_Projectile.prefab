@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 82753126635220968}
   - component: {fileID: 82726703222588018}
   m_Layer: 0
-  m_Name: Bounce_Projectile
+  m_Name: Obj_Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
