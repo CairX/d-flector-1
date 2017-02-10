@@ -22,7 +22,6 @@ public class CS_Avatar_MouseMovment : MonoBehaviour {
         mousePositionChange.y = Input.GetAxis("Mouse Y");
         mousePosition.x = this.transform.position.x + mousePositionChange.x;
         mousePosition.y = this.transform.position.y + mousePositionChange.y;
-        Debug.Log(mousePosition.x);
         if (mousePosition.x > boundaryStartX && mousePosition.x < boundaryStopX && mousePosition.y > boundaryStartY && mousePosition.y < boundaryStopY)
         {
             this.transform.position = mousePosition;
