@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 58111652814514250}
   - component: {fileID: 114285019359775350}
   m_Layer: 0
-  m_Name: Obj_Avatar_Idle
+  m_Name: Obj_Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,6 +421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889511f0e2e454469edf5f16ea93b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundaryStartX: 0
+  boundaryStartY: 0
+  boundaryStopX: 0
+  boundaryStopY: 0
 --- !u!212 &212149129092389982
 SpriteRenderer:
   m_ObjectHideFlags: 1
