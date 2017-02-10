@@ -15,11 +15,11 @@ The project is an assignment for the course [Game Design 2: Game Development (5S
 - If there several objects of the same type (for example enemies) then specify
 
 #### Unity Tags
-- CamelCase, capitalize the first letter and separating words. Ex _ExampleTag_
+- Unity tags should be in CamelCase notation. Capitalize the first letter and separating words. Ex _ExampleTag_
 
 #### Classes
-- CamelCase, class names. Ex. _ClassName_
-- mixedCase, class properties. Ex _classProperty_
+- Class names should be in CamelCase notation. Ex. _ClassName_
+- Class properties should be in mixedCase notation. Ex _classProperty_
 - Properties that are static should be all capitalized and separated with underscore. Ex _STATIC_PROPERTY_
 - Names should be descriptive.
 - Names should not be abbreviated.
