@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114922546019915932}
   m_Layer: 0
   m_Name: Obj_ShieldRotator
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 114105656214967242}
   m_Layer: 0
   m_Name: Obj_Powerup_Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 114285019359775350}
   m_Layer: 0
   m_Name: Obj_Avatar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,11 +265,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.48
+  m_Radius: 0.8645461
 --- !u!68 &68474033675797140
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -306,7 +306,7 @@ EdgeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: 0, y: 0.42}
@@ -332,7 +332,7 @@ EdgeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: 0, y: 0.42}
@@ -421,10 +421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889511f0e2e454469edf5f16ea93b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundaryStartX: 0
-  boundaryStartY: 0
-  boundaryStopX: 0
-  boundaryStopY: 0
+  boundaryStartX: -3.8
+  boundaryStartY: -1.8
+  boundaryStopX: 3.8
+  boundaryStopY: 1.8
 --- !u!212 &212149129092389982
 SpriteRenderer:
   m_ObjectHideFlags: 1
