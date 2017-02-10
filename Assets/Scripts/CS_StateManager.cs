@@ -50,11 +50,13 @@ public class CS_StateManager : MonoBehaviour {
     void OnVictory()
     {
         DisableAll();
+        victoryMenu.SetActive(true);
     }
 
     void OnGameOver()
     {
         DisableAll();
+        gameOverMenu.SetActive(true);
     }
 
     public void StartMenu()
