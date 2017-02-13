@@ -10,6 +10,7 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject victoryMenu;
     public GameObject gameOverMenu;
     public GameObject playing;
+    public GameObject testPlaying;
 
 	void Awake()
     {
@@ -56,7 +57,10 @@ public class CS_StateManager : MonoBehaviour {
     void OnGameOver()
     {
         DisableAll();
-        gameOverMenu.SetActive(true);
+        //gameOverMenu.SetActive(true);
+        Cursor.visible = true;
+        Destroy(testPlaying);
+        startMenu.SetActive(true);
     }
 
     public void StartMenu()
@@ -74,7 +78,8 @@ public class CS_StateManager : MonoBehaviour {
     public void PlayGame()
     {
         DisableAll();
-        playing.SetActive(true);
+        testPlaying = (GameObject)Instantiate(playing);
+        testPlaying.SetActive(true);
     }
 
     public void QuitApplication()
