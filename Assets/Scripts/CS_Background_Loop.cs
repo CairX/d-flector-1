@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
-
+public class CS_Background_Loop : CS_Background_move
+{
     public bool repet;
-    public float movementX = 0;
-    public float movementY = 0;
     public GameObject background;
-    NewBehaviourScript code;
-
+    CS_Background_Loop code;
     // Use this for initialization
     void Start () {
 		
@@ -27,7 +24,7 @@ public class NewBehaviourScript : MonoBehaviour {
                 //background.transform.position = new Vector3(transform.position.x + GetComponent<SpriteRenderer>().bounds.size.x, 0, this.transform.position.z);
                 GameObject back = Instantiate(background);
                 back.transform.position = new Vector3(transform.position.x + GetComponent<SpriteRenderer>().bounds.size.x, 0, this.transform.position.z);
-                code = background.GetComponent<NewBehaviourScript>();
+                code = background.GetComponent<CS_Background_Loop>();
                 code.repet = true;
                 repet = false;
             }
@@ -36,11 +33,9 @@ public class NewBehaviourScript : MonoBehaviour {
         {
             Debug.Log(repet);
         }
-        if(this.transform.position.x <= -12)
+        if (this.transform.position.x <= -12)
         {
             Destroy(this.gameObject);
         }
-
     }
 }
-
