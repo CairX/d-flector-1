@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881eb700cb9ad5c458383658fb7486fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
   netBounce: {fileID: 8300000, guid: 8bbe2f08f7f3ef246bd6a79b018c16d6, type: 3}
   shieldBounce: {fileID: 8300000, guid: d47c8d636c1acb64cadb9a8903c0770d, type: 3}
 --- !u!212 &212813184909570526

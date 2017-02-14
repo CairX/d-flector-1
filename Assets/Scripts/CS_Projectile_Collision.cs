@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class CS_Projectile_Collision : MonoBehaviour {
 
+    public int health;
+
     public AudioClip netBounce;
     public AudioClip shieldBounce;
 
     private AudioSource speaker;
 
     void Start () {
-        speaker = this.GetComponent<AudioSource>();
+        speaker = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
+        health--;
+        if (health <= 0 || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         Debug.Log(collision.gameObject.tag);

@@ -10,14 +10,9 @@ public class CS_Projectile_Movement : MonoBehaviour
     [Range(0, 360)]
     public float angle;
     public float speed;
-    public int health;
-
 
     void Start()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        sr.color = new Color(sr.color.r, sr.color.g - 1f, sr.color.b + 100f, sr.color.a);
-
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
 
@@ -49,15 +44,6 @@ public class CS_Projectile_Movement : MonoBehaviour
         newAngle = CS_Utils.Mod(newAngle + 180, 360);
 
         UpdateDirection(newAngle);
-
-        health--;
-        // TODO: Remove, visual representation for testing.
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        sr.color = new Color(sr.color.r, sr.color.g - 0.3f, sr.color.b - 0.2f, sr.color.a - 0.2f);
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void UpdateDirection(float a)
