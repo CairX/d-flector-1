@@ -151,13 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31859aab203c02742bde14e204b18c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 114308250653195900, guid: b26753741ddb1ad45b4a988e21099aa9,
+  projectile: {fileID: 114360880195198422, guid: b26753741ddb1ad45b4a988e21099aa9,
     type: 2}
   projectileSpeed: 1
   spawnLocation: {fileID: 4139158373470484}
   rotateSpawnLocation: 1
   spawnRate: 3
-  target: {fileID: 0}
+  target: {fileID: 4096386798268864, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
 --- !u!212 &212967369994577882
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -16,14 +16,16 @@ public class CS_Projectile_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
 
-        UpdateDirection(angle);
+        UpdateRotation(angle);
+        rb.AddForce(direction * (speed * 100));
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        Bounce(collision);
+        UpdateRotation(CS_Utils.PointToDegree(rb.velocity.normalized));
     }
 
+    // Not currently in use. Alternative to bounce material.
     private void Bounce(Collision2D collision)
     {
         ContactPoint2D contact = collision.contacts[0];
@@ -43,14 +45,14 @@ public class CS_Projectile_Movement : MonoBehaviour
         // Rotate 180 degrees to travle in opposite direction.
         newAngle = CS_Utils.Mod(newAngle + 180, 360);
 
-        UpdateDirection(newAngle);
+        UpdateRotation(newAngle);
+        rb.velocity = direction * speed;
     }
 
-    private void UpdateDirection(float a)
+    private void UpdateRotation(float a)
     {
         angle = a;
         direction = CS_Utils.DegreeToPoint(a);
-        rb.velocity = direction * speed;
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, a - 90);
     }
 }
