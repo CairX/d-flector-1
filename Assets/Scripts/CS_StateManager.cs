@@ -21,6 +21,7 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject victoryMenu;
     public GameObject gameOverMenu;
     public GameObject playing;
+
     private GameObject lastState;
 
 	private void Awake()
