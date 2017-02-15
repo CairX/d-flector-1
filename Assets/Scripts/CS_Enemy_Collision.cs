@@ -8,23 +8,24 @@ public class CS_Enemy_Collision : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Projectile")
+        GameObject cgo = collision.gameObject;
+        if (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isAvatar())
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             float randomValue = Random.Range(1.0f, 3.0f);
             if (randomValue >= 1.0f && randomValue <= 2.0f)
             {
-                twinShieldPowerUp.transform.position = this.transform.position;
+                twinShieldPowerUp.transform.position = transform.position;
                 Instantiate(twinShieldPowerUp);
             }
         }
-        if (collision.gameObject.tag == "Shield")
+        if (cgo.tag == "Shield")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Player")
+        if (cgo.tag == "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

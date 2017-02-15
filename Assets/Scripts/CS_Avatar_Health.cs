@@ -32,8 +32,9 @@ public class CS_Avatar_Health : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Projectile" || collision.gameObject.tag == "Enemy")
+        GameObject cgo = collision.gameObject;
+
+        if (cgo.tag == "Enemy" || (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy()))
         {
             if (timer <= 0 && index < healthSpriteRenders.Length - 1)
             {
