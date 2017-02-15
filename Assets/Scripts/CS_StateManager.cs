@@ -21,6 +21,7 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject victoryMenu;
     public GameObject gameOverMenu;
     public GameObject playing;
+    private GameObject lastState;
 
 	private void Awake()
     {
@@ -60,7 +61,8 @@ public class CS_StateManager : MonoBehaviour {
             case State.PauseMenu:
                 break;
             case State.OptionsMenu:
-                OptionsMenu();
+                //not corect objekt use
+                OptionsMenu(lastState);
                 break;
             case State.VictoryMenu:
                 OnVictory();
@@ -136,7 +138,7 @@ public class CS_StateManager : MonoBehaviour {
         Cursor.visible = true;
     }
 
-    private void UnPauseMenu()
+    public void UnPauseMenu()
     {
         CS_WorldManager.Instance.state = State.Playing;
         Time.timeScale = 1;
@@ -144,11 +146,21 @@ public class CS_StateManager : MonoBehaviour {
         Cursor.visible = false;
     }
 
-    public void OptionsMenu()
+    public void OptionsMenu(GameObject curentstate)
+    {
+
+        lastState = curentstate;
+        CS_WorldManager.Instance.state = State.OptionsMenu;
+        //DisableAll();
+        lastState.SetActive(false);
+        optionsMenu.SetActive(true);
+        Cursor.visible = true;
+    }
+    public void ReturnFromOptions()
     {
         CS_WorldManager.Instance.state = State.OptionsMenu;
-        DisableAll();
-        optionsMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+        lastState.SetActive(true);
         Cursor.visible = true;
     }
 
