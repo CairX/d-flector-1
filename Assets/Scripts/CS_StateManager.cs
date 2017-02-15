@@ -156,6 +156,7 @@ public class CS_StateManager : MonoBehaviour {
     {
         CS_WorldManager.Instance.state = State.Playing;
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
     public void PlayGame()

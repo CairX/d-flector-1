@@ -9,6 +9,7 @@ TagManager:
   - Shield
   - Enemy
   - net
+  - Playing
   layers:
   - Default
   - TransparentFX
