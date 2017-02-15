@@ -4,31 +4,44 @@ using UnityEngine;
 
 public class CS_Projectile_Collision : MonoBehaviour {
 
+    public enum Owner
+    {
+        Avatar,
+        Enemy
+    }
+
     public int health;
+
+    public Sprite avatarSprite;
+    public Color avatarTrailColor;
 
     public AudioClip netBounce;
     public AudioClip shieldBounce;
 
+    private Owner owner;
     private AudioSource speaker;
+    private SpriteRenderer spriteRenderer;
 
     void Start () {
+        owner = Owner.Enemy;
         speaker = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         health--;
-        if (health <= 0 || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
 
-        Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "shield")
+        if (owner == Owner.Enemy)
         {
-            speaker.PlayOneShot(shieldBounce);
+            OnEnemyCollisionEnter2D(collision);
         }
-        else if (collision.gameObject.tag == "player")
+
+        if (collision.gameObject.tag == "Shield")
         {
             speaker.PlayOneShot(shieldBounce);
         }
@@ -36,5 +49,28 @@ public class CS_Projectile_Collision : MonoBehaviour {
         {
             speaker.PlayOneShot(netBounce);
         }
+    }
+
+    private void OnEnemyCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Shield")
+        {
+            owner = Owner.Avatar;
+            spriteRenderer.sprite = avatarSprite;
+            TrailRenderer trail = transform.GetChild(0).GetComponent<TrailRenderer>();
+            trail.startColor = avatarTrailColor;
+            trail.endColor = avatarTrailColor;
+        }
+    }
+
+    public bool isAvatar()
+    {
+        return (owner == Owner.Avatar);
+    }
+
+    public bool isEnemy()
+    {
+        return (owner == Owner.Enemy);
     }
 }
