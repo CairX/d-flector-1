@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CS_Avatar_Health : MonoBehaviour {
 
-    public SpriteRenderer invincibleSpriteRender;
+    public Sprite invincibleSprite;
     public float invincibleTime;
     private float timer;
     private bool changeSprite;
 
-    public SpriteRenderer[] healthSpriteRenders;
+    public Sprite[] healthSprite;
     private SpriteRenderer spriteRenderer;
     private int index;
 
@@ -24,7 +24,10 @@ public class CS_Avatar_Health : MonoBehaviour {
         timer -= Time.deltaTime;
         if (changeSprite && timer <= 0)
         {
-            UnityEditor.EditorUtility.CopySerialized(healthSpriteRenders[index], spriteRenderer);
+            spriteRenderer.sprite = healthSprite[index];
+            Color color = spriteRenderer.color;
+            color.a = 1.0f;
+            spriteRenderer.color = color;
             changeSprite = false;
             index++;
         }
@@ -36,15 +39,18 @@ public class CS_Avatar_Health : MonoBehaviour {
 
         if (cgo.tag == "Enemy" || (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy()))
         {
-            if (timer <= 0 && index < healthSpriteRenders.Length - 1)
+            if (timer <= 0 && index < healthSprite.Length - 1)
             {
                 timer = invincibleTime;
-                UnityEditor.EditorUtility.CopySerialized(invincibleSpriteRender, spriteRenderer);
+                spriteRenderer.sprite = invincibleSprite;
+                Color color = spriteRenderer.color;
+                color.a = 0.8f;
+                spriteRenderer.color = color;
                 changeSprite = true;
             }
-            else if (timer <= 0 && index == healthSpriteRenders.Length - 1)
+            else if (timer <= 0 && index == healthSprite.Length - 1)
             {
-                UnityEditor.EditorUtility.CopySerialized(healthSpriteRenders[index], spriteRenderer);
+                spriteRenderer.sprite = healthSprite[index];
                 changeSprite = false;
 
                 CS_Notifications.Instance.Post(this, "OnGameOver", null);

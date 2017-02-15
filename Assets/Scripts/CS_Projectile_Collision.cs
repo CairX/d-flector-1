@@ -61,6 +61,9 @@ public class CS_Projectile_Collision : MonoBehaviour {
             TrailRenderer trail = transform.GetChild(0).GetComponent<TrailRenderer>();
             trail.startColor = avatarTrailColor;
             trail.endColor = avatarTrailColor;
+        } else if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
         }
     }
 
