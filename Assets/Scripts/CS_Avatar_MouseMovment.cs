@@ -13,7 +13,6 @@ public class CS_Avatar_MouseMovment : MonoBehaviour {
     public float boundaryStopY;
 
     void Start () {
-        Cursor.visible = false;
     }
 	
 	void Update () {

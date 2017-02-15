@@ -13,7 +13,7 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
         notifications = new Dictionary<string, HashSet<Component>>();
     }
 
-    public void Add(Component observer, string method)
+    public void Register(Component observer, string method)
     {
         if (!notifications.ContainsKey(method))
         {
@@ -23,7 +23,7 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
         notifications[method].Add(observer);
     }
 
-    public void Remove(Component observer, string method)
+    public void Unregister(Component observer, string method)
     {
         if (!notifications.ContainsKey(method))
         {
