@@ -8,7 +8,7 @@ public class CS_Projectile_SpawnerRandom : MonoBehaviour {
     public float projectileSpeed;
 
     public Transform spawnLocation;
-    public bool rotateSpawnLocation;
+    public Transform rotateObject;
     public float spawnRate = 0.0f;
     private float timer;
 
@@ -23,9 +23,9 @@ public class CS_Projectile_SpawnerRandom : MonoBehaviour {
             CS_Projectile_Movement i = Instantiate(projectile, spawnLocation.position, spawnLocation.rotation);
             float angle = Random.Range(0, 360);
             i.angle = angle;
-            if (rotateSpawnLocation)
+            if (rotateObject)
             {
-                spawnLocation.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
+                rotateObject.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
             }
             i.speed = projectileSpeed;
             timer = spawnRate;

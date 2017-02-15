@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4652001924942500}
   m_Layer: 0
-  m_Name: Obj_Enemy_ProjektileSpawner
+  m_Name: Obj_Enemy_ProjectileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645990146927904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.648, y: 1.1270095, z: 0}
+  m_LocalPosition: {x: 2.859, y: 1.355, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4652001924942500}
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359595014966064}
   m_LocalRotation: {x: -0, y: -0, z: 0.829428, w: 0.5586137}
-  m_LocalPosition: {x: 0.141, y: 1.025, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4139158373470484}
@@ -154,10 +154,9 @@ MonoBehaviour:
   projectile: {fileID: 114360880195198422, guid: b26753741ddb1ad45b4a988e21099aa9,
     type: 2}
   projectileSpeed: 1
-  spawnLocation: {fileID: 4139158373470484}
-  rotateSpawnLocation: 1
+  spawnLocation: {fileID: 4652001924942500}
+  rotateObject: {fileID: 4139158373470484}
   spawnRate: 3
-  target: {fileID: 4096386798268864, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
 --- !u!212 &212967369994577882
 SpriteRenderer:
   m_ObjectHideFlags: 1

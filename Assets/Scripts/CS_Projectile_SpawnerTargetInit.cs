@@ -8,23 +8,24 @@ public class CS_Projectile_SpawnerTargetInit : MonoBehaviour {
     public float projectileSpeed;
 
     public Transform spawnLocation;
-    public bool rotateSpawnLocation;
+    public Transform rotateObject;
     public float spawnRate = 0.0f;
     private float timer;
 
-    public Transform target;
+    private Transform target;
 
     void Start()
     {
+        target = GameObject.FindWithTag("Player").transform;
         timer = spawnRate;
     }
 
     void Update()
     {
-        float angle = CS_Utils.PointToDegree(target.position - spawnLocation.position);
-        if (rotateSpawnLocation)
+        float angle = CS_Utils.PointToDegree(target.position - rotateObject.position);
+        if (rotateObject)
         {
-            spawnLocation.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
+            rotateObject.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
         }
         timer -= Time.deltaTime;
         if (timer <= 0)
