@@ -24,11 +24,11 @@ public class CS_Projectile_Collision : MonoBehaviour {
         }
 
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "shield")
+        if (collision.gameObject.tag == "Shield")
         {
             speaker.PlayOneShot(shieldBounce);
         }
-        else if (collision.gameObject.tag == "player")
+        else if (collision.gameObject.tag == "Player")
         {
             speaker.PlayOneShot(shieldBounce);
         }
