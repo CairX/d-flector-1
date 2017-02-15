@@ -682,7 +682,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: Quit
 --- !u!222 &373760444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Endless
+  m_Text: Options
 --- !u!222 &488158505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 1245853152}
   - component: {fileID: 1245853151}
   m_Layer: 5
-  m_Name: Endles Button
+  m_Name: Options Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1690,7 +1690,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354051362}
-        m_MethodName: PlayGame
+        m_MethodName: OptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2148,7 +2148,7 @@ GameObject:
   - component: {fileID: 1526921248}
   - component: {fileID: 1526921247}
   m_Layer: 5
-  m_Name: Option Button
+  m_Name: Quit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2213,7 +2213,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354051362}
-        m_MethodName: OptionsMenu
+        m_MethodName: QuitApplication
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
