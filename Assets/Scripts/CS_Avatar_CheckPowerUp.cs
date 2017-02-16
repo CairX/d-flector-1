@@ -5,29 +5,21 @@ using UnityEngine;
 public class CS_Avatar_CheckPowerUp : MonoBehaviour {
 
     public GameObject powerUpTwinShield;
-    public int powerUpTime;
+    public float powerUpTime;
 
-    private int time = 0;
+    private float time = 0;
     private bool powerUpActivated;
 
     private void Update()
     {
         if (powerUpActivated == true)
         {
-            if (time != 0)
+            time -= Time.deltaTime;
+            if (time <= 0)
             {
-                if (Mathf.RoundToInt(Time.time) == (time + powerUpTime))
-                {
-                    Debug.Log("end");
-                    powerUpTwinShield.SetActive(false);
-                    time = 0;
-                    powerUpActivated = false;
-                } 
-            }
-            else
-            {
-                time = Mathf.RoundToInt(Time.time);
-                Debug.Log(time);
+                powerUpTwinShield.SetActive(false);
+                time = 0;
+                powerUpActivated = false;
             }
         }
     }
@@ -38,6 +30,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         {
             powerUpTwinShield.SetActive(true);
             Destroy(collision.gameObject);
+            time = powerUpTime;
             powerUpActivated = true;
         }
     }
