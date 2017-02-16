@@ -14,7 +14,7 @@ public class CS_Avatar_ShieldRotating : MonoBehaviour
 
     void Update()
     {
-
+        if (Time.timeScale <= 0) { return; }
         this.transform.Rotate(Vector3.forward, rotatinSpeed, 0);
     }
 }
