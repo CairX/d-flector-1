@@ -14,6 +14,8 @@ public class CS_Background_move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale <= 0) { return; }
+
         transform.position = new Vector3(transform.position.x + movementX, transform.position.y + movementY, transform.position.z);
 
         if (this.transform.position.x <= -12)
