@@ -15,6 +15,19 @@ public class CS_Avatar_ShieldRotating : MonoBehaviour
     void Update()
     {
         if (Time.timeScale <= 0) { return; }
-        this.transform.Rotate(Vector3.forward, rotatinSpeed, 0);
+
+        if (Input.GetMouseButton(1))
+        {
+            this.transform.Rotate(Vector3.forward, rotatinSpeed / 2, 0);
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            this.transform.Rotate(Vector3.forward, rotatinSpeed * 2, 0);
+        }
+        else
+        {
+            this.transform.Rotate(Vector3.forward, rotatinSpeed, 0);
+        }
     }
+        
 }
