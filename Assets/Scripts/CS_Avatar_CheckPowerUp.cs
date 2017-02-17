@@ -10,20 +10,27 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
 
     private float time = 0;
     private int go;
-    private bool powerUpActivated;
+    private bool powerUpShieldActivated;
+    private bool powerUpSlowMotionActivated;
+    private bool powerUpStickyActivated;
 
     private void Update()
     {
-        if (powerUpActivated == true)
+        if (powerUpShieldActivated == true)
         {
             time -= Time.deltaTime;
             if (time <= 0)
             {
                 powerUpTwinShield.SetActive(false);
                 time = 0;
-                powerUpActivated = false;
+                powerUpShieldActivated = false;
             }
-            if (go == 4)
+        }
+        if(powerUpSlowMotionActivated == true)
+        {
+            time -= Time.deltaTime;
+            
+            if (go == 8)
             {
                 GameObject shadow = Instantiate(trail);
                 shadow.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1.0f);
@@ -33,10 +40,11 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
             {
                 go += 1;
             }
-            //shadow.transform.rotation = Quaternion.identity;
-            //shadow.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-            //shadow.transform.parent = this.transform;
-
+            if (time <= 0)
+            {
+                powerUpSlowMotionActivated = false;
+                time = 0;
+            }
         }
     }
 
@@ -47,13 +55,15 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
             powerUpTwinShield.SetActive(true);
             Destroy(collision.gameObject);
             time = powerUpTime;
-            powerUpActivated = true;
+            powerUpSlowMotionActivated = false;
+            powerUpShieldActivated = true;
         }
         if (collision.gameObject.tag == "SlowMotionPowerUp")
         {
             Destroy(collision.gameObject);
             time = powerUpTime;
-            powerUpActivated = true;
+            powerUpSlowMotionActivated = true;
+            powerUpShieldActivated = false;
         }
 
     }
