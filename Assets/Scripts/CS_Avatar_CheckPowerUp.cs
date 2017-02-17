@@ -5,6 +5,7 @@ using UnityEngine;
 public class CS_Avatar_CheckPowerUp : MonoBehaviour {
 
     public GameObject powerUpTwinShield;
+    public GameObject trail;
     public float powerUpTime;
 
     private float time = 0;
@@ -33,5 +34,12 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
             time = powerUpTime;
             powerUpActivated = true;
         }
+        if (collision.gameObject.tag == "SlowMotionPowerUp")
+        {
+            Destroy(collision.gameObject);
+            time = powerUpTime;
+            powerUpActivated = true;
+        }
+
     }
 }
