@@ -27,15 +27,28 @@ public class CS_StateManager : MonoBehaviour {
 	private void Awake()
     {
         Init(CS_WorldManager.Instance.state);
+    }
 
+    private void OnEnable()
+    {
         CS_Notifications.Instance.Register(this, "OnVictory");
         CS_Notifications.Instance.Register(this, "OnGameOver");
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        CS_Notifications.Instance.Unregister(this, "OnVictory");
-        CS_Notifications.Instance.Unregister(this, "OnGameOver");
+        try
+        {
+            CS_Notifications.Instance.Unregister(this, "OnVictory");
+            CS_Notifications.Instance.Unregister(this, "OnGameOver");
+        }
+        catch (System.NullReferenceException)
+        {
+            // Unity destroys objects in random order so there is no way
+            // to know if this is run before or after the
+            // notification center has been destroyed.
+        }
+
     }
 
     private void Update()
