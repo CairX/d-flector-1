@@ -27,7 +27,7 @@ public class CS_Projectile_SpawnerTargetInit : MonoBehaviour {
         float angle = CS_Utils.PointToDegree(target.position - rotateObject.position);
         if (rotateObject)
         {
-            rotateObject.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
+            rotateObject.rotation = Quaternion.Euler(0.0f, 0.0f, angle + 90);
         }
         timer -= Time.deltaTime;
         if (timer <= 0)

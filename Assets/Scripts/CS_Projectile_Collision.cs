@@ -57,19 +57,21 @@ public class CS_Projectile_Collision : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        else
+        {
+            if (owner == Owner.Enemy)
+            {
+                OnEnemyCollisionEnter2D(collision);
+            }
 
-        if (owner == Owner.Enemy)
-        {
-            OnEnemyCollisionEnter2D(collision);
-        }
-
-        if (collision.gameObject.tag == "Shield")
-        {
-            speaker.PlayOneShot(shieldBounce);
-        }
-        else if (collision.gameObject.tag == "net")
-        {
-            speaker.PlayOneShot(netBounce);
+            if (collision.gameObject.tag == "Shield")
+            {
+                speaker.PlayOneShot(shieldBounce);
+            }
+            else if (collision.gameObject.tag == "net")
+            {
+                speaker.PlayOneShot(netBounce);
+            }
         }
 
         collisionTimer = 0.08f;
