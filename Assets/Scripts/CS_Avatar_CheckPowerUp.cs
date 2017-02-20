@@ -63,6 +63,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
             Destroy(collision.gameObject);
             time = powerUpTime;
             powerUpSlowMotionActivated = true;
+            powerUpTwinShield.SetActive(false);
             powerUpShieldActivated = false;
         }
 
