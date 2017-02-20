@@ -6,9 +6,9 @@ using UnityEngine;
 public class CS_Wave_Spawner : MonoBehaviour {
 
     public Wave[] waves;
-    public float TimeBetweenWaves;
+    public float timeBetweenWaves;
     private int currenWave = 0;
-    private bool SpawnNextWave = true;
+    private bool spawnNextWave = true;
 
     void Start () {
         CS_Notifications.Instance.Register(this, "EnemyDead");
@@ -16,12 +16,12 @@ public class CS_Wave_Spawner : MonoBehaviour {
     }
 	
 	void Update () {
-        if (SpawnNextWave == true)
+        if (spawnNextWave == true)
         {
             waves[currenWave].start();
-            SpawnNextWave = false;         
+            spawnNextWave = false;         
         }
-        if (waves[currenWave].waveDone == true)
+        if (waves[currenWave].waveDone_X_ == true)
         {
             if (currenWave + 1 == waves.Length)
             {
@@ -29,10 +29,10 @@ public class CS_Wave_Spawner : MonoBehaviour {
             }
             else
             {
-                TimeBetweenWaves -= Time.deltaTime;
-                if (TimeBetweenWaves <= 0)
+                timeBetweenWaves -= Time.deltaTime;
+                if (timeBetweenWaves <= 0)
                 {
-                    SpawnNextWave = true;
+                    spawnNextWave = true;
                     currenWave++;
                 }
             }
@@ -46,7 +46,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
 
     void EnemyDead()
     {
-        waves[currenWave].enemys--;
+        waves[currenWave].enemies--;
     }
 
 
@@ -55,13 +55,13 @@ public class CS_Wave_Spawner : MonoBehaviour {
 public class Wave
 {
     private float time;
-    public bool waveDone = false;
+    public bool waveDone_X_ = false;
     public WaveProp[] wave;
-    public int enemys;
+    public int enemies;
 
     public void start()
     {
-        enemys = wave.Length;
+        enemies = wave.Length;
     }
     public void Update()
     {
@@ -71,18 +71,18 @@ public class Wave
         {
             if (wave[index].spawnDeley <= time)
             {
-                if (wave[index].spawned == false)
+                if (wave[index].spawned_X_ == false)
                 {
                     wave[index].enemy.transform.position = wave[index].spawnPos;
                     MonoBehaviour.Instantiate(wave[index].enemy);
-                    wave[index].spawned = true;
+                    wave[index].spawned_X_ = true;
                 }
             }
         }
 
-        if (enemys == 0)
+        if (enemies == 0)
         {
-            waveDone = true;
+            waveDone_X_ = true;
         }
     }
 
@@ -97,6 +97,7 @@ public class WaveProp
     public GameObject enemy;
     public int spawnDeley;
     public Vector2 spawnPos;
-    public bool spawned = false;
+    public bool spawned_X_ = false;
+    public GameObject movementPattern;
 }
 
