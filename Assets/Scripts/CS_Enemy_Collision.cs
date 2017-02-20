@@ -18,14 +18,17 @@ public class CS_Enemy_Collision : MonoBehaviour {
                 twinShieldPowerUp.transform.position = transform.position;
                 Instantiate(twinShieldPowerUp);
             }
+            CS_Notifications.Instance.Post(this, "EnemyDead");
         }
         if (cgo.tag == "Shield")
         {
             Destroy(gameObject);
+            CS_Notifications.Instance.Post(this, "EnemyDead");
         }
         if (cgo.tag == "Player")
         {
             Destroy(gameObject);
+            CS_Notifications.Instance.Post(this, "EnemyDead");
         }
     }
 }
