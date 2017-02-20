@@ -9,6 +9,11 @@ public class CS_Utils : MonoBehaviour {
         return (x % m + m) % m;
     }
 
+    public static int Mod(int x, int m)
+    {
+        return (x % m + m) % m;
+    }
+
     public static float AngleRound(float a)
     {
         if ((a > 315 && a <= 360) || (a >= 0 && a <= 45))
