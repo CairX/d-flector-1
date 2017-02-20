@@ -22,15 +22,37 @@ public class CS_Projectile_Collision : MonoBehaviour {
     private AudioSource speaker;
     private SpriteRenderer spriteRenderer;
 
+    private TextMesh text;
+
+    private float collisionTimer;
+
     void Start () {
         owner = Owner.Enemy;
         speaker = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        text = transform.GetChild(1).GetComponent<TextMesh>();
+        text.text = health.ToString();
+        Debug.Log("INIT HEALTH: " + health);
+        collisionTimer = 0.08f;
+    }
+
+    private void Update()
+    {
+        collisionTimer -= Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collisionTimer > 0)
+        {
+            return;
+        }
+
         health--;
+        text.text = health.ToString();
+        Debug.Log("HEALTH: " + health);
+        Debug.Log("ENTER: " + collision.gameObject + " // " + Time.time);
+
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -49,6 +71,13 @@ public class CS_Projectile_Collision : MonoBehaviour {
         {
             speaker.PlayOneShot(netBounce);
         }
+
+        collisionTimer = 0.08f;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("EXIT: " + collision.gameObject + " // " + Time.time);
     }
 
     private void OnEnemyCollisionEnter2D(Collision2D collision)

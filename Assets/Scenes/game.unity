@@ -1202,7 +1202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &534882987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2902,6 +2902,10 @@ Prefab:
       propertyPath: m_Name
       value: Obj_Enemy_Bolas (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1645990146927904, guid: 17f144aaa3bebe94e8825e0a45e114b0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17f144aaa3bebe94e8825e0a45e114b0, type: 2}
   m_IsPrefabParent: 0
@@ -4484,6 +4488,10 @@ Prefab:
       propertyPath: m_Name
       value: Obj_Enemy_Bolas (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1645990146927904, guid: 17f144aaa3bebe94e8825e0a45e114b0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17f144aaa3bebe94e8825e0a45e114b0, type: 2}
   m_IsPrefabParent: 0
@@ -5905,10 +5913,10 @@ Prefab:
       propertyPath: m_Name
       value: Obj_Enemy_Bolas (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 50442043763660880, guid: 17f144aaa3bebe94e8825e0a45e114b0,
+    - target: {fileID: 114383178894388716, guid: 17f144aaa3bebe94e8825e0a45e114b0,
         type: 2}
-      propertyPath: m_Constraints
-      value: 7
+      propertyPath: spawnRate
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17f144aaa3bebe94e8825e0a45e114b0, type: 2}
