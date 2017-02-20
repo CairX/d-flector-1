@@ -10,6 +10,8 @@ public class CS_Projectile_Collision : MonoBehaviour {
         Enemy
     }
 
+    private static float COLLISION_COOLDOWN = 0.08f;
+
     public int health;
 
     public Sprite avatarSprite;
@@ -30,10 +32,10 @@ public class CS_Projectile_Collision : MonoBehaviour {
         owner = Owner.Enemy;
         speaker = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
         text = transform.GetChild(1).GetComponent<TextMesh>();
         text.text = health.ToString();
-        Debug.Log("INIT HEALTH: " + health);
-        collisionTimer = 0.08f;
+        collisionTimer = COLLISION_COOLDOWN;
     }
 
     private void Update()
@@ -50,8 +52,6 @@ public class CS_Projectile_Collision : MonoBehaviour {
 
         health--;
         text.text = health.ToString();
-        Debug.Log("HEALTH: " + health);
-        Debug.Log("ENTER: " + collision.gameObject + " // " + Time.time);
 
         if (health <= 0)
         {
@@ -74,12 +74,7 @@ public class CS_Projectile_Collision : MonoBehaviour {
             }
         }
 
-        collisionTimer = 0.08f;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("EXIT: " + collision.gameObject + " // " + Time.time);
+        collisionTimer = COLLISION_COOLDOWN;
     }
 
     private void OnEnemyCollisionEnter2D(Collision2D collision)
