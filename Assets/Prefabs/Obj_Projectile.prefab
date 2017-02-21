@@ -470,10 +470,10 @@ TrailRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 3372154880
+        rgba: 3371203862
       key1:
         serializedVersion: 2
-        rgba: 1358888960
+        rgba: 854621462
       key2:
         serializedVersion: 2
         rgba: 0
