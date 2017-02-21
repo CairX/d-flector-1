@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114365516055913086}
   - component: {fileID: 50442043763660880}
   - component: {fileID: 60009400771149702}
+  - component: {fileID: 114328959784184160}
   m_Layer: 0
   m_Name: Obj_Enemy_Bolas
   m_TagString: Enemy
@@ -52,8 +53,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645990146927904}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.859, y: 1.355, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.92387956, w: -0.3826834}
+  m_LocalPosition: {x: 1.5, y: -1.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4652001924942500}
@@ -209,6 +210,19 @@ PolygonCollider2D:
       - {x: 0.011428571, y: -0.72571427}
       - {x: 0.025714286, y: -0.56857145}
       - {x: 0.054285713, y: -0.5428571}
+--- !u!114 &114328959784184160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645990146927904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fdda4ba890fbb4892974ffb62fe05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  path: {fileID: 0}
 --- !u!114 &114365516055913086
 MonoBehaviour:
   m_ObjectHideFlags: 1

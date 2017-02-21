@@ -36,7 +36,6 @@ public class CS_Wave_Spawner : MonoBehaviour {
                     currenWave++;
                 }
             }
-
         }
         else
         {
@@ -46,7 +45,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
 
     void EnemyDead()
     {
-        waves[currenWave].enemies--;
+        waves[currenWave].enemies_X_--;
     }
 
 
@@ -57,11 +56,11 @@ public class Wave
     private float time;
     public bool waveDone_X_ = false;
     public WaveProp[] wave;
-    public int enemies;
+    public int enemies_X_;
 
     public void start()
     {
-        enemies = wave.Length;
+        enemies_X_ = wave.Length;
     }
     public void Update()
     {
@@ -73,14 +72,16 @@ public class Wave
             {
                 if (wave[index].spawned_X_ == false)
                 {
-                    wave[index].enemy.transform.position = wave[index].spawnPos;
-                    MonoBehaviour.Instantiate(wave[index].enemy);
+                    wave[index].enemy.transform.position = wave[index].spawnPos;          
+                    wave[index].enemy = MonoBehaviour.Instantiate(wave[index].enemy);
+                    CS_Enemy_Movement script = wave[index].enemy.GetComponent<CS_Enemy_Movement>();
+                    script.path = wave[index].movementPattern;
                     wave[index].spawned_X_ = true;
                 }
             }
         }
 
-        if (enemies == 0)
+        if (enemies_X_ == 0)
         {
             waveDone_X_ = true;
         }
@@ -98,6 +99,6 @@ public class WaveProp
     public int spawnDeley;
     public Vector2 spawnPos;
     public bool spawned_X_ = false;
-    public GameObject movementPattern;
+    public Transform movementPattern;
 }
 
