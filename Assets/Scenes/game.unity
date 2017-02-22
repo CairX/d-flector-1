@@ -4776,7 +4776,7 @@ MonoBehaviour:
     wave:
     - enemy: {fileID: 1645990146927904, guid: 17f144aaa3bebe94e8825e0a45e114b0, type: 2}
       spawnDeley: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 2, y: 0}
       spawned_X_: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
