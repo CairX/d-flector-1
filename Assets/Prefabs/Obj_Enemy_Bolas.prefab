@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645990146927904}
   m_LocalRotation: {x: -0, y: -0, z: 0.92387956, w: -0.3826834}
-  m_LocalPosition: {x: 1.5, y: -1.5, z: 0}
+  m_LocalPosition: {x: 2, y: 0.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4652001924942500}
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   twinShieldPowerUp: {fileID: 1993075815452806, guid: 8dc811dc91d319a4e9fc12569461c2ed,
     type: 2}
+  SlowMotionPowerUp: {fileID: 0}
 --- !u!114 &114383178894388716
 MonoBehaviour:
   m_ObjectHideFlags: 1
