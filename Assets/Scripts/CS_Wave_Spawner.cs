@@ -25,7 +25,8 @@ public class CS_Wave_Spawner : MonoBehaviour {
         {
             if (currenWave + 1 == waves.Length)
             {
-                CS_Notifications.Instance.Post(this, "OnVictory", null);
+                CS_Notifications.Instance.Post(this, "LevelComplet");
+                CS_Notifications.Instance.Post(this, "OnVictory");
             }
             else
             {

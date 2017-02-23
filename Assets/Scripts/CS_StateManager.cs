@@ -183,6 +183,7 @@ public class CS_StateManager : MonoBehaviour {
         CS_WorldManager.Instance.state = State.Playing;
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
+        CS_Notifications.Instance.Post(this, "LevelStart");
     }
 
     public void PlayGame()
@@ -191,6 +192,7 @@ public class CS_StateManager : MonoBehaviour {
         DisableAll();
         playing.SetActive(true);
         Cursor.visible = false;
+        CS_Notifications.Instance.Post(this, "LevelStart");
     }
 
     public void QuitApplication()

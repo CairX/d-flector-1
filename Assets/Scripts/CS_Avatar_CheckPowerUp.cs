@@ -5,25 +5,28 @@ using UnityEngine;
 public class CS_Avatar_CheckPowerUp : MonoBehaviour {
 
     public GameObject powerUpTwinShield;
+    public GameObject shield;
     public GameObject trail;
+    public GameObject stickyBombShield;
     public float powerUpTime;
 
     private float time = 0;
     private int go;
     private bool powerUpShieldActivated;
     private bool powerUpSlowMotionActivated;
-    private bool powerUpStickyActivated;
+    private bool powerUpStickyBombActivated;
 
     private void Update()
     {
         if (powerUpShieldActivated == true)
         {
             time -= Time.deltaTime;
+
             if (time <= 0)
             {
                 powerUpTwinShield.SetActive(false);
-                time = 0;
                 powerUpShieldActivated = false;
+                time = 0;
             }
         }
         if(powerUpSlowMotionActivated == true)
@@ -46,17 +49,31 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
                 time = 0;
             }
         }
+        if (powerUpStickyBombActivated == true)
+        {
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                powerUpStickyBombActivated = false;
+                shield.SetActive(true);
+                stickyBombShield.SetActive(false);
+                time = 0;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "TwinSheildPowerUp")
         {
-            powerUpTwinShield.SetActive(true);
             Destroy(collision.gameObject);
             time = powerUpTime;
+            powerUpTwinShield.SetActive(true);
             powerUpSlowMotionActivated = false;
             powerUpShieldActivated = true;
+            powerUpStickyBombActivated = false;
+            shield.SetActive(true);
+            stickyBombShield.SetActive(false);
         }
         if (collision.gameObject.tag == "SlowMotionPowerUp")
         {
@@ -65,6 +82,20 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
             powerUpSlowMotionActivated = true;
             powerUpTwinShield.SetActive(false);
             powerUpShieldActivated = false;
+            powerUpStickyBombActivated = false;
+            shield.SetActive(true);
+            stickyBombShield.SetActive(false);
+        }
+        if (collision.gameObject.tag == "StickyBombPowerUp")
+        {
+            Destroy(collision.gameObject);
+            time = powerUpTime;
+            powerUpSlowMotionActivated = false;
+            powerUpTwinShield.SetActive(false);
+            powerUpShieldActivated = false;
+            powerUpStickyBombActivated = true;
+            shield.SetActive(false);
+            stickyBombShield.SetActive(true);
         }
 
     }

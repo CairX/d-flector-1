@@ -5,7 +5,8 @@ using UnityEngine;
 public class CS_Enemy_Collision : MonoBehaviour {
 
     public GameObject twinShieldPowerUp;
-    public GameObject SlowMotionPowerUp;
+    public GameObject slowMotionPowerUp;
+    public GameObject stickyBombPowerUp;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,16 +14,21 @@ public class CS_Enemy_Collision : MonoBehaviour {
         if (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isAvatar())
         {
             Destroy(gameObject);
-            float randomValue = Random.Range(1.0f, 6.0f);
-            if (randomValue >= 1.0f && randomValue <= 2.0f)
+            float randomValue = Random.Range(1.0f, 8.0f);
+            if (randomValue >= 1.0f && randomValue < 2.0f)
             {
                 twinShieldPowerUp.transform.position = transform.position;
                 Instantiate(twinShieldPowerUp);
             }
-            else if(randomValue >= 3.0f && randomValue <= 4.0f)
+            else if(randomValue >= 2.0f && randomValue < 3.0f)
             {
-                SlowMotionPowerUp.transform.position = transform.position;
-                Instantiate(SlowMotionPowerUp);
+                slowMotionPowerUp.transform.position = transform.position;
+                Instantiate(slowMotionPowerUp);
+            }
+            else if (randomValue >= 3.0f && randomValue < 4.0f)
+            {
+                stickyBombPowerUp.transform.position = transform.position;
+                Instantiate(stickyBombPowerUp);
             }
 
             CS_Notifications.Instance.Post(this, "EnemyDead");
