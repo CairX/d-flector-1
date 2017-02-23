@@ -14,19 +14,19 @@ public class CS_Projectile_Collision : MonoBehaviour {
 
     public int health;
 
+    private Owner owner;
+    private SpriteRenderer spriteRenderer;
     public Sprite avatarSprite;
     public Color avatarTrailColor;
 
+    private AudioSource speaker;
     public AudioClip netBounce;
     public AudioClip shieldBounce;
-
-    private Owner owner;
-    private AudioSource speaker;
-    private SpriteRenderer spriteRenderer;
 
     private TextMesh text;
 
     private float collisionTimer;
+    private CS_Projectile_Type projectileType;
 
     void Start () {
         owner = Owner.Enemy;
@@ -36,6 +36,8 @@ public class CS_Projectile_Collision : MonoBehaviour {
         text = transform.GetChild(1).GetComponent<TextMesh>();
         text.text = health.ToString();
         collisionTimer = COLLISION_COOLDOWN;
+
+        projectileType = GetComponent<CS_Projectile_Type>();
     }
 
     private void Update()
@@ -54,6 +56,8 @@ public class CS_Projectile_Collision : MonoBehaviour {
 
         UpdateHealth();
         RouteOnCollisionEnter2D(collision);
+
+        projectileType.SpecialCollision(collision);
     }
 
     private void UpdateHealth()
@@ -92,7 +96,7 @@ public class CS_Projectile_Collision : MonoBehaviour {
 
     private void OnPlayerCollisionEnter2D(Collision2D collision)
     {
-        if (owner == Owner.Enemy)
+        if (isEnemy())
         {
             Destroy(gameObject);
         }
