@@ -15,9 +15,9 @@ public class CS_Projectile_Collision : MonoBehaviour {
     public int health;
 
     private Owner owner;
-    private SpriteRenderer spriteRenderer;
-    public Sprite avatarSprite;
-    public Color avatarTrailColor;
+
+    public GameObject avatarVisuals;
+    public GameObject enemyVisuals;
 
     private AudioSource speaker;
     public AudioClip netBounce;
@@ -31,9 +31,11 @@ public class CS_Projectile_Collision : MonoBehaviour {
     void Start () {
         owner = Owner.Enemy;
         speaker = GetComponent<AudioSource>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
-        text = transform.GetChild(1).GetComponent<TextMesh>();
+        avatarVisuals.SetActive(false);
+        enemyVisuals.SetActive(true);
+
+        text = transform.GetChild(0).GetComponent<TextMesh>();
         text.text = health.ToString();
         collisionTimer = COLLISION_COOLDOWN;
 
@@ -57,7 +59,10 @@ public class CS_Projectile_Collision : MonoBehaviour {
         UpdateHealth();
         RouteOnCollisionEnter2D(collision);
 
-        projectileType.SpecialCollision(collision);
+        if (projectileType)
+        {
+            projectileType.SpecialCollision(collision);
+        }
     }
 
     private void UpdateHealth()
@@ -106,11 +111,8 @@ public class CS_Projectile_Collision : MonoBehaviour {
     {
         if (owner == Owner.Enemy)
         {
-            owner = Owner.Avatar;
-            spriteRenderer.sprite = avatarSprite;
-            TrailRenderer trail = transform.GetChild(0).GetComponent<TrailRenderer>();
-            trail.startColor = avatarTrailColor;
-            trail.endColor = avatarTrailColor;
+            avatarVisuals.SetActive(true);
+            enemyVisuals.SetActive(false);
         }
 
         speaker.PlayOneShot(shieldBounce);
