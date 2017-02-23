@@ -45,11 +45,19 @@ public class CS_Projectile_Collision : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collisionTimer > 0)
-        {
-            return;
-        }
+        // Prevent collisions from triggering to frequantly,
+        // instantly killing the projectile. This often happens
+        // when a player pushed a projectile with the shield.
+        // The timer cooldown value is entirely arbitary.
+        if (collisionTimer > 0) { return; }
+        collisionTimer = COLLISION_COOLDOWN;
 
+        UpdateHealth();
+        RouteOnCollisionEnter2D(collision);
+    }
+
+    private void UpdateHealth()
+    {
         health--;
         text.text = health.ToString();
 
@@ -57,40 +65,51 @@ public class CS_Projectile_Collision : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        else
-        {
-            if (owner == Owner.Enemy)
-            {
-                OnEnemyCollisionEnter2D(collision);
-            }
-
-            if (collision.gameObject.tag == "Shield")
-            {
-                speaker.PlayOneShot(shieldBounce);
-            }
-            else if (collision.gameObject.tag == "net")
-            {
-                speaker.PlayOneShot(netBounce);
-            }
-        }
-
-        collisionTimer = COLLISION_COOLDOWN;
     }
 
-    private void OnEnemyCollisionEnter2D(Collision2D collision)
+    private void RouteOnCollisionEnter2D(Collision2D collision)
     {
+        switch (collision.gameObject.tag)
+        {
+            case "Player":
+                OnPlayerCollisionEnter2D(collision);
+                break;
+            case "Shield":
+                OnShieldCollisionEnter2D(collision);
+                break;
+            case "net":
+                OnNetCollisionEnter2D(collision);
+                break;
+            default:
+                break;
+        }
+    }
 
-        if (collision.gameObject.tag == "Shield")
+    private void OnNetCollisionEnter2D(Collision2D collision)
+    {
+        speaker.PlayOneShot(netBounce);
+    }
+
+    private void OnPlayerCollisionEnter2D(Collision2D collision)
+    {
+        if (owner == Owner.Enemy)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnShieldCollisionEnter2D(Collision2D collision)
+    {
+        if (owner == Owner.Enemy)
         {
             owner = Owner.Avatar;
             spriteRenderer.sprite = avatarSprite;
             TrailRenderer trail = transform.GetChild(0).GetComponent<TrailRenderer>();
             trail.startColor = avatarTrailColor;
             trail.endColor = avatarTrailColor;
-        } else if (collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
         }
+
+        speaker.PlayOneShot(shieldBounce);
     }
 
     public bool isAvatar()
