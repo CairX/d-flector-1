@@ -21,7 +21,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
             waves[currenWave].start();
             spawnNextWave = false;         
         }
-        if (waves[currenWave].waveDone_X_ == true)
+        if (waves[currenWave].waveDone == true)
         {
             if (currenWave + 1 == waves.Length)
             {
@@ -45,7 +45,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
 
     void EnemyDead()
     {
-        waves[currenWave].enemies_X_--;
+        waves[currenWave].enemies--;
     }
 
 
@@ -54,13 +54,15 @@ public class CS_Wave_Spawner : MonoBehaviour {
 public class Wave
 {
     private float time;
-    public bool waveDone_X_ = false;
+    [HideInInspector]
+    public bool waveDone = false;
     public WaveProp[] wave;
-    public int enemies_X_;
+    [HideInInspector]
+    public int enemies;
 
     public void start()
     {
-        enemies_X_ = wave.Length;
+        enemies = wave.Length;
     }
     public void Update()
     {
@@ -70,20 +72,20 @@ public class Wave
         {
             if (wave[index].spawnDeley <= time)
             {
-                if (wave[index].spawned_X_ == false)
+                if (wave[index].spawned == false)
                 {
                     wave[index].enemy.transform.position = wave[index].spawnPos;          
                     wave[index].enemy = MonoBehaviour.Instantiate(wave[index].enemy);
                     CS_Enemy_Movement script = wave[index].enemy.GetComponent<CS_Enemy_Movement>();
                     script.path = wave[index].movementPattern;
-                    wave[index].spawned_X_ = true;
+                    wave[index].spawned = true;
                 }
             }
         }
 
-        if (enemies_X_ == 0)
+        if (enemies == 0)
         {
-            waveDone_X_ = true;
+            waveDone = true;
         }
     }
 
@@ -98,7 +100,8 @@ public class WaveProp
     public GameObject enemy;
     public int spawnDeley;
     public Vector2 spawnPos;
-    public bool spawned_X_ = false;
+    [HideInInspector]
+    public bool spawned = false;
     public Transform movementPattern;
 }
 
