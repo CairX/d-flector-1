@@ -111,6 +111,7 @@ public class CS_Projectile_Collision : MonoBehaviour {
     {
         if (owner == Owner.Enemy)
         {
+            owner = Owner.Avatar;
             avatarVisuals.SetActive(true);
             enemyVisuals.SetActive(false);
         }
