@@ -80,6 +80,9 @@ public class CS_Projectile_Collision : MonoBehaviour {
     {
         switch (collision.gameObject.tag)
         {
+            case "Enemy":
+                OnEnemyCollisionEnter2D(collision);
+                break;
             case "Player":
                 OnPlayerCollisionEnter2D(collision);
                 break;
@@ -97,6 +100,14 @@ public class CS_Projectile_Collision : MonoBehaviour {
     private void OnNetCollisionEnter2D(Collision2D collision)
     {
         speaker.PlayOneShot(netBounce);
+    }
+
+    private void OnEnemyCollisionEnter2D(Collision2D collision)
+    {
+        if (isAvatar())
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnPlayerCollisionEnter2D(Collision2D collision)
