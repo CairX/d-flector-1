@@ -73,7 +73,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1592882869987118
 GameObject:
   m_ObjectHideFlags: 1
@@ -624,6 +624,7 @@ MonoBehaviour:
   powerUpTwinShield: {fileID: 1314865073339686}
   shield: {fileID: 1050513001366514}
   trail: {fileID: 1548129656541204, guid: c4da628170f7dbc429c5e2f605f0ed54, type: 2}
+  stickyBombShield: {fileID: 1517809785823646}
   powerUpTime: 10
 --- !u!114 &114922546019915932
 MonoBehaviour:
