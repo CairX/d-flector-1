@@ -31,10 +31,6 @@ public class CS_Background_Loop : CS_Background_move
                 repet = false;
             }
         }
-        else
-        {
-            Debug.Log(repet);
-        }
         if (this.transform.position.x <= -12)
         {
             Destroy(this.gameObject);

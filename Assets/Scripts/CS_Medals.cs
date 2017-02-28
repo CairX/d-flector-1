@@ -2,41 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_Medals : MonoBehaviour {
+public class CS_Medals : CS_Singleton<CS_Medals> {
 
-    public GameObject levelCompletMedal;
-    public GameObject noLevelCompletMedal;
+    public bool levelComplet = false;
+    public bool noDamage = false;
+    public bool speedRun = false;
 
-    public GameObject allHealfMedal;
-    public GameObject noAllHealfMedal;
+    protected CS_Medals() { }
 
-    public GameObject timeMedal;
-    public GameObject noTimeMedal;
-
-    void Start () {
-        CS_Notifications.Instance.Register(this, "LevelComplet");
-        CS_Notifications.Instance.Register(this, "LevelStart");
-
-    }
-	
-	void Update () {
-		
-	}
-
-    void LevelComplet()
+    public void LevelStart()
     {
-        levelCompletMedal.SetActive(true);
-        noLevelCompletMedal.SetActive(false);
+        levelComplet = false;
+        noDamage = false;
+        speedRun = false;
     }
 
-    void LevelStart()
+    public void LevelComplet()
     {
-        levelCompletMedal.SetActive(false);
-        timeMedal.SetActive(false);
-        allHealfMedal.SetActive(false);
-
-        noAllHealfMedal.SetActive(true);
-        noLevelCompletMedal.SetActive(true);
-        noTimeMedal.SetActive(true);
+        levelComplet = true;
     }
 }
