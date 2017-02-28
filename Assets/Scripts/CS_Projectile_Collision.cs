@@ -129,7 +129,7 @@ public class CS_Projectile_Collision : MonoBehaviour
             enemyVisuals.SetActive(false);
         }
 
-        speaker.PlayOneShot(shieldBounce);
+        //CS_MasterAudio.Instance.ProjectileVsShield();
     }
 
     public bool isAvatar()
