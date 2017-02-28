@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114672490274871172}
   - component: {fileID: 114333854307650610}
   - component: {fileID: 114148427747307306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Homing
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4272128134044060}
   - component: {fileID: 96967640315248962}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 4855987399428806}
   - component: {fileID: 23373106420141274}
   - component: {fileID: 102226133111231306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,8 +575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  avatarSprite: {fileID: 21300000, guid: 9af2551d2101c0f49a739a80188b638f, type: 3}
-  avatarTrailColor: {r: 1, g: 1, b: 0, a: 1}
+  avatarVisuals: {fileID: 0}
+  enemyVisuals: {fileID: 0}
   netBounce: {fileID: 8300000, guid: 8bbe2f08f7f3ef246bd6a79b018c16d6, type: 3}
   shieldBounce: {fileID: 8300000, guid: d47c8d636c1acb64cadb9a8903c0770d, type: 3}
 --- !u!212 &212875120000428902

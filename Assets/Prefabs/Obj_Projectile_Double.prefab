@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4300961712678962}
   - component: {fileID: 23817049676865254}
   - component: {fileID: 102525856209144676}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 82016292734380516}
   - component: {fileID: 114169588292213046}
   - component: {fileID: 114334875409482582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Double
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4680830047792776}
   - component: {fileID: 212854960548135646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Double_Two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333995061730026}
   - component: {fileID: 96622463787341164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4970823124548600}
   - component: {fileID: 212705972747972628}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Double_One
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4891063925030398}
   - component: {fileID: 212675355492411332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Double_Connector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,8 +670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  avatarSprite: {fileID: 21300000, guid: 9af2551d2101c0f49a739a80188b638f, type: 3}
-  avatarTrailColor: {r: 1, g: 1, b: 0, a: 1}
+  avatarVisuals: {fileID: 0}
+  enemyVisuals: {fileID: 0}
   netBounce: {fileID: 8300000, guid: 8bbe2f08f7f3ef246bd6a79b018c16d6, type: 3}
   shieldBounce: {fileID: 8300000, guid: d47c8d636c1acb64cadb9a8903c0770d, type: 3}
 --- !u!114 &114334875409482582

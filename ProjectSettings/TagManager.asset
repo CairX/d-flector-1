@@ -11,6 +11,8 @@ TagManager:
   - net
   - Playing
   - TwinSheildPowerUp
+  - SlowMotionPowerUp
+  - StickyBombPowerUp
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - 
   - Shield
   - Player
-  - 
+  - Projectile
   - 
   - 
   - 
