@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_Projectile_Collision : MonoBehaviour {
+public class CS_Projectile_Collision : MonoBehaviour
+{
 
     public enum Owner
     {
@@ -41,6 +42,7 @@ public class CS_Projectile_Collision : MonoBehaviour {
 
         projectileType = GetComponent<CS_Projectile_Type>();
     }
+
 
     private void Update()
     {

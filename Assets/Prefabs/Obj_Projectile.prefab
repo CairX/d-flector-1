@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4360015290017300}
   - component: {fileID: 212351694577025674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4008107338462862}
   - component: {fileID: 96324192136839670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Avatar_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4281976655556414}
   - component: {fileID: 23295466509828152}
   - component: {fileID: 102047373049346158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4336309776151480}
   - component: {fileID: 96064172035218466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 82726703222588018}
   - component: {fileID: 114583094210315492}
   - component: {fileID: 114360880195198422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obj_Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4638875416135242}
   - component: {fileID: 212549360804689370}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
