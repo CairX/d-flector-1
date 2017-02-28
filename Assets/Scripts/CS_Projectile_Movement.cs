@@ -9,7 +9,7 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 direction;
-
+    private bool speedup = false;
     [Range(0, 360)]
     public float angle;
     public float speed;
@@ -22,7 +22,19 @@ public class CS_Projectile_Movement : MonoBehaviour
         UpdateRotation(angle);
         rb.AddForce(direction * (speed * FORCE));
     }
-
+    void Update()
+    {
+        if ((CS_WorldManager.Instance.slowdown != 1  && speedup == false) || (CS_WorldManager.Instance.slowdown == 1 && speedup == true))
+        {
+            speedup = true;
+            rb.velocity = Vector2.zero;
+            rb.AddForce(direction * ((speed * 100) / CS_WorldManager.Instance.slowdown));
+          if(CS_WorldManager.Instance.slowdown == 1)
+            {
+                speedup = false;
+            }
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         UpdateRotation(CS_Utils.PointToDegree(rb.velocity.normalized));

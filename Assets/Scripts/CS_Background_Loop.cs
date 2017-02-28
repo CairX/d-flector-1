@@ -16,7 +16,7 @@ public class CS_Background_Loop : CS_Background_move
 	void Update () {
         if (Time.timeScale <= 0) { return; }
 
-        transform.position = new Vector3(transform.position.x + movementX, transform.position.y + movementY, transform.position.z);
+        transform.position = new Vector3(transform.position.x + (movementX / CS_WorldManager.Instance.slowdown), transform.position.y + (movementY / CS_WorldManager.Instance.slowdown), transform.position.z);
 
         if (repet == true)
         {

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_Background_move : MonoBehaviour {
+public class CS_Background_move : MonoBehaviour
+{
 
     public float movementX = 0;
     public float movementY = 0;
@@ -13,10 +14,11 @@ public class CS_Background_move : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (Time.timeScale <= 0) { return; }
 
-        transform.position = new Vector3(transform.position.x + movementX, transform.position.y + movementY, transform.position.z);
+        transform.position = new Vector3(transform.position.x + (movementX / CS_WorldManager.Instance.slowdown), transform.position.y + (movementY / CS_WorldManager.Instance.slowdown), transform.position.z);
 
         if (this.transform.position.x <= -12)
         {

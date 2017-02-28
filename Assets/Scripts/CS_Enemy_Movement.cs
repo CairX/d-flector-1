@@ -25,19 +25,20 @@ public class CS_Enemy_Movement : MonoBehaviour
 
     void Update()
     {
-        if (path != null)
-        {
-            if (targets.Count == 0)
+            if (path != null)
             {
-                return;
-            }
+                if (targets.Count == 0)
+                {
+                   return;
+                }
 
-            if (transform.position == targets[current])
-            {
-                current = CS_Utils.Mod(current + 1, targets.Count);
-            }
+                if (transform.position == targets[current])
+                {
+                    current = CS_Utils.Mod(current + 1, targets.Count);
+                }
 
             transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime * speed);
-        }   
+            }   
+        
     }
 }
