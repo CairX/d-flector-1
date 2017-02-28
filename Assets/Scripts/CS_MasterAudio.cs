@@ -5,14 +5,14 @@ using UnityEngine;
 public class CS_MasterAudio : CS_Singleton<CS_MasterAudio>
 {
     private AudioSource speaker;
-    public AudioClip shieldhit1;
-    public AudioClip shieldhit2;
-    public AudioClip shieldhit3;
-    public AudioClip shieldhit4;
-    public AudioClip shieldhit5;
-    public AudioClip shieldhit6;
-    public AudioClip shieldhit7;
-    public AudioClip shieldhit8;
+    static public AudioClip shieldhit1;
+    static public AudioClip shieldhit2;
+    static public AudioClip shieldhit3;
+    static public AudioClip shieldhit4;
+    static public AudioClip shieldhit5;
+    static public AudioClip shieldhit6;
+    static public AudioClip shieldhit7;
+    static public AudioClip shieldhit8;
 
     protected CS_MasterAudio() { }
 
