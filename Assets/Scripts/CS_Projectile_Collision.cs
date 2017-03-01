@@ -11,7 +11,7 @@ public class CS_Projectile_Collision : MonoBehaviour
         Enemy
     }
 
-    private static float COLLISION_COOLDOWN = 0.08f;
+    private static float COLLISION_COOLDOWN = 0.16f;
 
     public int health;
 
