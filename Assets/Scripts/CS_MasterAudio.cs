@@ -35,35 +35,35 @@ public class CS_MasterAudio : CS_Singleton<CS_MasterAudio>
 
         if (randomValue == 1)
         {
-            speaker.PlayOneShot(shieldhit1);
+            //speaker.PlayOneShot(shieldhit1);
         }
         else if (randomValue == 2)
         {
-            speaker.PlayOneShot(shieldhit2);
+            //speaker.PlayOneShot(shieldhit2);
         }
         else if (randomValue == 3)
         {
-            speaker.PlayOneShot(shieldhit3);
+            //speaker.PlayOneShot(shieldhit3);
         }
         else if (randomValue == 4)
         {
-            speaker.PlayOneShot(shieldhit4);
+            //speaker.PlayOneShot(shieldhit4);
         }
         else if (randomValue == 5)
         {
-            speaker.PlayOneShot(shieldhit5);
+            //speaker.PlayOneShot(shieldhit5);
         }
         else if (randomValue == 6)
         {
-            speaker.PlayOneShot(shieldhit6);
+            //speaker.PlayOneShot(shieldhit6);
         }
         else if (randomValue == 7)
         {
-            speaker.PlayOneShot(shieldhit7);
+            //speaker.PlayOneShot(shieldhit7);
         }
         else if (randomValue == 8)
         {
-            speaker.PlayOneShot(shieldhit8);
+            //speaker.PlayOneShot(shieldhit8);
         }
     }
 }
