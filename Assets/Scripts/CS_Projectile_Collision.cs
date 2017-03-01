@@ -61,7 +61,7 @@ public class CS_Projectile_Collision : MonoBehaviour
         UpdateHealth();
         RouteOnCollisionEnter2D(collision);
 
-        if (projectileType)
+        if (projectileType && health > 0)
         {
             projectileType.SpecialCollision(collision);
         }
