@@ -362,7 +362,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Draxl's Journey
+  m_Text: D-eflektor-1
 --- !u!222 &128257051
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1419,7 +1419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &534882987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3176,6 +3176,10 @@ Prefab:
     - target: {fileID: 4517046572431864, guid: f85f90f2262103e439029a4c90cd0d98, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813605922840384, guid: f85f90f2262103e439029a4c90cd0d98, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f85f90f2262103e439029a4c90cd0d98, type: 2}
