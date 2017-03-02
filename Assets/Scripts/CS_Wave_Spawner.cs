@@ -152,22 +152,22 @@ public class WaveProp
         else if (spawnPosition == SpawnPos.A2)
         {
             spawnPos.x = 1f;
-            spawnPos.y = 1f;
+            spawnPos.y = 1.2f;
         }
         else if (spawnPosition == SpawnPos.A3)
         {
             spawnPos.x = 1f;
-            spawnPos.y = 0f;
+            spawnPos.y = 0.4f;
         }
         else if (spawnPosition == SpawnPos.A4)
         {
             spawnPos.x = 1f;
-            spawnPos.y = -1f;
+            spawnPos.y = -0.4f;
         }
         else if (spawnPosition == SpawnPos.A5)
         {
             spawnPos.x = 1f;
-            spawnPos.y = -2f;
+            spawnPos.y = -1.2f;
         }
         else if (spawnPosition == SpawnPos.B1)
         {
