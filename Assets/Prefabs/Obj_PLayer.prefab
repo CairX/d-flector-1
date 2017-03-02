@@ -651,10 +651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889511f0e2e454469edf5f16ea93b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundaryStartX: -3.8
-  boundaryStartY: -1.8
-  boundaryStopX: 3.8
-  boundaryStopY: 1.8
+  boundaryStartX: -4.1
+  boundaryStartY: -1.2
+  boundaryStopX: 4.1
+  boundaryStopY: 2
 --- !u!198 &198526952991486912
 ParticleSystem:
   m_ObjectHideFlags: 1
