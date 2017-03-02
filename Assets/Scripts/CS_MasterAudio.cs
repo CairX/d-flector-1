@@ -25,6 +25,27 @@ public class CS_MasterAudio : MonoBehaviour
     public AudioClip stickyOnPickup;
     public AudioClip twinShieldOnPickup;
 
+    public AudioClip ProjectileSound1;
+    public AudioClip ProjectileSound2;
+    public AudioClip ProjectileSound3;
+    public AudioClip ProjectileSound4;
+    public AudioClip ProjectileSound5;
+
+    public AudioClip enemyDeath1;
+    public AudioClip enemyDeath2;
+    public AudioClip enemyDeath3;
+    public AudioClip enemyDeath4;
+    public AudioClip enemyDeath5;
+
+    public AudioClip avtarLesLife1;
+    public AudioClip avtarLesLife2;
+    public AudioClip avtarLesLife3;
+
+    public AudioClip netSound1;
+    public AudioClip netSound2;
+    public AudioClip netSound3;
+    public AudioClip netSound4;
+
     // Use this for initialization
     void Start()
     {
@@ -101,7 +122,6 @@ public class CS_MasterAudio : MonoBehaviour
             speaker.PlayOneShot(loseSound);
         }
     }
-
     public void ButtonPress(int i)
     {
         if (i == 1)
@@ -117,5 +137,88 @@ public class CS_MasterAudio : MonoBehaviour
             speaker.PlayOneShot(menuSart);
         }
     }
+    public void ProjectileSoundStart(int i)
+    {
+        if (i == 1)
+        {
+            speaker.PlayOneShot(ProjectileSound1);
+        }
+        else if (i == 2)
+        {
+            speaker.PlayOneShot(ProjectileSound2);
+        }
+        else if (i == 3)
+        {
+            speaker.PlayOneShot(ProjectileSound3);
+        }
+        else if (i == 4)
+        {
+            speaker.PlayOneShot(ProjectileSound4);
+        }
+        else if (i == 5)
+        {
+            speaker.PlayOneShot(ProjectileSound5);
+        }
+    }
+    public void DeathToEnemySounds()
+    {
 
+        int randomValue = Random.Range(1, 5);
+        if (randomValue == 1)
+        {
+            speaker.PlayOneShot(enemyDeath1);
+        }
+        else if (randomValue == 2)
+        {
+            speaker.PlayOneShot(enemyDeath2);
+        }
+        else if (randomValue == 3)
+        {
+            speaker.PlayOneShot(enemyDeath3);
+        }
+        else if (randomValue == 4)
+        {
+            speaker.PlayOneShot(enemyDeath4);
+        }
+        else if (randomValue == 5)
+        {
+            speaker.PlayOneShot(enemyDeath5);
+        }
+    }
+    public void AvaterLoseHealth(int i)
+    {
+        if (i == 1)
+        {
+            speaker.PlayOneShot(avtarLesLife1);
+        }
+        else if (i == 2)
+        {
+            speaker.PlayOneShot(avtarLesLife2);
+        }
+        else if (i == 3)
+        {
+            speaker.PlayOneShot(avtarLesLife3);
+        }
+    }
+    public void NetBonce()
+    {
+        int randomValue = Random.Range(1, 4);
+
+        if (randomValue == 1)
+        {
+            speaker.PlayOneShot(netSound1);
+        }
+        else if (randomValue == 2)
+        {
+            speaker.PlayOneShot(netSound2);
+        }
+        else if (randomValue == 3)
+        {
+            speaker.PlayOneShot(netSound3);
+        }
+        else if (randomValue == 4)
+        {
+            speaker.PlayOneShot(netSound4);
+        }
+    }
 }
