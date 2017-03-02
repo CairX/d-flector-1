@@ -15,7 +15,7 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     public int health;
 
-    private Owner owner;
+    private Owner owner = Owner.Enemy;
 
     public GameObject avatarVisuals;
     public GameObject enemyVisuals;
@@ -30,17 +30,15 @@ public class CS_Projectile_Collision : MonoBehaviour
     private CS_Projectile_Type projectileType;
 
     void Start () {
-        owner = Owner.Enemy;
         speaker = GetComponent<AudioSource>();
-
-        avatarVisuals.SetActive(false);
-        enemyVisuals.SetActive(true);
 
         text = transform.GetChild(0).GetComponent<TextMesh>();
         text.text = health.ToString();
         collisionTimer = COLLISION_COOLDOWN;
 
         projectileType = GetComponent<CS_Projectile_Type>();
+
+        ChangeOwner(owner);
     }
 
 
@@ -124,9 +122,7 @@ public class CS_Projectile_Collision : MonoBehaviour
     {
         if (owner == Owner.Enemy)
         {
-            owner = Owner.Avatar;
-            avatarVisuals.SetActive(true);
-            enemyVisuals.SetActive(false);
+            ChangeOwner(Owner.Avatar);
         }
 
         CS_All_Audio.Instance.ProjectileVsShield();
@@ -140,5 +136,28 @@ public class CS_Projectile_Collision : MonoBehaviour
     public bool isEnemy()
     {
         return (owner == Owner.Enemy);
+    }
+
+    public void ChangeOwner(Owner owner)
+    {
+        this.owner = owner;
+        switch (this.owner)
+        {
+            case Owner.Avatar:
+                avatarVisuals.SetActive(true);
+                enemyVisuals.SetActive(false);
+                break;
+            case Owner.Enemy:
+                avatarVisuals.SetActive(false);
+                enemyVisuals.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public Owner GetOwner()
+    {
+        return owner;
     }
 }
