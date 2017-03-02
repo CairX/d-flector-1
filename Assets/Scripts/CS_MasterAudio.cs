@@ -14,6 +14,17 @@ public class CS_MasterAudio : MonoBehaviour
     public AudioClip shieldhit7;
     public AudioClip shieldhit8;
 
+    public AudioClip winSound;
+    public AudioClip loseSound;
+
+    public AudioClip menuOut;
+    public AudioClip menuIn;
+    public AudioClip menuSart;
+
+    public AudioClip steroidOnPickup;
+    public AudioClip stickyOnPickup;
+    public AudioClip twinShieldOnPickup;
+
     // Use this for initialization
     void Start()
     {
