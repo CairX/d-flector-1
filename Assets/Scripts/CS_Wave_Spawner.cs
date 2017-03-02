@@ -62,6 +62,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
 [System.Serializable]
 public class Wave
 {
+    public string name = "Wave";
     private float time;
     [HideInInspector]
     public bool waveDone = false;
@@ -110,7 +111,6 @@ public class Wave
 [System.Serializable]
 public class WaveProp
 {
-    [HideInInspector]
     public string name = "Enemy";
     public enum EnemyType { BASIC, BOLAR, HOWLAL, SHOTGUN }
     public enum SpawnPos { A1, A2, A3, A4, A5, B1, B2, B3, B4, B5, C1, C2, C3, C4, C5 }
