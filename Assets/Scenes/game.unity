@@ -2630,6 +2630,7 @@ GameObject:
   - component: {fileID: 925868331}
   - component: {fileID: 925868330}
   - component: {fileID: 925868329}
+  - component: {fileID: 925868328}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -2730,6 +2731,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &925868328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925868325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c3c403cbaaf4942b4aac8ffec3e9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldhit1: {fileID: 8300000, guid: 418567fd7c46ba641ae93e1f522eca75, type: 3}
+  shieldhit2: {fileID: 8300000, guid: 52c01df89ed7ba74283efc8ecd4389fd, type: 3}
+  shieldhit3: {fileID: 8300000, guid: a9184b91ada9e3c45bb6ef502debb631, type: 3}
+  shieldhit4: {fileID: 8300000, guid: 64020032802466c4898c2da54a3b389d, type: 3}
+  shieldhit5: {fileID: 8300000, guid: b5f781e820d63d746b7da10563cdc859, type: 3}
+  shieldhit6: {fileID: 8300000, guid: 2aad977053e625849b8d6fab2399492b, type: 3}
+  shieldhit7: {fileID: 8300000, guid: eeaf65c99c7f69840893ed34f8217763, type: 3}
+  shieldhit8: {fileID: 8300000, guid: 29dc40ea19781f04cad67fab0a6c50f7, type: 3}
 --- !u!82 &925868329
 AudioSource:
   m_ObjectHideFlags: 0
