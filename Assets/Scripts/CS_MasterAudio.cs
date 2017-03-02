@@ -75,4 +75,47 @@ public class CS_MasterAudio : MonoBehaviour
             speaker.PlayOneShot(shieldhit8);
         }
     }
+    public void PickupSound(int i)
+    {
+        if (i == 1)
+        {
+            speaker.PlayOneShot(twinShieldOnPickup);
+        }
+        else if (i == 2)
+        {
+            speaker.PlayOneShot(steroidOnPickup);
+        }
+        else if (i == 3)
+        {
+            speaker.PlayOneShot(stickyOnPickup);
+        }
+    }
+    public void WinLose(bool i)
+    {
+        if (i)
+        {
+            speaker.PlayOneShot(winSound);
+        }
+        else
+        {
+            speaker.PlayOneShot(loseSound);
+        }
+    }
+
+    public void ButtonPress(int i)
+    {
+        if (i == 1)
+        {
+            speaker.PlayOneShot(menuOut);
+        }
+        else if (i == 2)
+        {
+            speaker.PlayOneShot(menuIn);
+        }
+        else if (i == 3)
+        {
+            speaker.PlayOneShot(menuSart);
+        }
+    }
+
 }

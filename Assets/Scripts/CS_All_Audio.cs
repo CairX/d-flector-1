@@ -20,4 +20,16 @@ public class CS_All_Audio : CS_Singleton<CS_MasterAudio>
     {
         other.ProjectileVsShield();
     }
+    public void PickupSoundReal(int i)
+    {
+        other.PickupSound(i);
+    }
+    public void WinLoseReal(bool i)
+    {
+        other.WinLose(i);
+    }
+    public void ButtonPressReal(int i)
+    {
+        other.ButtonPress(i);
+    }
 }
