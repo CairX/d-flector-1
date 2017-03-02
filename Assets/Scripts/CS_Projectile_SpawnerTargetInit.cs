@@ -21,7 +21,7 @@ public class CS_Projectile_SpawnerTargetInit : MonoBehaviour
     {
         target = GameObject.FindWithTag("Player").transform;
         parent = GameObject.FindWithTag("Playing").transform;
-        timer = spawnRate;
+        timer = Random.Range(0.0f, spawnRate);
     }
 
     void Update()
