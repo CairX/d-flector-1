@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50443144439880162}
   - component: {fileID: 60395565666840692}
   - component: {fileID: 114786497675916462}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Obj_Enemy_Basic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4403840728527228}
   - component: {fileID: 198688886004603272}
   - component: {fileID: 199647941126986966}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Par_Enemy_Trail_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4977111794078354}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Obj_Enemy_ProjectileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4218183102530980}
   - component: {fileID: 198289973278908084}
   - component: {fileID: 199799594321279120}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Par_Enemy_Trail_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010959746214292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.86903, y: 0.6693646, z: 0}
+  m_LocalPosition: {x: 1, y: 0.4, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_Children:
   - {fileID: 4977111794078354}

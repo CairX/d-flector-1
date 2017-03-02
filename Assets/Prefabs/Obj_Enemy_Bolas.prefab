@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4435961807794294}
   - component: {fileID: 198300055210542738}
   - component: {fileID: 199300415259398868}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Par_Enemy_Trail_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4652001924942500}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Obj_Enemy_ProjectileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4028729658651594}
   - component: {fileID: 198377795035732086}
   - component: {fileID: 199820281244904102}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Par_Enemy_Trail_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 50442043763660880}
   - component: {fileID: 60009400771149702}
   - component: {fileID: 114328959784184160}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Obj_Enemy_Bolas
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645990146927904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9940933, y: 0.7431199, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_Children:
   - {fileID: 4652001924942500}

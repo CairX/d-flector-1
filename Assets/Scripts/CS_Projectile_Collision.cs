@@ -144,10 +144,12 @@ public class CS_Projectile_Collision : MonoBehaviour
         switch (this.owner)
         {
             case Owner.Avatar:
+                gameObject.layer = LayerMask.NameToLayer("ProjectileAvatar");
                 avatarVisuals.SetActive(true);
                 enemyVisuals.SetActive(false);
                 break;
             case Owner.Enemy:
+                gameObject.layer = LayerMask.NameToLayer("ProjectileEnemy");
                 avatarVisuals.SetActive(false);
                 enemyVisuals.SetActive(true);
                 break;
