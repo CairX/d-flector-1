@@ -101,7 +101,7 @@ ParticleSystem:
     serializedVersion: 3
     enabled: 1
     startLifetime:
-      scalar: 1.5
+      scalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -539,7 +539,7 @@ ParticleSystem:
     enabled: 1
     serializedVersion: 3
     rateOverTime:
-      scalar: 100
+      scalar: 50
       maxCurve:
         serializedVersion: 2
         m_Curve:

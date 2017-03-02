@@ -2766,6 +2766,23 @@ MonoBehaviour:
   steroidOnPickup: {fileID: 8300000, guid: bd7b934c11758894d885e1c2e95a48e7, type: 3}
   stickyOnPickup: {fileID: 8300000, guid: 2ff29533f2a13ce46a8ffde096678174, type: 3}
   twinShieldOnPickup: {fileID: 8300000, guid: 6649cf9ecc0548f459ce9bdf22194ad0, type: 3}
+  ProjectileSound1: {fileID: 0}
+  ProjectileSound2: {fileID: 0}
+  ProjectileSound3: {fileID: 0}
+  ProjectileSound4: {fileID: 0}
+  ProjectileSound5: {fileID: 0}
+  enemyDeath1: {fileID: 0}
+  enemyDeath2: {fileID: 0}
+  enemyDeath3: {fileID: 0}
+  enemyDeath4: {fileID: 0}
+  enemyDeath5: {fileID: 0}
+  avtarLesLife1: {fileID: 0}
+  avtarLesLife2: {fileID: 0}
+  avtarLesLife3: {fileID: 0}
+  netSound1: {fileID: 0}
+  netSound2: {fileID: 0}
+  netSound3: {fileID: 0}
+  netSound4: {fileID: 0}
 --- !u!82 &925868329
 AudioSource:
   m_ObjectHideFlags: 0
