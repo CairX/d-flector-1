@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_MasterAudio : CS_Singleton<CS_MasterAudio>
+public class CS_MasterAudio : MonoBehaviour
 {
     private AudioSource speaker;
     static public AudioClip shieldhit1;
@@ -13,8 +13,6 @@ public class CS_MasterAudio : CS_Singleton<CS_MasterAudio>
     static public AudioClip shieldhit6;
     static public AudioClip shieldhit7;
     static public AudioClip shieldhit8;
-
-    protected CS_MasterAudio() { }
 
     // Use this for initialization
     void Start()
