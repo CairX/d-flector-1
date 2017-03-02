@@ -177,22 +177,22 @@ public class WaveProp
         else if (spawnPosition == SpawnPos.B2)
         {
             spawnPos.x = 2.4f;
-            spawnPos.y = 1f;
+            spawnPos.y = 1.2f;
         }
         else if (spawnPosition == SpawnPos.B3)
         {
             spawnPos.x = 2.4f;
-            spawnPos.y = 0f;
+            spawnPos.y = 0.4f;
         }
         else if (spawnPosition == SpawnPos.B4)
         {
             spawnPos.x = 2.4f;
-            spawnPos.y = -1f;
+            spawnPos.y = -0.4f;
         }
         else if (spawnPosition == SpawnPos.B5)
         {
             spawnPos.x = 2.4f;
-            spawnPos.y = -2f;
+            spawnPos.y = -1f;
         }
         else if (spawnPosition == SpawnPos.C1)
         {
@@ -202,22 +202,22 @@ public class WaveProp
         else if (spawnPosition == SpawnPos.C2)
         {
             spawnPos.x = 3.8f;
-            spawnPos.y = 1f;
+            spawnPos.y = 1.2f;
         }
         else if (spawnPosition == SpawnPos.C3)
         {
             spawnPos.x = 3.8f;
-            spawnPos.y = 0f;
+            spawnPos.y = 0.4f;
         }
         else if (spawnPosition == SpawnPos.C4)
         {
             spawnPos.x = 3.8f;
-            spawnPos.y = -1f;
+            spawnPos.y = -0.4f;
         }
         else if (spawnPosition == SpawnPos.C5)
         {
             spawnPos.x = 3.8f;
-            spawnPos.y = -2f;
+            spawnPos.y = -1.2f;
         }
     }
 
