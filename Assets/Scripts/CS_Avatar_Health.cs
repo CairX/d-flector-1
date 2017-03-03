@@ -9,9 +9,10 @@ public class CS_Avatar_Health : MonoBehaviour {
     private float timer;
     private bool changeSprite;
 
-    public Sprite[] healthSprite;
+    public HealthPoint[] healthPoints;
     private SpriteRenderer spriteRenderer;
     private int index;
+
 
 	void Start ()
     {
@@ -24,10 +25,13 @@ public class CS_Avatar_Health : MonoBehaviour {
         timer -= Time.deltaTime;
         if (changeSprite && timer <= 0)
         {
-            spriteRenderer.sprite = healthSprite[index];
+            spriteRenderer.sprite = healthPoints[index].avatar;
             Color color = spriteRenderer.color;
             color.a = 1.0f;
             spriteRenderer.color = color;
+
+            healthPoints[index].hud.SetActive(false);
+
             changeSprite = false;
             index++;
         }
@@ -39,8 +43,8 @@ public class CS_Avatar_Health : MonoBehaviour {
 
         if (cgo.tag == "Enemy" || (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy()))
         {
-            CS_All_Audio.Instance.AvaterLoseHealth(healthSprite.Length - 1);
-            if (timer <= 0 && index < healthSprite.Length - 1)
+            CS_All_Audio.Instance.AvaterLoseHealth(healthPoints.Length - 1);
+            if (timer <= 0 && index < healthPoints.Length - 1)
             {
                 timer = invincibleTime;
                 spriteRenderer.sprite = invincibleSprite;
@@ -49,14 +53,21 @@ public class CS_Avatar_Health : MonoBehaviour {
                 spriteRenderer.color = color;
                 changeSprite = true;
             }
-            else if (timer <= 0 && index == healthSprite.Length - 1)
+            else if (timer <= 0 && index == healthPoints.Length - 1)
             {
-                spriteRenderer.sprite = healthSprite[index];
+                healthPoints[index].hud.SetActive(false);
+                spriteRenderer.sprite = healthPoints[index].avatar;
                 changeSprite = false;
 
-                CS_Notifications.Instance.Post(this, "OnGameOver", null);
+                CS_Notifications.Instance.Post(this, "OnGameOver");
             }
         }
-       
     }
+}
+
+[System.Serializable]
+public class HealthPoint
+{
+    public Sprite avatar;
+    public GameObject hud;
 }

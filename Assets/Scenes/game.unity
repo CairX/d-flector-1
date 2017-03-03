@@ -10346,6 +10346,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: healthPoints.Array.data[2].hud
+      value: 
+      objectReference: {fileID: 1744549881}
+    - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: healthPoints.Array.data[1].hud
+      value: 
+      objectReference: {fileID: 362234568}
+    - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: healthPoints.Array.data[0].hud
+      value: 
+      objectReference: {fileID: 300686693}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
   m_IsPrefabParent: 0
