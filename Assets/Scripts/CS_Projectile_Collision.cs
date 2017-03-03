@@ -99,7 +99,7 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     private void OnNetCollisionEnter2D(Collision2D collision)
     {
-        speaker.PlayOneShot(netBounce);
+        CS_All_Audio.Instance.NetBonce();
     }
 
     private void OnEnemyCollisionEnter2D(Collision2D collision)

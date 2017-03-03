@@ -15,7 +15,7 @@ public class CS_All_Audio : CS_Singleton<CS_MasterAudio>
 	
 	// Update is called once per frame
 	void Update () {
-    }
+    }/*
     public void ProjectileVsShieldReal()
     {
         other.ProjectileVsShield();
@@ -48,4 +48,5 @@ public class CS_All_Audio : CS_Singleton<CS_MasterAudio>
     {
         other.NetBonce();
     }
+    */
 }

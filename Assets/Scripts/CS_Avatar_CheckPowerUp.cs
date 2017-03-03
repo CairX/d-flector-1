@@ -67,6 +67,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
     {
         if (collision.gameObject.tag == "TwinSheildPowerUp")
         {
+            CS_All_Audio.Instance.PickupSound(1);
             Destroy(collision.gameObject);
             time = powerUpTime;
             powerUpTwinShield.SetActive(true);
@@ -80,6 +81,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         }
         if (collision.gameObject.tag == "SlowMotionPowerUp")
         {
+            CS_All_Audio.Instance.PickupSound(2);
             Destroy(collision.gameObject);
             time = powerUpTime;
             powerUpSlowMotionActivated = true;
@@ -93,6 +95,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         }
         if (collision.gameObject.tag == "StickyBombPowerUp")
         {
+            CS_All_Audio.Instance.PickupSound(3);
             Destroy(collision.gameObject);
             time = powerUpTime;
             powerUpSlowMotionActivated = false;
