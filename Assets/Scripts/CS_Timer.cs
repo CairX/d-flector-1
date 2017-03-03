@@ -11,6 +11,7 @@ public class CS_Timer : MonoBehaviour
 
     private void Awake()
     {
+        CS_Notifications.Instance.Register(this, "OnStartMenu");
         CS_Notifications.Instance.Register(this, "OnPlayGame");
         CS_Notifications.Instance.Register(this, "OnVictory");
         CS_Notifications.Instance.Register(this, "OnGameOver");
@@ -20,6 +21,7 @@ public class CS_Timer : MonoBehaviour
     {
         try
         {
+            CS_Notifications.Instance.Unregister(this, "OnStartMenu");
             CS_Notifications.Instance.Unregister(this, "OnPlayGame");
             CS_Notifications.Instance.Unregister(this, "OnVictory");
             CS_Notifications.Instance.Unregister(this, "OnGameOver");
@@ -62,6 +64,12 @@ public class CS_Timer : MonoBehaviour
     public void TimerResume()
     {
         running = true;
+    }
+
+    public void OnStartMenu()
+    {
+        running = false;
+        text.text = "";
     }
 
     public void OnPlayGame()
