@@ -162,10 +162,10 @@ public class CS_StateManager : MonoBehaviour {
         Cursor.visible = false;
     }
 
-    public void OptionsMenu(GameObject curentstate)
+    public void OptionsMenu(GameObject currentState)
     {
 
-        lastState = curentstate;
+        lastState = currentState;
         CS_WorldManager.Instance.state = State.OptionsMenu;
         //DisableAll();
         lastState.SetActive(false);
