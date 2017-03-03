@@ -46,6 +46,8 @@ public class CS_MasterAudio : MonoBehaviour
     public AudioClip netSound3;
     public AudioClip netSound4;
 
+    public AudioClip musik;
+
     // Use this for initialization
     void Start()
     {
@@ -223,4 +225,17 @@ public class CS_MasterAudio : MonoBehaviour
             speaker.PlayOneShot(netSound4);
         }
     }
-}
+    //dosent sem to work
+    public void PlayMusik(bool i)
+    {
+        if(i == true)
+        {
+            speaker.PlayOneShot(shieldhit1);
+            speaker.PlayOneShot(musik);
+        }
+        else
+        {
+            speaker.Stop();
+        }
+    }
+    }

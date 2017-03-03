@@ -120,7 +120,7 @@ public class CS_StateManager : MonoBehaviour {
         }
     }
 
-    private void OnVictory()
+    public void OnVictory()
     {
         CS_All_Audio.Instance.WinLose(true);
         CS_WorldManager.Instance.state = State.VictoryMenu;
