@@ -15,6 +15,27 @@ public class CS_StateManager : MonoBehaviour {
         Playing
     }
 
+    public static State GetState(string s)
+    {
+        switch (s)
+        {
+            case "StartMenu":
+                return State.StartMenu;
+            case "PauseMenu":
+                return State.PauseMenu;
+            case "OptionsMenu":
+                return State.OptionsMenu;
+            case "VictoryMenu":
+                return State.VictoryMenu;
+            case "GameOverMenu":
+                return State.GameOverMenu;
+            case "Playing":
+                return State.Playing;
+            default:
+                return State.StartMenu;
+        }
+    }
+
     public GameObject startMenu;
     public GameObject pauseMenu;
     public GameObject optionsMenu;
@@ -22,7 +43,7 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject gameOverMenu;
     public GameObject playing;
 
-    private GameObject lastState;
+    private State previousState;
 
     private void Start()
     {
@@ -74,8 +95,7 @@ public class CS_StateManager : MonoBehaviour {
             case State.PauseMenu:
                 break;
             case State.OptionsMenu:
-                //not corect objekt use
-                OptionsMenu(lastState);
+                OptionsMenu("StartMenu");
                 break;
             case State.VictoryMenu:
                 OnVictory();
@@ -88,6 +108,27 @@ public class CS_StateManager : MonoBehaviour {
                 break;
             default:
                 break;
+        }
+    }
+
+    private GameObject GetStateObject(State state)
+    {
+        switch (state)
+        {
+            case State.StartMenu:
+                return startMenu;
+            case State.PauseMenu:
+                return pauseMenu;
+            case State.OptionsMenu:
+                return optionsMenu;
+            case State.VictoryMenu:
+                return victoryMenu;
+            case State.GameOverMenu:
+                return gameOverMenu;
+            case State.Playing:
+                return playing;
+            default:
+                throw new System.Exception("No GameObject matched with State.");
         }
     }
 
@@ -144,6 +185,8 @@ public class CS_StateManager : MonoBehaviour {
         DisableAll();
         startMenu.SetActive(true);
         Cursor.visible = true;
+
+        CS_Notifications.Instance.Post(this, "OnStartMenu");
     }
 
     private void PauseMenu()
@@ -162,21 +205,20 @@ public class CS_StateManager : MonoBehaviour {
         Cursor.visible = false;
     }
 
-    public void OptionsMenu(GameObject currentState)
+    public void OptionsMenu(string previous)
     {
+        previousState = GetState(previous);
 
-        lastState = currentState;
         CS_WorldManager.Instance.state = State.OptionsMenu;
-        //DisableAll();
-        lastState.SetActive(false);
+        GetStateObject(previousState).SetActive(false);
         optionsMenu.SetActive(true);
         Cursor.visible = true;
     }
     public void ReturnFromOptions()
     {
-        CS_WorldManager.Instance.state = State.OptionsMenu;
+        CS_WorldManager.Instance.state = previousState;
         optionsMenu.SetActive(false);
-        lastState.SetActive(true);
+        GetStateObject(previousState).SetActive(true);
         Cursor.visible = true;
     }
 
