@@ -24,7 +24,7 @@ public class CS_StateManager : MonoBehaviour {
 
     private GameObject lastState;
 
-	private void Awake()
+    private void Start()
     {
         Init(CS_WorldManager.Instance.state);
     }
@@ -48,7 +48,6 @@ public class CS_StateManager : MonoBehaviour {
             // to know if this is run before or after the
             // notification center has been destroyed.
         }
-
     }
 
     private void Update()
@@ -196,6 +195,7 @@ public class CS_StateManager : MonoBehaviour {
         playing.SetActive(true);
         Cursor.visible = false;
         CS_Medals.Instance.LevelStart();
+        CS_Notifications.Instance.Post(this, "OnPlayGame");
     }
 
     public void QuitApplication()
