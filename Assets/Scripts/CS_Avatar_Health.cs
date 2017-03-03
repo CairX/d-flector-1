@@ -39,6 +39,7 @@ public class CS_Avatar_Health : MonoBehaviour {
 
         if (cgo.tag == "Enemy" || (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy()))
         {
+            CS_All_Audio.Instance.AvaterLoseHealth(healthSprite.Length - 1);
             if (timer <= 0 && index < healthSprite.Length - 1)
             {
                 timer = invincibleTime;
