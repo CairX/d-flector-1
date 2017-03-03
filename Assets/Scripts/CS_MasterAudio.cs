@@ -137,6 +137,7 @@ public class CS_MasterAudio : MonoBehaviour
             speaker.PlayOneShot(menuSart);
         }
     }
+    //ProjectileSoundStart needs to be spesifick
     public void ProjectileSoundStart(int i)
     {
         if (i == 1)
@@ -160,6 +161,7 @@ public class CS_MasterAudio : MonoBehaviour
             speaker.PlayOneShot(ProjectileSound5);
         }
     }
+    //DeathToEnemySounds is probebly weird whitout animation
     public void DeathToEnemySounds()
     {
 
@@ -187,7 +189,7 @@ public class CS_MasterAudio : MonoBehaviour
     }
     public void AvaterLoseHealth(int i)
     {
-        if (i == 1)
+        if (i == 3)
         {
             speaker.PlayOneShot(avtarLesLife1);
         }
@@ -195,7 +197,7 @@ public class CS_MasterAudio : MonoBehaviour
         {
             speaker.PlayOneShot(avtarLesLife2);
         }
-        else if (i == 3)
+        else if (i == 1)
         {
             speaker.PlayOneShot(avtarLesLife3);
         }

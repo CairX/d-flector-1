@@ -122,6 +122,7 @@ public class CS_StateManager : MonoBehaviour {
 
     private void OnVictory()
     {
+        CS_All_Audio.Instance.WinLose(true);
         CS_WorldManager.Instance.state = State.VictoryMenu;
         DisableAll();
         victoryMenu.SetActive(true);
@@ -131,6 +132,7 @@ public class CS_StateManager : MonoBehaviour {
 
     private void OnGameOver()
     {
+        CS_All_Audio.Instance.WinLose(false);
         CS_WorldManager.Instance.state = State.GameOverMenu;
         DisableAll();
         gameOverMenu.SetActive(true);

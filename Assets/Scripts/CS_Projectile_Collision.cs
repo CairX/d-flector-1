@@ -20,17 +20,12 @@ public class CS_Projectile_Collision : MonoBehaviour
     public GameObject avatarVisuals;
     public GameObject enemyVisuals;
 
-    private AudioSource speaker;
-    public AudioClip netBounce;
-    public AudioClip shieldBounce;
-
     private TextMesh text;
 
     private float collisionTimer;
     private CS_Projectile_Type projectileType;
 
     void Start () {
-        speaker = GetComponent<AudioSource>();
 
         text = transform.GetChild(0).GetComponent<TextMesh>();
         text.text = health.ToString();
