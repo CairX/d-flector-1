@@ -12,7 +12,8 @@ public class CS_StateManager : MonoBehaviour {
         OptionsMenu,
         VictoryMenu,
         GameOverMenu,
-        Playing
+        Playing,
+        Tutorial
     }
 
     public static State GetState(string s)
@@ -31,6 +32,8 @@ public class CS_StateManager : MonoBehaviour {
                 return State.GameOverMenu;
             case "Playing":
                 return State.Playing;
+            case "Tutorial":
+                return State.Tutorial;
             default:
                 return State.StartMenu;
         }
@@ -42,6 +45,7 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject victoryMenu;
     public GameObject gameOverMenu;
     public GameObject playing;
+    public GameObject tutorialScreen;
 
     private State previousState;
 
@@ -62,6 +66,7 @@ public class CS_StateManager : MonoBehaviour {
         {
             CS_Notifications.Instance.Unregister(this, "OnVictory");
             CS_Notifications.Instance.Unregister(this, "OnGameOver");
+
         }
         catch (System.NullReferenceException)
         {
@@ -106,6 +111,9 @@ public class CS_StateManager : MonoBehaviour {
             case State.Playing:
                 PlayGame();
                 break;
+            case State.Tutorial:
+                GoToTutorial();
+                break;
             default:
                 break;
         }
@@ -127,6 +135,8 @@ public class CS_StateManager : MonoBehaviour {
                 return gameOverMenu;
             case State.Playing:
                 return playing;
+            case State.Tutorial:
+                return tutorialScreen;
             default:
                 throw new System.Exception("No GameObject matched with State.");
         }
@@ -157,6 +167,10 @@ public class CS_StateManager : MonoBehaviour {
         if (playing != null)
         {
             playing.SetActive(false);
+        }
+        if (tutorialScreen != null)
+        {
+            tutorialScreen.SetActive(false);
         }
     }
 
@@ -239,7 +253,12 @@ public class CS_StateManager : MonoBehaviour {
         CS_Medals.Instance.LevelStart();
         CS_Notifications.Instance.Post(this, "OnPlayGame");
     }
-
+    public void GoToTutorial()
+    {
+        CS_WorldManager.Instance.state = State.Tutorial;
+        DisableAll();
+        tutorialScreen.SetActive(true);
+    }
     public void QuitApplication()
     {
         Application.Quit();
