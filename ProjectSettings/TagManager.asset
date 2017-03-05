@@ -13,6 +13,7 @@ TagManager:
   - TwinSheildPowerUp
   - SlowMotionPowerUp
   - StickyBombPowerUp
+  - StickySheild
   layers:
   - Default
   - TransparentFX

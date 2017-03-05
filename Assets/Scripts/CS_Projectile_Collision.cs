@@ -24,6 +24,7 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     private float collisionTimer;
     private CS_Projectile_Type projectileType;
+    private CS_Projectile_Movement movement;
 
     void Start () {
 
@@ -32,6 +33,7 @@ public class CS_Projectile_Collision : MonoBehaviour
         collisionTimer = COLLISION_COOLDOWN;
 
         projectileType = GetComponent<CS_Projectile_Type>();
+        movement = GetComponent<CS_Projectile_Movement>();
 
         ChangeOwner(owner);
     }
@@ -87,6 +89,9 @@ public class CS_Projectile_Collision : MonoBehaviour
             case "net":
                 OnNetCollisionEnter2D(collision);
                 break;
+            case "StickySheild":
+                onStickySheildCollisionEnter2D(collision);
+                break;
             default:
                 break;
         }
@@ -121,6 +126,15 @@ public class CS_Projectile_Collision : MonoBehaviour
         }
 
         CS_All_Audio.Instance.ProjectileVsShield();
+    }
+    private void onStickySheildCollisionEnter2D(Collision2D collision)
+    {
+        movement.Stick();
+        if (owner == Owner.Enemy)
+        {
+            ChangeOwner(Owner.Avatar);
+        }
+
     }
 
     public bool isAvatar()

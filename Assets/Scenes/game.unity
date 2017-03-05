@@ -1714,7 +1714,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4568158683545390, guid: 06ae5dbf1d090274792c219df236b3b0, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06ae5dbf1d090274792c219df236b3b0, type: 2}
@@ -8345,7 +8345,7 @@ Transform:
   - {fileID: 2142087033}
   - {fileID: 464077964}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1722229206
 MonoBehaviour:
@@ -10435,9 +10435,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
         type: 2}
-      propertyPath: healthPoints.Array.data[2].hud
+      propertyPath: healthPoints.Array.data[0].hud
       value: 
-      objectReference: {fileID: 1744549881}
+      objectReference: {fileID: 300686693}
     - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
         type: 2}
       propertyPath: healthPoints.Array.data[1].hud
@@ -10445,9 +10445,13 @@ Prefab:
       objectReference: {fileID: 362234568}
     - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
         type: 2}
-      propertyPath: healthPoints.Array.data[0].hud
+      propertyPath: healthPoints.Array.data[2].hud
       value: 
-      objectReference: {fileID: 300686693}
+      objectReference: {fileID: 1744549881}
+    - target: {fileID: 1517809785823646, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
   m_IsPrefabParent: 0
