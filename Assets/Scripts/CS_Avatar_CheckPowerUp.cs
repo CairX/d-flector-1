@@ -58,6 +58,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
                 powerUpStickyBombActivated = false;
                 shield.SetActive(true);
                 stickyBombShield.SetActive(false);
+                CS_Notifications.Instance.Post(this, "Relese");
                 time = 0;
             }
         }

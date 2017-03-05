@@ -69,11 +69,11 @@ GameObject:
   - component: {fileID: 4482296421377818}
   m_Layer: 0
   m_Name: Obj_StickyBomb_Shield
-  m_TagString: Untagged
+  m_TagString: StickySheild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1592882869987118
 GameObject:
   m_ObjectHideFlags: 1
@@ -100,9 +100,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4480475430526916}
   - component: {fileID: 212310995257213846}
+  - component: {fileID: 58852544236489258}
   m_Layer: 0
   m_Name: Spr_Avatar_Idle_Light
-  m_TagString: Untagged
+  m_TagString: StickySheild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,6 +334,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!58 &58852544236489258
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1675783787801798}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0.000000059604645}
+  serializedVersion: 2
+  m_Radius: 0.46604463
 --- !u!60 &60619531497243602
 PolygonCollider2D:
   m_ObjectHideFlags: 1

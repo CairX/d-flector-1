@@ -14,10 +14,16 @@ public class CS_Projectile_Movement : MonoBehaviour
     public float angle;
     public float speed;
 
+
+    private float stickyAngle;
+    private float stickySpeed;
+    private Vector2 stickyDirection;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+        CS_Notifications.Instance.Register(this, "Relese");
 
         UpdateRotation(angle);
         rb.AddForce(direction * (speed * FORCE));
@@ -69,5 +75,27 @@ public class CS_Projectile_Movement : MonoBehaviour
         angle = a;
         direction = CS_Utils.DegreeToPoint(a);
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, a - 90);
+    }
+
+    public void Stick()
+    {
+        stickyAngle = angle;
+        stickySpeed = speed;
+        stickyDirection = direction;
+
+        rb.Sleep();
+    }
+
+    public void Relese()
+    {
+        if (rb.IsSleeping())
+        {
+            rb.WakeUp();
+            angle = stickyAngle;
+            speed = stickySpeed;
+            direction = stickyDirection;
+      UpdateRotation(angle);
+        rb.AddForce((direction * (speed * FORCE)) * -1);
+        }
     }
 }
