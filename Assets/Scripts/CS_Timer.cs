@@ -69,7 +69,10 @@ public class CS_Timer : MonoBehaviour
     public void OnStartMenu()
     {
         running = false;
-        text.text = "";
+        if (text)
+        {
+            text.text = "";
+        }
     }
 
     public void OnPlayGame()
