@@ -3081,7 +3081,7 @@ MonoBehaviour:
   netSound2: {fileID: 8300000, guid: d2358c2269554484aaf557e595e02149, type: 3}
   netSound3: {fileID: 8300000, guid: 76eec2929ad81594887c022ce6b9e531, type: 3}
   netSound4: {fileID: 8300000, guid: f178dd0c9e937db4199c7b4b68c04db2, type: 3}
-  musik: {fileID: 8300000, guid: acc47b5ee8900184796494b7bec8dd2e, type: 3}
+  musik: {fileID: 8300000, guid: 8ddb32d003f4cac479d9318097b69258, type: 3}
 --- !u!82 &925868329
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4291,7 +4291,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: acc47b5ee8900184796494b7bec8dd2e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8ddb32d003f4cac479d9318097b69258, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
