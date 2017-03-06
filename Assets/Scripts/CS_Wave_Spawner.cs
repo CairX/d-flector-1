@@ -22,10 +22,9 @@ public class CS_Wave_Spawner : MonoBehaviour {
         CS_Enemy_Holder.Instance.bolar = bolar;
         CS_Enemy_Holder.Instance.howlar = howlar;
         CS_Enemy_Holder.Instance.shotgun = shotgun;
-
     }
-	
-	void Update () {
+
+    void Update () {
         if (spawnNextWave == true)
         {
             waves[currenWave].start();
@@ -78,6 +77,7 @@ public class Wave
             amountOfEnemies[index].LoadEnemy();
         }
     }
+
     public void Update()
     {
         time += Time.deltaTime;
@@ -89,7 +89,7 @@ public class Wave
                 if (amountOfEnemies[index].spawned == false)
                 {
                     amountOfEnemies[index].enemyObject.transform.position = amountOfEnemies[index].spawnPos;          
-                    amountOfEnemies[index].enemyObject = MonoBehaviour.Instantiate(amountOfEnemies[index].enemyObject);
+                    amountOfEnemies[index].enemyObject = MonoBehaviour.Instantiate(amountOfEnemies[index].enemyObject, GameObject.FindWithTag("Playing").transform);
                     CS_Enemy_Movement script = amountOfEnemies[index].enemyObject.GetComponent<CS_Enemy_Movement>();
                     script.path = amountOfEnemies[index].movementPattern;
                     amountOfEnemies[index].spawned = true;
