@@ -73,7 +73,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1592882869987118
 GameObject:
   m_ObjectHideFlags: 1
@@ -639,10 +639,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889511f0e2e454469edf5f16ea93b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundaryStartX: -4.1
-  boundaryStartY: -1.2
-  boundaryStopX: 4.1
-  boundaryStopY: 2
+  boundaryStartX: -4.2
+  boundaryStartY: -1.3
+  boundaryStopX: 4.2
+  boundaryStopY: 3
 --- !u!198 &198526952991486912
 ParticleSystem:
   m_ObjectHideFlags: 1

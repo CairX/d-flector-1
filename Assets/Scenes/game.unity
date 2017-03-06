@@ -2436,7 +2436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &534882987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6130,7 +6130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1013458946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6535,7 +6535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1130626584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10895,9 +10895,25 @@ Prefab:
       propertyPath: healthPoints.Array.data[2].hud
       value: 
       objectReference: {fileID: 1744549881}
-    - target: {fileID: 1517809785823646, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 114967483220303812, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: boundaryStartX
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967483220303812, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: boundaryStartY
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967483220303812, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: boundaryStopX
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967483220303812, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: boundaryStopY
+      value: 2.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
