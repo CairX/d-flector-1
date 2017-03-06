@@ -15,7 +15,14 @@ public class CS_BaseMusic : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        RestartMusic();
+        speaker = GetComponent<AudioSource>();
+        speaker.PlayOneShot(musik);
+        if (speaker.loop == false)
+        {
+            speaker.loop = true;
+        }
+        speaker.volume = 0.2f;
+        speaker.Pause();
 
 
         //milk.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
@@ -59,15 +66,11 @@ public class CS_BaseMusic : MonoBehaviour {
     }
     public void RestartMusic()
     {
-        speaker = null;
-        speaker = GetComponent<AudioSource>();
+        speaker.Stop();
         speaker.PlayOneShot(musik);
         if (speaker.loop == false)
         {
             speaker.loop = true;
         }
-        speaker.volume = 0.2f;
-        speaker.Pause();
-
     }
 }

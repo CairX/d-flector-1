@@ -214,6 +214,8 @@ public class CS_MasterAudio : MonoBehaviour
     {
         int randomValue = Random.Range(1, 4);
 
+        speaker.volume = 0.6f;
+
         if (randomValue == 1)
         {
             speaker.PlayOneShot(netSound1);
@@ -230,6 +232,8 @@ public class CS_MasterAudio : MonoBehaviour
         {
             speaker.PlayOneShot(netSound4);
         }
+        speaker.volume = 1f;
+
     }
     //dosent sem to work
     }
