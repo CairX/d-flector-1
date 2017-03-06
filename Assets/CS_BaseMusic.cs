@@ -49,7 +49,7 @@ public class CS_BaseMusic : MonoBehaviour {
         }
         if(vicktory.activeSelf || failure.activeSelf)
         {
-            speaker.Pause();
+            speaker.Stop();
         }
     }
     public void PlayMusic()
@@ -65,12 +65,14 @@ public class CS_BaseMusic : MonoBehaviour {
         speaker.volume = v;
     }
     public void RestartMusic()
-    {
-        speaker.Stop();
+    {/*
         speaker.PlayOneShot(musik);
         if (speaker.loop == false)
         {
             speaker.loop = true;
         }
+        Debug.Log(speaker.isPlaying);
+        */
+        speaker.UnPause();
     }
 }

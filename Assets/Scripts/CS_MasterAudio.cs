@@ -55,12 +55,12 @@ public class CS_MasterAudio : MonoBehaviour
 
         speaker = GetComponent<AudioSource>();
 
-        SoundSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        //SoundSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
     public void ValueChangeCheck()
     {
-        speaker.volume = SoundSlider.value;
+        //speaker.volume = SoundSlider.value;
     }
     // Update is called once per frame
     void Update()
@@ -214,7 +214,6 @@ public class CS_MasterAudio : MonoBehaviour
     {
         int randomValue = Random.Range(1, 4);
 
-        speaker.volume = 0.6f;
 
         if (randomValue == 1)
         {
@@ -232,7 +231,6 @@ public class CS_MasterAudio : MonoBehaviour
         {
             speaker.PlayOneShot(netSound4);
         }
-        speaker.volume = 1f;
 
     }
     //dosent sem to work
