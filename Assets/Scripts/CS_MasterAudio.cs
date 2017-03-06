@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CS_MasterAudio : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class CS_MasterAudio : MonoBehaviour
     public AudioClip netSound3;
     public AudioClip netSound4;
 
-    public AudioClip musik;
+    public Slider SoundSlider;
 
     // Use this for initialization
     void Start()
@@ -54,8 +55,13 @@ public class CS_MasterAudio : MonoBehaviour
 
         speaker = GetComponent<AudioSource>();
 
+        SoundSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
+    public void ValueChangeCheck()
+    {
+        speaker.volume = SoundSlider.value;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -226,16 +232,4 @@ public class CS_MasterAudio : MonoBehaviour
         }
     }
     //dosent sem to work
-    public void PlayMusik(bool i)
-    {
-        if(i == true)
-        {
-            speaker.PlayOneShot(shieldhit1);
-            speaker.PlayOneShot(musik);
-        }
-        else
-        {
-            speaker.Stop();
-        }
-    }
     }
