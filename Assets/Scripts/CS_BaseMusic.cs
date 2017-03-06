@@ -8,7 +8,6 @@ public class CS_BaseMusic : MonoBehaviour {
     private AudioSource speaker;
 
     public AudioClip musik;
-    public Slider musicSlider;
 
     public GameObject vicktory;
     public GameObject failure;
@@ -45,12 +44,18 @@ public class CS_BaseMusic : MonoBehaviour {
             else
             {
                 speaker.UnPause();
-            }            
+            }       
         }
+        
         if(vicktory.activeSelf || failure.activeSelf)
         {
             speaker.Stop();
         }
+        /*if (game.activeSelf)
+        {
+            speaker.UnPause();
+        }
+        */
     }
     public void PlayMusic()
     {
