@@ -7,15 +7,31 @@ using UnityEngine;
 public class CS_Animation : MonoBehaviour {
 
     public Sprite[] tutorial;
-    private int frame;
+    
+    private int frame = 0;
+    private int tutorialPage = 0;
+    SpriteRenderer sr;
 
-	// Use this for initialization
-	void Start () {
-        fruitSprites = Resources.LoadAll<Sprite>("fruits");
+        // Use this for initialization
+    void Start () {
+        sr = GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        if (frame == 4)
+        {
+            frame = 0;
+
+            sr.sprite = tutorial[tutorialPage];
+            
+            tutorialPage++;
+            if(tutorialPage == tutorial.Length)
+            {
+                tutorialPage = 0;
+            }
+        }
+        frame++;
 	}
 }
