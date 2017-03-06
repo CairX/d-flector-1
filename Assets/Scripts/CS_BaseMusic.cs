@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CS_BaseMusic : MonoBehaviour {
 
@@ -13,7 +12,7 @@ public class CS_BaseMusic : MonoBehaviour {
     public GameObject failure;
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         speaker = GetComponent<AudioSource>();
         speaker.PlayOneShot(musik);
         if (speaker.loop == false)
@@ -21,15 +20,8 @@ public class CS_BaseMusic : MonoBehaviour {
             speaker.loop = true;
         }
         speaker.volume = 0.2f;
-        speaker.Pause();
-
-
-        //milk.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-    }
-
-    public void ValueChangeCheck()
-    {
-        //speaker.volume = milk.value;
+        //speaker.Pause();
+        Debug.Log("Noa");
     }
 
     // Update is called once per frame
@@ -40,44 +32,40 @@ public class CS_BaseMusic : MonoBehaviour {
             if(speaker.isPlaying == true)
             {
                 speaker.Pause();
+                Debug.Log("Logan");
             }
             else
             {
+                Debug.Log("Smurfs");
                 speaker.UnPause();
             }       
         }
         
         if(vicktory.activeSelf || failure.activeSelf)
         {
+            Debug.Log("Dave");
             speaker.Stop();
         }
-        /*if (game.activeSelf)
-        {
-            speaker.UnPause();
-        }
-        */
+        //Debug.Log(speaker.isPlaying);
     }
     public void PlayMusic()
     {
+        Debug.Log("Sven");
         speaker.UnPause();
     }
     public void PaseMusic()
     {
+        Debug.Log("Ola");
         speaker.Pause();
     }
     public void MusicVolume(float v)
     {
+        Debug.Log("Hilda");
         speaker.volume = v;
     }
     public void RestartMusic()
-    {/*
-        speaker.PlayOneShot(musik);
-        if (speaker.loop == false)
-        {
-            speaker.loop = true;
-        }
-        Debug.Log(speaker.isPlaying);
-        */
+    {
+        Debug.Log("Bjork");
         speaker.UnPause();
     }
 }
