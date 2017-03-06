@@ -240,13 +240,12 @@ public class CS_StateManager : MonoBehaviour {
     {
         CS_WorldManager.Instance.state = State.Playing;
         SceneManager.LoadScene(0);
-        Time.timeScale = 1;
-        CS_Medals.Instance.LevelStart();
     }
 
-    public void PlayGame()
+    private void PlayGame()
     {
         CS_WorldManager.Instance.state = State.Playing;
+        Time.timeScale = 1;
         DisableAll();
         playing.SetActive(true);
         Cursor.visible = false;
