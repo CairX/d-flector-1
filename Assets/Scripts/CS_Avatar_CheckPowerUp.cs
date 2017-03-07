@@ -68,45 +68,60 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
     {
         if (collision.gameObject.tag == "TwinSheildPowerUp")
         {
-            CS_All_Audio.Instance.PickupSound(1);
+            RemoveAllPickupExcept(collision.gameObject.tag);
+            CS_All_Audio.Instance.PickupSound(3);
             Destroy(collision.gameObject);
-            time = powerUpTime;
-            powerUpTwinShield.SetActive(true);
-            powerUpSlowMotionActivated = false;
-            powerUpShieldActivated = true;
-
-            CS_WorldManager.Instance.slowdown = 1;
-            powerUpStickyBombActivated = false;
-            shield.SetActive(true);
-            stickyBombShield.SetActive(false);
         }
         if (collision.gameObject.tag == "SlowMotionPowerUp")
         {
+            RemoveAllPickupExcept(collision.gameObject.tag);
             CS_All_Audio.Instance.PickupSound(2);
             Destroy(collision.gameObject);
-            time = powerUpTime;
-            powerUpSlowMotionActivated = true;
-            powerUpTwinShield.SetActive(false);
-            powerUpShieldActivated = false;
-
-            CS_WorldManager.Instance.slowdown = 4;
-            powerUpStickyBombActivated = false;
-            shield.SetActive(true);
-            stickyBombShield.SetActive(false);
         }
         if (collision.gameObject.tag == "StickyBombPowerUp")
         {
+            RemoveAllPickupExcept(collision.gameObject.tag);
             CS_All_Audio.Instance.PickupSound(3);
             Destroy(collision.gameObject);
-            time = powerUpTime;
-            powerUpSlowMotionActivated = false;
-            powerUpTwinShield.SetActive(false);
-            powerUpShieldActivated = false;
-            powerUpStickyBombActivated = true;
-            shield.SetActive(false);
-            stickyBombShield.SetActive(true);
-            CS_WorldManager.Instance.slowdown = 1;
         }
 
+    }
+    private void RemoveAllPickupExcept(string p)
+    {
+        time = powerUpTime;
+
+        if (p != "TwinSheildPowerUp")
+        {
+            powerUpShieldActivated = false;
+            powerUpTwinShield.SetActive(false);
+            shield.SetActive(false);
+        }
+        else
+        {
+            shield.SetActive(true);
+            powerUpShieldActivated = true;
+            powerUpTwinShield.SetActive(true);
+        }
+        if(p != "SlowMotionPowerUp")
+        {
+            powerUpSlowMotionActivated = false;
+           
+            CS_WorldManager.Instance.slowdown = 1;
+        }
+        else
+        {
+            powerUpSlowMotionActivated = true;
+            CS_WorldManager.Instance.slowdown = 4;
+        }
+        if (p != "StickyBombPowerUp")
+        {
+            powerUpStickyBombActivated = false;
+            stickyBombShield.SetActive(false);
+        }
+        else
+        {
+            stickyBombShield.SetActive(true);
+            powerUpStickyBombActivated = true;
+        }
     }
 }
