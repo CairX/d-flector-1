@@ -9,7 +9,6 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 direction;
-    private float magnitude;
     private bool speedup = false;
 
     [Range(0, 360)]
@@ -27,8 +26,6 @@ public class CS_Projectile_Movement : MonoBehaviour
         CS_Notifications.Instance.Register(this, "Relese");
 
         UpdateRotation(angle);
-        rb.velocity = direction * speed;
-        magnitude = rb.velocity.magnitude;
     }
 
     void Update()
@@ -50,7 +47,6 @@ public class CS_Projectile_Movement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         UpdateRotation(CS_Utils.PointToDegree(rb.velocity.normalized));
-        rb.velocity = direction * (magnitude / CS_WorldManager.Instance.slowdown);
     }
 
     // Not currently in use. Alternative to bounce material.
@@ -74,14 +70,14 @@ public class CS_Projectile_Movement : MonoBehaviour
         newAngle = CS_Utils.Mod(newAngle + 180, 360);
 
         UpdateRotation(newAngle);
-        rb.velocity = direction * speed;
     }
 
-    private void UpdateRotation(float a)
+    public void UpdateRotation(float a)
     {
         angle = a;
         direction = CS_Utils.DegreeToPoint(a);
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, a - 90);
+        rb.velocity = direction * (speed / CS_WorldManager.Instance.slowdown);
     }
 
     public void Stick()
@@ -102,7 +98,6 @@ public class CS_Projectile_Movement : MonoBehaviour
             speed = stickySpeed;
             direction = stickyDirection;
             UpdateRotation(angle);
-            rb.AddForce((direction * (speed * FORCE)) * -1);
         }
     }
 }

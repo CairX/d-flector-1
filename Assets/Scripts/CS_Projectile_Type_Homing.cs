@@ -23,8 +23,7 @@ public class CS_Projectile_Type_Homing : CS_Projectile_Type
         if (target)
         {
             Vector3 direction = (target.transform.position - transform.position).normalized;
-            float speed = projectileMovement.speed * CS_Projectile_Movement.FORCE;
-            rb.AddForce(direction * speed * Time.smoothDeltaTime, ForceMode2D.Force);
+            projectileMovement.UpdateRotation(CS_Utils.PointToDegree(direction));
         }
         else
         {
