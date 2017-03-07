@@ -16,7 +16,17 @@ public class CS_Avatar_ShieldRotating : MonoBehaviour
     {
         if (Time.timeScale <= 0) { return; }
 
-        if (Input.GetMouseButton(1))
+
+        if(Input.GetMouseButtonDown(0)) // Left mouse button
+        {
+            transform.Rotate(Vector3.back, 45);
+        }
+        else if (Input.GetMouseButtonDown(1)) // Right mouse button
+        {
+            transform.Rotate(Vector3.forward, 45);
+        }
+
+        /*if (Input.GetMouseButton(1))
         {
             this.transform.Rotate(Vector3.forward, rotatinSpeed / 2, 0);
         }
@@ -27,7 +37,6 @@ public class CS_Avatar_ShieldRotating : MonoBehaviour
         else
         {
             this.transform.Rotate(Vector3.forward, rotatinSpeed, 0);
-        }
+        }*/
     }
-        
 }
