@@ -69,7 +69,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         if (collision.gameObject.tag == "TwinSheildPowerUp")
         {
             RemoveAllPickupExcept(collision.gameObject.tag);
-            CS_All_Audio.Instance.PickupSound(3);
+            CS_All_Audio.Instance.PickupSound(1);
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "SlowMotionPowerUp")

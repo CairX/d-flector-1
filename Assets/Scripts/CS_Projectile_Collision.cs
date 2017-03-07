@@ -22,6 +22,8 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     private TextMesh text;
 
+    public GameObject stickyParent;
+
     private float collisionTimer;
     private CS_Projectile_Type projectileType;
     private CS_Projectile_Movement movement;
@@ -127,9 +129,12 @@ public class CS_Projectile_Collision : MonoBehaviour
 
         CS_All_Audio.Instance.ProjectileVsShield();
     }
+    //here
     private void onStickySheildCollisionEnter2D(Collision2D collision)
     {
         movement.Stick();
+        //this.transform.SetParent(stickyParent);
+        
         if (owner == Owner.Enemy)
         {
             ChangeOwner(Owner.Avatar);
