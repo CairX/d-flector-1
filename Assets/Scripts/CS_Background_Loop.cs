@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_Background_Loop : CS_Background_move
+public class CS_Background_Loop : MonoBehaviour
 {
     public bool repet;
     public GameObject background;
     CS_Background_Loop code;
+    public float movementX = 0;
+    public float movementY = 0;
     // Use this for initialization
     void Start () {
 		
