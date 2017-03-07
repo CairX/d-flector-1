@@ -10356,6 +10356,7 @@ MonoBehaviour:
   musik: {fileID: 8300000, guid: 8ddb32d003f4cac479d9318097b69258, type: 3}
   vicktory: {fileID: 1480017448}
   failure: {fileID: 695428800}
+  Menu: {fileID: 534882986}
 --- !u!82 &1892473385
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10423,7 +10424,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
