@@ -9,11 +9,12 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 direction;
+    private float magnitude;
     private bool speedup = false;
+
     [Range(0, 360)]
     public float angle;
     public float speed;
-
 
     private float stickyAngle;
     private float stickySpeed;
@@ -26,24 +27,30 @@ public class CS_Projectile_Movement : MonoBehaviour
         CS_Notifications.Instance.Register(this, "Relese");
 
         UpdateRotation(angle);
-        rb.AddForce(direction * (speed * FORCE));
+        rb.velocity = direction * speed;
+        magnitude = rb.velocity.magnitude;
     }
+
     void Update()
     {
-        if ((CS_WorldManager.Instance.slowdown != 1  && speedup == false) || (CS_WorldManager.Instance.slowdown == 1 && speedup == true))
+        if ((CS_WorldManager.Instance.slowdown != 1  && speedup == false) ||
+            (CS_WorldManager.Instance.slowdown == 1 && speedup == true))
         {
             speedup = true;
             rb.velocity = Vector2.zero;
-            rb.AddForce(direction * ((speed * 100) / CS_WorldManager.Instance.slowdown));
-          if(CS_WorldManager.Instance.slowdown == 1)
+            rb.AddForce(direction * ((speed * FORCE) / CS_WorldManager.Instance.slowdown));
+
+            if(CS_WorldManager.Instance.slowdown == 1)
             {
                 speedup = false;
             }
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         UpdateRotation(CS_Utils.PointToDegree(rb.velocity.normalized));
+        rb.velocity = direction * (magnitude / CS_WorldManager.Instance.slowdown);
     }
 
     // Not currently in use. Alternative to bounce material.
@@ -94,8 +101,8 @@ public class CS_Projectile_Movement : MonoBehaviour
             angle = stickyAngle;
             speed = stickySpeed;
             direction = stickyDirection;
-      UpdateRotation(angle);
-        rb.AddForce((direction * (speed * FORCE)) * -1);
+            UpdateRotation(angle);
+            rb.AddForce((direction * (speed * FORCE)) * -1);
         }
     }
 }
