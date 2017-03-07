@@ -26,6 +26,11 @@ public class CS_Animation : MonoBehaviour {
 
             sr.sprite = tutorial[tutorialPage];
             
+            
+            if(tutorialPage == 12)
+            {
+                CS_All_Audio.Instance.ProjectileVsShield();
+            }
             tutorialPage++;
             if(tutorialPage == tutorial.Length)
             {
