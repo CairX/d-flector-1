@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CS_Enemy_Movement : MonoBehaviour
 {
-
     public float speed = 1.0f;
     public Transform path;
 
@@ -20,25 +19,23 @@ public class CS_Enemy_Movement : MonoBehaviour
                 targets.Add(transform.position + path.GetChild(i).position);
             }
         }
-         
     }
 
     void Update()
     {
-            if (path != null)
+        if (path != null)
+        {
+            if (targets.Count == 0)
             {
-                if (targets.Count == 0)
-                {
-                   return;
-                }
+                return;
+            }
 
-                if (transform.position == targets[current])
-                {
-                    current = CS_Utils.Mod(current + 1, targets.Count);
-                }
+            if (transform.position == targets[current])
+            {
+                current = CS_Utils.Mod(current + 1, targets.Count);
+            }
 
-            transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime * (speed/ CS_WorldManager.Instance.slowdown));
-            }   
-        
+            transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime * (speed / CS_WorldManager.Instance.slowdown));
+        }
     }
 }
