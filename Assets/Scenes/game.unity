@@ -8039,8 +8039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompletMedal: {fileID: 109934797}
-  noDamageMedal: {fileID: 502649579}
-  speedRunMedal: {fileID: 2015569842}
+  noDamageMedal: {fileID: 2015569842}
+  speedRunMedal: {fileID: 502649579}
 --- !u!1 &1526921245
 GameObject:
   m_ObjectHideFlags: 0

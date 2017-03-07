@@ -44,6 +44,7 @@ public class CS_Avatar_Health : MonoBehaviour {
         if (cgo.tag == "Enemy" || (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy()))
         {
             CS_All_Audio.Instance.AvaterLoseHealth(healthPoints.Length - 1);
+            CS_Medals.Instance.TookDamage();
             if (timer <= 0 && index < healthPoints.Length - 1)
             {
                 timer = invincibleTime;
@@ -58,7 +59,7 @@ public class CS_Avatar_Health : MonoBehaviour {
                 healthPoints[index].hud.SetActive(false);
                 spriteRenderer.sprite = healthPoints[index].avatar;
                 changeSprite = false;
-
+                
                 CS_Notifications.Instance.Post(this, "OnGameOver");
             }
         }

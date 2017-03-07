@@ -48,6 +48,11 @@ public class CS_Timer : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60);
         int seconds = Mathf.FloorToInt(timer % 60);
         text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        if (timer >= 120)
+        {
+            CS_Medals.Instance.Time();
+        }
     }
 
     public void TimerStart()
