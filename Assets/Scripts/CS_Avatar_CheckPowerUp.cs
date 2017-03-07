@@ -94,11 +94,9 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         {
             powerUpShieldActivated = false;
             powerUpTwinShield.SetActive(false);
-            shield.SetActive(false);
         }
         else
         {
-            shield.SetActive(true);
             powerUpShieldActivated = true;
             powerUpTwinShield.SetActive(true);
         }
@@ -107,6 +105,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
             powerUpSlowMotionActivated = false;
            
             CS_WorldManager.Instance.slowdown = 1;
+            shield.SetActive(true);
         }
         else
         {
@@ -115,11 +114,13 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         }
         if (p != "StickyBombPowerUp")
         {
+            shield.SetActive(true);
             powerUpStickyBombActivated = false;
             stickyBombShield.SetActive(false);
         }
         else
         {
+            shield.SetActive(false);
             stickyBombShield.SetActive(true);
             powerUpStickyBombActivated = true;
         }
