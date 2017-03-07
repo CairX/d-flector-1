@@ -17,6 +17,7 @@ public class CS_Avatar_MouseMovment : MonoBehaviour {
 	
 	void Update () {
         if (Time.timeScale <= 0) { return; }
+        Cursor.lockState = CursorLockMode.Locked;
 
         mousePositionChange.x = Input.GetAxis("Mouse X");
         mousePositionChange.y = Input.GetAxis("Mouse Y");
