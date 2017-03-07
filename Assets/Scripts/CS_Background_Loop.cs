@@ -9,14 +9,27 @@ public class CS_Background_Loop : MonoBehaviour
     CS_Background_Loop code;
     public float movementX = 0;
     public float movementY = 0;
+
+    public Renderer rend;
+
     // Use this for initialization
     void Start () {
-		
-	}
+        rend = GetComponent<Renderer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (Time.timeScale <= 0) { return; }
+
+
+        if (this.transform.position.x <= 12)
+        {
+            rend.enabled = true;
+        }
+        else
+        {
+            rend.enabled = false;
+        }
 
         transform.position = new Vector3(transform.position.x + (movementX / CS_WorldManager.Instance.slowdown), transform.position.y + (movementY / CS_WorldManager.Instance.slowdown), transform.position.z);
 
@@ -24,9 +37,10 @@ public class CS_Background_Loop : MonoBehaviour
         {
             if (this.transform.position.x <= 0)
             {
-                //Instantiate(background);
+           
                 //background.transform.position = new Vector3(transform.position.x + GetComponent<SpriteRenderer>().bounds.size.x, 0, this.transform.position.z);
                 GameObject back = Instantiate(background);
+                back.transform.SetParent(this.transform.parent);
                 back.transform.position = new Vector3(transform.position.x + GetComponent<SpriteRenderer>().bounds.size.x, 0, this.transform.position.z);
                 code = background.GetComponent<CS_Background_Loop>();
                 code.repet = true;
