@@ -22,8 +22,6 @@ public class CS_BaseMusic : MonoBehaviour {
             speaker.loop = true;
         }
         speaker.volume = 0.2f;
-        //speaker.Pause();
-        Debug.Log("Noa");
     }
 
     // Update is called once per frame
@@ -34,11 +32,9 @@ public class CS_BaseMusic : MonoBehaviour {
             if(speaker.isPlaying == true)
             {
                 speaker.Pause();
-                Debug.Log("Logan");
             }
             else
             {
-                Debug.Log("Smurfs");
                 speaker.UnPause();
             }       
         }
@@ -49,29 +45,23 @@ public class CS_BaseMusic : MonoBehaviour {
         
         if(vicktory.activeSelf || failure.activeSelf)
         {
-            Debug.Log("Dave");
             speaker.Stop();
         }
-        //Debug.Log(speaker.isPlaying);
     }
     public void PlayMusic()
     {
-        Debug.Log("Sven");
         speaker.UnPause();
     }
     public void PaseMusic()
     {
-        Debug.Log("Ola");
         speaker.Pause();
     }
     public void MusicVolume(float v)
     {
-        Debug.Log("Hilda");
         speaker.volume = v;
     }
     public void RestartMusic()
     {
-        Debug.Log("Bjork");
         speaker.UnPause();
     }
 }
