@@ -433,7 +433,8 @@ MonoBehaviour:
   health: 3
   avatarVisuals: {fileID: 1869328625147348}
   enemyVisuals: {fileID: 1456056766850676}
-  stickyParent: {fileID: 0}
+  stickyParent: {fileID: 1517809785823646, guid: 20be7f4ccbed10c458406a9caf638f6d,
+    type: 2}
 --- !u!198 &198115102656223250
 ParticleSystem:
   m_ObjectHideFlags: 1

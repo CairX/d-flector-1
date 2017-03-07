@@ -133,7 +133,7 @@ public class CS_Projectile_Collision : MonoBehaviour
     private void onStickySheildCollisionEnter2D(Collision2D collision)
     {
         movement.Stick();
-        //this.transform.SetParent(stickyParent);
+        this.transform.SetParent(collision.transform);
         
         if (owner == Owner.Enemy)
         {

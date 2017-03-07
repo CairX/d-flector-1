@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 4480475430526916}
   - component: {fileID: 212310995257213846}
   - component: {fileID: 58852544236489258}
+  - component: {fileID: 114288708888090452}
   m_Layer: 0
   m_Name: Spr_Avatar_Idle_Light
   m_TagString: StickySheild
@@ -587,6 +588,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatinSpeed: 0.1
+--- !u!114 &114288708888090452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1675783787801798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7183c7ea76f1f43429b8501345db4d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatinSpeed: 1
 --- !u!114 &114477820407280832
 MonoBehaviour:
   m_ObjectHideFlags: 1
