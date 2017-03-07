@@ -1201,8 +1201,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354051362}
-        m_MethodName: OptionsMenu
-        m_Mode: 5
+        m_MethodName: Nextlevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1313,7 +1313,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: continue
 --- !u!222 &293806349
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10235,7 +10235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1480017449
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12670,6 +12670,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musik: {fileID: 8300000, guid: 8ddb32d003f4cac479d9318097b69258, type: 3}
+  intro: {fileID: 0}
+  loop1: {fileID: 0}
+  transistion1: {fileID: 0}
+  loop2: {fileID: 0}
+  transistion2: {fileID: 0}
+  loop3: {fileID: 0}
+  end: {fileID: 0}
   vicktory: {fileID: 1480017448}
   failure: {fileID: 695428800}
   Menu: {fileID: 534882986}
