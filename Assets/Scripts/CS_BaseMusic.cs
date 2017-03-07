@@ -2,11 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_BaseMusic : MonoBehaviour {
+public class CS_BaseMusic : MonoBehaviour
+{
 
     private AudioSource speaker;
 
     public AudioClip musik;
+
+
+    public AudioClip intro;
+
+    public AudioClip loop1;
+    public AudioClip transistion1;
+    public AudioClip loop2;
+    public AudioClip transistion2;
+    public AudioClip loop3;
+
+    public AudioClip end;
+
+    private AudioClip curentloop;
 
     public GameObject vicktory;
     public GameObject failure;
@@ -14,7 +28,8 @@ public class CS_BaseMusic : MonoBehaviour {
     public GameObject Menu;
 
     // Use this for initialization
-    private void Start() {
+    private void Start()
+    {
         speaker = GetComponent<AudioSource>();
         speaker.PlayOneShot(musik);
         if (speaker.loop == false)
@@ -29,21 +44,21 @@ public class CS_BaseMusic : MonoBehaviour {
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if(speaker.isPlaying == true)
+            if (speaker.isPlaying == true)
             {
                 speaker.Pause();
             }
             else
             {
                 speaker.UnPause();
-            }       
+            }
         }
-        if(Menu.activeSelf)
+        if (Menu.activeSelf)
         {
             speaker.Pause();
         }
-        
-        if(vicktory.activeSelf || failure.activeSelf)
+
+        if (vicktory.activeSelf || failure.activeSelf)
         {
             speaker.Stop();
         }
@@ -63,5 +78,22 @@ public class CS_BaseMusic : MonoBehaviour {
     public void RestartMusic()
     {
         speaker.UnPause();
+    }
+
+    public void diffrentlevel(int i)
+    {
+        if (i == 1)
+        {
+            curentloop = loop1;
+        }
+        if (i == 2)
+        {
+            curentloop = loop2;
+        }
+        if (i == 3)
+        {
+            curentloop = loop3;
+        }
+
     }
 }
