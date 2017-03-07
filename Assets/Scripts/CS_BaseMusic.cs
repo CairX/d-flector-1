@@ -11,6 +11,8 @@ public class CS_BaseMusic : MonoBehaviour {
     public GameObject vicktory;
     public GameObject failure;
 
+    public GameObject Menu;
+
     // Use this for initialization
     private void Start() {
         speaker = GetComponent<AudioSource>();
@@ -39,6 +41,10 @@ public class CS_BaseMusic : MonoBehaviour {
                 Debug.Log("Smurfs");
                 speaker.UnPause();
             }       
+        }
+        if(Menu.activeSelf)
+        {
+            speaker.Pause();
         }
         
         if(vicktory.activeSelf || failure.activeSelf)
