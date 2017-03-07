@@ -88,11 +88,27 @@ public class Wave
             {
                 if (amountOfEnemies[index].spawned == false)
                 {
-                    amountOfEnemies[index].enemyObject.transform.position = amountOfEnemies[index].spawnPos;          
+                    amountOfEnemies[index].enemyObject.transform.position = amountOfEnemies[index].startPos;          
                     amountOfEnemies[index].enemyObject = MonoBehaviour.Instantiate(amountOfEnemies[index].enemyObject, GameObject.FindWithTag("Playing").transform);
-                    CS_Enemy_Movement script = amountOfEnemies[index].enemyObject.GetComponent<CS_Enemy_Movement>();
-                    script.path = amountOfEnemies[index].movementPattern;
+                    amountOfEnemies[index].movmentScript = amountOfEnemies[index].enemyObject.GetComponent<CS_Enemy_Movement>();
+                    amountOfEnemies[index].movmentScript.path = amountOfEnemies[index].movementPattern;
                     amountOfEnemies[index].spawned = true;
+                }
+            }
+
+            if (amountOfEnemies[index].movmentScript != null)
+            {
+                if (amountOfEnemies[index].movmentScript.inPos == false)
+                {
+                    if (amountOfEnemies[index].enemyObject.transform.position == amountOfEnemies[index].spawnPos)
+                    {
+                        amountOfEnemies[index].movmentScript.inPos = true;
+                        amountOfEnemies[index].movmentScript.InStartPos();
+                    }
+                    else
+                    {
+                        amountOfEnemies[index].enemyObject.transform.position = Vector3.MoveTowards(amountOfEnemies[index].enemyObject.transform.position, amountOfEnemies[index].spawnPos,Time.deltaTime * 1f);
+                    }
                 }
             }
         }
@@ -120,10 +136,14 @@ public class WaveProp
     public int spawnDeley;
     public SpawnPos spawnPosition;
     [HideInInspector]
-    public Vector2 spawnPos;
+    public Vector3 spawnPos;
     [HideInInspector]
     public bool spawned = false;
     public Transform movementPattern;
+    [HideInInspector]
+    public CS_Enemy_Movement movmentScript;
+    [HideInInspector]
+    public Vector3 startPos = new Vector3(6, 0);
 
     public void LoadEnemy()
     {
