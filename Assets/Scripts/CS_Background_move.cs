@@ -8,17 +8,17 @@ public class CS_Background_move : MonoBehaviour
 
     private float startYpos;
     private float startpos = 35;
-    private float endpos = -10;
+    public float endpos = -7;
     public float movementX = 0;
     public float movementY = 0;
-
+   
     public Renderer rend;
 
     // Use this for initialization
     void Start () {
 
         rend = GetComponent<Renderer>();
-        
+
         startXpos = this.transform.position.x;
         if (movementY == 0)
         {
@@ -39,7 +39,7 @@ public class CS_Background_move : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x + (movementX / CS_WorldManager.Instance.slowdown),transform.position.y + (movementY / CS_WorldManager.Instance.slowdown), transform.position.z);
 
-        if (this.transform.position.x <= (endpos * -1))
+        if (this.transform.position.x <= (endpos* -1))
         {
             rend.enabled = true;
         }
