@@ -104,6 +104,8 @@ public class Wave
                     {
                         amountOfEnemies[index].movmentScript.inPos = true;
                         amountOfEnemies[index].movmentScript.InStartPos();
+                        CS_Projectile_SpawnerTargetInit script = amountOfEnemies[index].enemyObject.GetComponent<CS_Projectile_SpawnerTargetInit>();
+                        script.enabled = true;
                     }
                     else
                     {
