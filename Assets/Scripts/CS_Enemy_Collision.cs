@@ -67,6 +67,8 @@ public class CS_Enemy_Collision : MonoBehaviour {
 
     private void Update()
     {
+        if (Time.timeScale <= 0) { return; }
+
         if (dead == true)
         {
             if (diedThisFrame == true)
@@ -89,6 +91,5 @@ public class CS_Enemy_Collision : MonoBehaviour {
                 Destroy(this.gameObject);
             }
         }
-        
     }
 }
