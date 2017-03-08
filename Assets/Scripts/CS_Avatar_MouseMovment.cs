@@ -10,7 +10,7 @@ public class CS_Avatar_MouseMovment : MonoBehaviour {
     public float boundaryStopY;
 
     void Update () {
-        if (Time.timeScale <= 0) { return; }
+        if (Time.timeScale <= 0) { Cursor.lockState = CursorLockMode.None; return; }
         Cursor.lockState = CursorLockMode.Locked;
 
         Vector2 n = new Vector2(transform.position.x + Input.GetAxis("Mouse X"), transform.position.y + Input.GetAxis("Mouse Y"));

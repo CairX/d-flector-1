@@ -1347,12 +1347,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 507235336}
+  m_Father: {fileID: 938960759}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96.09998, y: -459.7}
+  m_AnchoredPosition: {x: 96.09986, y: -459.70007}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300686695
@@ -1462,12 +1462,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 507235336}
+  m_Father: {fileID: 938960759}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -459.7}
+  m_AnchoredPosition: {x: -0.000061035156, y: -459.70007}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362234570
@@ -2033,39 +2033,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 502649579}
---- !u!1 &507235335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 507235336}
-  m_Layer: 0
-  m_Name: Obj_HUD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &507235336
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 507235335}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1659294902}
-  - {fileID: 1744549882}
-  - {fileID: 362234569}
-  - {fileID: 300686694}
-  - {fileID: 519452753}
-  m_Father: {fileID: 1813388392}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519452752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,12 +2061,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 507235336}
+  m_Father: {fileID: 938960759}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -590, y: -470}
+  m_AnchoredPosition: {x: -590.0001, y: -470.00006}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519452754
@@ -2789,28 +2756,34 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 4
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 4
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wane 2
     waveDone: 0
@@ -2820,37 +2793,45 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 3
     waveDone: 0
@@ -2860,52 +2841,64 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 4
     waveDone: 0
@@ -2915,26 +2908,32 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 5
     waveDone: 0
@@ -2944,80 +2943,98 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 6
     waveDone: 0
@@ -3027,77 +3044,95 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 7
     waveDone: 0
@@ -3107,44 +3142,54 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 8
     waveDone: 0
@@ -3154,72 +3199,88 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 9
     waveDone: 0
@@ -3229,79 +3290,97 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 10
     waveDone: 0
@@ -3311,95 +3390,117 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 13
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 11
     waveDone: 0
@@ -3409,43 +3510,53 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 12
     waveDone: 0
@@ -3455,71 +3566,87 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 13
     waveDone: 0
@@ -3529,95 +3656,117 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 14
     waveDone: 0
@@ -3627,96 +3776,118 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 15
     waveDone: 0
@@ -3726,113 +3897,139 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 9
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   timeBetweenWaves: 2
   basic: {fileID: 1010959746214292, guid: 72be368cb15a78847a0e8c14fdeb635c, type: 2}
@@ -3881,7 +4078,7 @@ Transform:
   - {fileID: 1290165442}
   - {fileID: 697242176}
   m_Father: {fileID: 1722229205}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &754250450
 GameObject:
@@ -6912,6 +7109,103 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928591007}
+--- !u!1 &938960758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 938960759}
+  - component: {fileID: 938960762}
+  - component: {fileID: 938960761}
+  - component: {fileID: 938960760}
+  m_Layer: 0
+  m_Name: Playing_HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &938960759
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938960758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1659294902}
+  - {fileID: 1744549882}
+  - {fileID: 362234569}
+  - {fileID: 300686694}
+  - {fileID: 519452753}
+  m_Father: {fileID: 1722229205}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &938960760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938960758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &938960761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938960758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 180}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &938960762
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938960758}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &963987291
 GameObject:
   m_ObjectHideFlags: 0
@@ -7569,7 +7863,7 @@ RectTransform:
   - {fileID: 1306242605}
   - {fileID: 1474471059}
   m_Father: {fileID: 1813388392}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8133,7 +8427,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4517046572431864, guid: f85f90f2262103e439029a4c90cd0d98, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4842467871441356, guid: f85f90f2262103e439029a4c90cd0d98, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8330,28 +8624,34 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 4
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 4
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wane 2
     waveDone: 0
@@ -8361,37 +8661,45 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 3
     waveDone: 0
@@ -8401,52 +8709,64 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 4
     waveDone: 0
@@ -8456,26 +8776,32 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 5
     waveDone: 0
@@ -8485,80 +8811,98 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 6
     waveDone: 0
@@ -8568,77 +8912,95 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 7
     waveDone: 0
@@ -8648,44 +9010,54 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 8
     waveDone: 0
@@ -8695,72 +9067,88 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 9
     waveDone: 0
@@ -8770,79 +9158,97 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 10
     waveDone: 0
@@ -8852,95 +9258,117 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 13
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 11
     waveDone: 0
@@ -8950,43 +9378,53 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 12
     waveDone: 0
@@ -8996,71 +9434,87 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 13
     waveDone: 0
@@ -9070,95 +9524,117 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 14
     waveDone: 0
@@ -9168,96 +9644,118 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 15
     waveDone: 0
@@ -9267,113 +9765,139 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 9
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   timeBetweenWaves: 2
   basic: {fileID: 1010959746214292, guid: 72be368cb15a78847a0e8c14fdeb635c, type: 2}
@@ -10193,7 +10717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1480017449
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10880,12 +11404,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 507235336}
+  m_Father: {fileID: 938960759}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -462}
+  m_AnchoredPosition: {x: -0.000061035156, y: -462.00006}
   m_SizeDelta: {x: 1830, y: 139}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659294903
@@ -11089,6 +11613,7 @@ Transform:
   m_LocalPosition: {x: -0.34, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 938960759}
   - {fileID: 710814933}
   - {fileID: 2142087033}
   - {fileID: 464077964}
@@ -11211,12 +11736,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 507235336}
+  m_Father: {fileID: 938960759}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96.1, y: -459.7}
+  m_AnchoredPosition: {x: -96.10006, y: -459.70007}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744549883
@@ -11433,10 +11958,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -11477,7 +12002,6 @@ RectTransform:
   - {fileID: 566197089}
   - {fileID: 1480017449}
   - {fileID: 695428801}
-  - {fileID: 507235336}
   - {fileID: 1130626584}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -11523,28 +12047,34 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 4
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 4
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wane 2
     waveDone: 0
@@ -11554,37 +12084,45 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 3
     waveDone: 0
@@ -11594,52 +12132,64 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 4
     waveDone: 0
@@ -11649,26 +12199,32 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 5
     waveDone: 0
@@ -11678,80 +12234,98 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 6
     waveDone: 0
@@ -11761,77 +12335,95 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 20
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 7
     waveDone: 0
@@ -11841,44 +12433,54 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 8
     waveDone: 0
@@ -11888,72 +12490,88 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 18
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 9
     waveDone: 0
@@ -11963,79 +12581,97 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 10
     waveDone: 0
@@ -12045,95 +12681,117 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4423285174237720, guid: f0e897b76a0e60249a74bada38e87e08,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 13
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 14
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 11
     waveDone: 0
@@ -12143,43 +12801,53 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 12
     waveDone: 0
@@ -12189,71 +12857,87 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 16
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 13
     waveDone: 0
@@ -12263,95 +12947,117 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 6
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 10
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 14
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 14
     waveDone: 0
@@ -12361,96 +13067,118 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 3
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 6
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 8
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 0
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 4
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   - name: Wave 15
     waveDone: 0
@@ -12460,113 +13188,139 @@ MonoBehaviour:
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 1
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 2
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 1
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 2
       spawnPosition: 3
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 8
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 9
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 2
       enemyObject: {fileID: 0}
       spawnDeley: 10
       spawnPosition: 7
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4737235949164830, guid: f555ac7baa824324d94cca848bf2f648,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 5
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 9
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4835784743523978, guid: a0ac10a90f435bc4aa22f0c564b75fac,
         type: 2}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 13
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 3
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 11
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     - name: 
       enemy: 1
       enemyObject: {fileID: 0}
       spawnDeley: 15
       spawnPosition: 12
-      spawnPos: {x: 0, y: 0}
+      spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 0}
+      movmentScript: {fileID: 0}
+      startPos: {x: 6, y: 0, z: 0}
     enemies: 0
   timeBetweenWaves: 2
   basic: {fileID: 1010959746214292, guid: 72be368cb15a78847a0e8c14fdeb635c, type: 2}
@@ -13356,7 +14110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4096386798268864, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
         type: 2}
