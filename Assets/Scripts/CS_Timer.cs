@@ -9,7 +9,7 @@ public class CS_Timer : MonoBehaviour
     private float timer = 0.0f;
     private bool running = false;
 
-    private void Awake()
+    private void OnEnable()
     {
         CS_Notifications.Instance.Register(this, "OnStartMenu");
         CS_Notifications.Instance.Register(this, "OnPlayGame");
