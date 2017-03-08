@@ -13,14 +13,32 @@ public class CS_Avatar_Health : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private int index;
 
+    private void OnEnable()
+    {
+        CS_Notifications.Instance.Register(this, "OnAvatarDamage");
+    }
 
-	void Start ()
+    private void OnDisable()
+    {
+        try
+        {
+            CS_Notifications.Instance.Unregister(this, "OnAvatarDamagar");
+        }
+        catch (System.NullReferenceException)
+        {
+            // Unity destroys objects in random order so there is no way
+            // to know if this is run before or after the
+            // notification center has been destroyed.
+        }
+    }
+
+    private void Start ()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         index = 0;
     }
 
-    void Update ()
+    private void Update ()
     {
         timer -= Time.deltaTime;
         if (changeSprite && timer <= 0)
@@ -37,31 +55,36 @@ public class CS_Avatar_Health : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject cgo = collision.gameObject;
 
         if (cgo.tag == "Enemy" || (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy()))
         {
-            CS_All_Audio.Instance.AvaterLoseHealth(healthPoints.Length - 1);
-            CS_Medals.Instance.TookDamage();
-            if (timer <= 0 && index < healthPoints.Length - 1)
-            {
-                timer = invincibleTime;
-                spriteRenderer.sprite = invincibleSprite;
-                Color color = spriteRenderer.color;
-                color.a = 0.8f;
-                spriteRenderer.color = color;
-                changeSprite = true;
-            }
-            else if (timer <= 0 && index == healthPoints.Length - 1)
-            {
-                healthPoints[index].hud.SetActive(false);
-                spriteRenderer.sprite = healthPoints[index].avatar;
-                changeSprite = false;
-                
-                CS_Notifications.Instance.Post(this, "OnGameOver");
-            }
+            OnAvatarDamage();
+        }
+    }
+
+    public void OnAvatarDamage()
+    {
+        CS_All_Audio.Instance.AvaterLoseHealth(healthPoints.Length - 1);
+        CS_Medals.Instance.TookDamage();
+        if (timer <= 0 && index < healthPoints.Length - 1)
+        {
+            timer = invincibleTime;
+            spriteRenderer.sprite = invincibleSprite;
+            Color color = spriteRenderer.color;
+            color.a = 0.8f;
+            spriteRenderer.color = color;
+            changeSprite = true;
+        }
+        else if (timer <= 0 && index == healthPoints.Length - 1)
+        {
+            healthPoints[index].hud.SetActive(false);
+            spriteRenderer.sprite = healthPoints[index].avatar;
+            changeSprite = false;
+
+            CS_Notifications.Instance.Post(this, "OnGameOver");
         }
     }
 }
