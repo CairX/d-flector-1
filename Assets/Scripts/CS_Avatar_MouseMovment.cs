@@ -11,7 +11,9 @@ public class CS_Avatar_MouseMovment : MonoBehaviour {
 
     void Update () {
         if (Time.timeScale <= 0) { return; }
+
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         Vector2 n = new Vector2(transform.position.x + Input.GetAxis("Mouse X"), transform.position.y + Input.GetAxis("Mouse Y"));
         n.x = (n.x > boundaryStartX && n.x < boundaryStopX) ? n.x : transform.position.x;
