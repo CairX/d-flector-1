@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CS_Avatar_CheckPowerUp : MonoBehaviour {
 
@@ -8,19 +9,27 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
     public GameObject shield;
     public GameObject trail;
     public GameObject stickyBombShield;
-    public float powerUpTime;
 
+    public float powerUpTime;
     private float time = 0;
+    private Image timerImage;
+
     private int go;
     private bool powerUpShieldActivated;
     private bool powerUpSlowMotionActivated;
     private bool powerUpStickyBombActivated;
 
+    private void Start()
+    {
+        timerImage = GameObject.FindGameObjectWithTag("PowerUpTimer").GetComponent<Image>();
+        timerImage.fillAmount = 0.0f;
+    }
+
     private void Update()
     {
         if (powerUpShieldActivated == true)
         {
-            time -= Time.deltaTime;
+            UpdateTimer();
 
             if (time <= 0)
             {
@@ -31,8 +40,8 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         }
         if(powerUpSlowMotionActivated == true)
         {
-            time -= Time.deltaTime;
-            
+            UpdateTimer();
+
             if (go == 8)
             {
                 GameObject shadow = Instantiate(trail);
@@ -52,7 +61,8 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
         }
         if (powerUpStickyBombActivated == true)
         {
-            time -= Time.deltaTime;
+            UpdateTimer();
+
             if (time <= 0)
             {
                 powerUpStickyBombActivated = false;
@@ -88,7 +98,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
     }
     private void RemoveAllPickupExcept(string p)
     {
-        time = powerUpTime;
+        ResetTimer();
 
         if (p != "TwinSheildPowerUp")
         {
@@ -124,5 +134,17 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
             stickyBombShield.SetActive(true);
             powerUpStickyBombActivated = true;
         }
+    }
+
+    private void UpdateTimer()
+    {
+        time -= Time.deltaTime;
+        timerImage.fillAmount = time / powerUpTime;
+    }
+
+    private void ResetTimer()
+    {
+        time = powerUpTime;
+        timerImage.fillAmount = time / powerUpTime;
     }
 }
