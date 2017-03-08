@@ -13382,13 +13382,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musik: {fileID: 8300000, guid: 8ddb32d003f4cac479d9318097b69258, type: 3}
-  intro: {fileID: 0}
-  loop1: {fileID: 0}
-  transistion1: {fileID: 0}
-  loop2: {fileID: 0}
-  transistion2: {fileID: 0}
-  loop3: {fileID: 0}
-  end: {fileID: 0}
+  intro: {fileID: 8300000, guid: 9d1f3631e6915d148a6788268c852257, type: 3}
+  loop1: {fileID: 8300000, guid: d18e2828c3706e144b3f0d81bb510ff3, type: 3}
+  transistion1: {fileID: 8300000, guid: 5fcbda964a57f974793544caa1cb1c1a, type: 3}
+  loop2: {fileID: 8300000, guid: 044f9287ca4e39c43ad946887e417e1d, type: 3}
+  transistion2: {fileID: 8300000, guid: d103afbdd393fe141874183ad962676c, type: 3}
+  loop3: {fileID: 8300000, guid: db50b6dfa77c34a439060c8765c4a3da, type: 3}
+  end: {fileID: 8300000, guid: b38cab76ddcf63148a617534d4e692e8, type: 3}
   vicktory: {fileID: 1480017448}
   failure: {fileID: 695428800}
   Menu: {fileID: 534882986}
