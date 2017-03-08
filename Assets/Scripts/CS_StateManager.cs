@@ -142,7 +142,7 @@ public class CS_StateManager : MonoBehaviour {
         }
     }
 
-    private void DisableAll()
+    private void DisableAllStates()
     {
         if (startMenu != null)
         {
@@ -172,43 +172,52 @@ public class CS_StateManager : MonoBehaviour {
         {
             tutorialScreen.SetActive(false);
         }
+
+        RestoreCursor();
+    }
+
+    private void RestoreCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void OnVictory()
     {
+        DisableAllStates();
+
         CS_All_Audio.Instance.WinLose(true);
         CS_WorldManager.Instance.state = State.VictoryMenu;
-        DisableAll();
         victoryMenu.SetActive(true);
-        Cursor.visible = true;
         CS_Medals.Instance.LevelComplet();
     }
 
     private void OnGameOver()
     {
+        DisableAllStates();
+
         CS_All_Audio.Instance.WinLose(false);
         CS_WorldManager.Instance.state = State.GameOverMenu;
-        DisableAll();
         gameOverMenu.SetActive(true);
-        Cursor.visible = true;
     }
 
     public void StartMenu()
     {
+        DisableAllStates();
+
         CS_WorldManager.Instance.state = State.StartMenu;
-        DisableAll();
         startMenu.SetActive(true);
-        Cursor.visible = true;
 
         CS_Notifications.Instance.Post(this, "OnStartMenu");
     }
 
     private void PauseMenu()
     {
+        RestoreCursor();
+
         CS_WorldManager.Instance.state = State.PauseMenu;
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        Cursor.visible = true;
     }
 
     public void UnPauseMenu()
@@ -216,24 +225,24 @@ public class CS_StateManager : MonoBehaviour {
         CS_WorldManager.Instance.state = State.Playing;
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
-        Cursor.visible = false;
     }
 
     public void OptionsMenu(string previous)
     {
-        previousState = GetState(previous);
+        RestoreCursor();
 
+        previousState = GetState(previous);
         CS_WorldManager.Instance.state = State.OptionsMenu;
         GetStateObject(previousState).SetActive(false);
         optionsMenu.SetActive(true);
-        Cursor.visible = true;
     }
     public void ReturnFromOptions()
     {
+        RestoreCursor();
+
         CS_WorldManager.Instance.state = previousState;
         optionsMenu.SetActive(false);
         GetStateObject(previousState).SetActive(true);
-        Cursor.visible = true;
     }
 
     public void LoadLevel(int level)
@@ -255,20 +264,22 @@ public class CS_StateManager : MonoBehaviour {
 
     private void PlayGame()
     {
+        DisableAllStates();
+
         CS_WorldManager.Instance.state = State.Playing;
         Time.timeScale = 1;
-        DisableAll();
         playing.SetActive(true);
-        Cursor.visible = false;
         CS_Medals.Instance.LevelStart();
         CS_Notifications.Instance.Post(this, "OnPlayGame");
     }
+
     public void GoToTutorial()
     {
         CS_WorldManager.Instance.state = State.Tutorial;
-        DisableAll();
+        DisableAllStates();
         tutorialScreen.SetActive(true);
     }
+
     public void QuitApplication()
     {
         Application.Quit();
