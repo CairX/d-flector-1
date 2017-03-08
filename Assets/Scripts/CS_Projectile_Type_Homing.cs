@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class CS_Projectile_Type_Homing : CS_Projectile_Type
 {
-    private Rigidbody2D rb;
     private CS_Projectile_Movement projectileMovement;
 
     private GameObject target;
 
     void Start ()
     {
-        rb = GetComponent<Rigidbody2D>();
         projectileMovement = GetComponent<CS_Projectile_Movement>();
-
         target = GameObject.FindGameObjectWithTag("Player");
     }
 
