@@ -27,16 +27,18 @@ public class CS_BaseMusic : MonoBehaviour
 
     public GameObject Menu;
 
+    public float transitionTime;
+
+    private int stage = 1;
+
+    private bool okay = true;
+
     // Use this for initialization
     private void Start()
     {
         speaker = GetComponent<AudioSource>();
-        speaker.PlayOneShot(musik);
-        if (speaker.loop == false)
-        {
-            speaker.loop = true;
-        }
         speaker.volume = 0.2f;
+        curentloop = loop1;
     }
 
     // Update is called once per frame
@@ -47,29 +49,39 @@ public class CS_BaseMusic : MonoBehaviour
             if (speaker.isPlaying == true)
             {
                 speaker.Pause();
+                okay = false;
             }
             else
             {
                 speaker.UnPause();
+                okay = true;
             }
         }
         if (Menu.activeSelf)
         {
             speaker.Pause();
+            okay = false;
         }
 
         if (vicktory.activeSelf || failure.activeSelf)
         {
             speaker.Stop();
+            okay = false;
+        }
+        if (okay && speaker.isPlaying == false && speaker.loop == false)
+        {
+            Nextstep();
         }
     }
     public void PlayMusic()
     {
         speaker.UnPause();
+        okay = true;
     }
     public void PaseMusic()
     {
         speaker.Pause();
+        okay = true;
     }
     public void MusicVolume(float v)
     {
@@ -78,9 +90,9 @@ public class CS_BaseMusic : MonoBehaviour
     public void RestartMusic()
     {
         speaker.UnPause();
+        okay = true;
     }
-
-    public void diffrentlevel(int i)
+    public void DiffrentLevel(int i)
     {
         if (i == 1)
         {
@@ -94,6 +106,49 @@ public class CS_BaseMusic : MonoBehaviour
         {
             curentloop = loop3;
         }
-
+    }
+    public void StopLoop()
+    {
+        speaker.loop = false;
+    }
+    public void Nextstep()
+    {
+        
+        if (stage == 1)
+        {
+            speaker.PlayOneShot(intro);
+            speaker.loop = false;
+            stage = 2;
+        }
+        else if (stage == 2)
+        {
+            speaker.PlayOneShot(curentloop);
+            speaker.loop = true;
+            stage = 3;
+        }
+        else if (stage == 3)
+        {
+            speaker.PlayOneShot(end);
+            speaker.loop = false;
+        }
+        Debug.Log("Wakey Wakey mother fucker, is it looping : " + speaker.loop);
+        /*
+        else if (stage == 4)
+        {
+            stage = 5;
+        }
+        else if (stage == 5)
+        {
+            stage = 6;
+        }
+        else if (stage == 6)
+        {
+            stage = 7;
+        }
+        else if (stage == 7)
+        {
+            
+        }
+        */
     }
 }
