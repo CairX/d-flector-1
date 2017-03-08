@@ -55,6 +55,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
             dead = true;
             diedThisFrame = true;
             CS_Notifications.Instance.Post(this, "EnemyDead");
+            CS_Notifications.Instance.Post(this, "OnAvatarDamage");
         }
         if (cgo.tag == "Player")
         {
