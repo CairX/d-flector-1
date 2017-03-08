@@ -7,6 +7,38 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
     protected CS_Notifications() { }
 
     private Dictionary<string, HashSet<Component>> notifications = new Dictionary<string, HashSet<Component>>();
+    private Dictionary<string, HashSet<Component>> cacheRegister = new Dictionary<string, HashSet<Component>>();
+    private Dictionary<string, HashSet<Component>> cacheUnregister = new Dictionary<string, HashSet<Component>>();
+
+    private static void InitKey(Dictionary<string, HashSet<Component>> dict, string key)
+    {
+        if (!dict.ContainsKey(key))
+        {
+            dict.Add(key, new HashSet<Component>());
+        }
+    }
+
+    private void UpdateCache()
+    {
+        foreach (var pair in cacheRegister)
+        {
+            InitKey(notifications, pair.Key);
+            foreach (var observer in pair.Value)
+            {
+                notifications[pair.Key].Add(observer);
+            }
+        }
+        cacheRegister.Clear();
+
+        foreach (var pair in cacheUnregister)
+        {
+            foreach (var observer in pair.Value)
+            {
+                notifications[pair.Key].Remove(observer);
+            }
+        }
+        cacheUnregister.Clear();
+    }
 
     public void Register(Component observer, string method)
     {
@@ -16,12 +48,8 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
             return;
         }
 
-        if (!notifications.ContainsKey(method))
-        {
-            notifications.Add(method, new HashSet<Component>());
-        }
-
-        notifications[method].Add(observer);
+        InitKey(cacheRegister, method);
+        cacheRegister[method].Add(observer);
     }
 
     public void Unregister(Component observer, string method)
@@ -32,13 +60,8 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
             return;
         }
 
-        if (!notifications.ContainsKey(method))
-        {
-            Debug.Log("No observers registered for method: " + method);
-            return;
-        }
-
-        notifications[method].Remove(observer);
+        InitKey(cacheUnregister, method);
+        cacheUnregister[method].Add(observer);
     }
 
     public void Post(Component sender, string method)
@@ -48,15 +71,11 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
 
     public void Post(Component sender, string method, Hashtable data)
     {
+        UpdateCache();
+
         if (string.IsNullOrEmpty(method))
         {
             Debug.Log("Can't post method that is null or empty.");
-            return;
-        }
-
-        if (!notifications.ContainsKey(method))
-        {
-            Debug.Log("No observers registered for method: " + method);
             return;
         }
 
