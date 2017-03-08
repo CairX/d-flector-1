@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CS_Enemy_Movement : MonoBehaviour
 {
-
     public float speed = 1.0f;
     public Transform path;
     public bool inPos = false;
@@ -43,7 +42,7 @@ public class CS_Enemy_Movement : MonoBehaviour
                 current = CS_Utils.Mod(current + 1, targets.Count);
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime * (speed/ CS_WorldManager.Instance.slowdown));
-            }   
+            transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime * (speed / CS_WorldManager.Instance.slowdown));
+        }
     }
 }

@@ -2,11 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_BaseMusic : MonoBehaviour {
+public class CS_BaseMusic : MonoBehaviour
+{
 
     private AudioSource speaker;
 
     public AudioClip musik;
+
+
+    public AudioClip intro;
+
+    public AudioClip loop1;
+    public AudioClip transistion1;
+    public AudioClip loop2;
+    public AudioClip transistion2;
+    public AudioClip loop3;
+
+    public AudioClip end;
+
+    private AudioClip curentloop;
 
     public GameObject vicktory;
     public GameObject failure;
@@ -14,7 +28,8 @@ public class CS_BaseMusic : MonoBehaviour {
     public GameObject Menu;
 
     // Use this for initialization
-    private void Start() {
+    private void Start()
+    {
         speaker = GetComponent<AudioSource>();
         speaker.PlayOneShot(musik);
         if (speaker.loop == false)
@@ -22,8 +37,6 @@ public class CS_BaseMusic : MonoBehaviour {
             speaker.loop = true;
         }
         speaker.volume = 0.2f;
-        //speaker.Pause();
-        Debug.Log("Noa");
     }
 
     // Update is called once per frame
@@ -31,47 +44,56 @@ public class CS_BaseMusic : MonoBehaviour {
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if(speaker.isPlaying == true)
+            if (speaker.isPlaying == true)
             {
                 speaker.Pause();
-                Debug.Log("Logan");
             }
             else
             {
-                Debug.Log("Smurfs");
                 speaker.UnPause();
-            }       
+            }
         }
-        if(Menu.activeSelf)
+        if (Menu.activeSelf)
         {
             speaker.Pause();
         }
-        
-        if(vicktory.activeSelf || failure.activeSelf)
+
+        if (vicktory.activeSelf || failure.activeSelf)
         {
-            Debug.Log("Dave");
             speaker.Stop();
         }
-        //Debug.Log(speaker.isPlaying);
     }
     public void PlayMusic()
     {
-        Debug.Log("Sven");
         speaker.UnPause();
     }
     public void PaseMusic()
     {
-        Debug.Log("Ola");
         speaker.Pause();
     }
     public void MusicVolume(float v)
     {
-        Debug.Log("Hilda");
         speaker.volume = v;
     }
     public void RestartMusic()
     {
-        Debug.Log("Bjork");
         speaker.UnPause();
+    }
+
+    public void diffrentlevel(int i)
+    {
+        if (i == 1)
+        {
+            curentloop = loop1;
+        }
+        if (i == 2)
+        {
+            curentloop = loop2;
+        }
+        if (i == 3)
+        {
+            curentloop = loop3;
+        }
+
     }
 }

@@ -352,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 114012468626427446, guid: 0f178e46633cbbf419b5ab25d4fd4905,
     type: 2}
-  projectileSpeed: 1
+  projectileSpeed: 2
   spawnLocation: {fileID: 4652001924942500}
   rotateObject: {fileID: 4139158373470484}
   spawnRate: 3

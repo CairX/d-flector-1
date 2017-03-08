@@ -4,28 +4,19 @@ using UnityEngine;
 
 public class CS_Avatar_MouseMovment : MonoBehaviour {
 
-    private Vector2 mousePosition;
-    private Vector2 mousePositionChange;
-
     public float boundaryStartX;
     public float boundaryStartY;
     public float boundaryStopX;
     public float boundaryStopY;
 
-    void Start () {
-    }
-	
-	void Update () {
+    void Update () {
         if (Time.timeScale <= 0) { return; }
+        Cursor.lockState = CursorLockMode.Locked;
 
-        mousePositionChange.x = Input.GetAxis("Mouse X");
-        mousePositionChange.y = Input.GetAxis("Mouse Y");
-        mousePosition.x = this.transform.position.x + mousePositionChange.x;
-        mousePosition.y = this.transform.position.y + mousePositionChange.y;
-        if (mousePosition.x > boundaryStartX && mousePosition.x < boundaryStopX && mousePosition.y > boundaryStartY && mousePosition.y < boundaryStopY)
-        {
-            this.transform.position = mousePosition;
-        }
+        Vector2 n = new Vector2(transform.position.x + Input.GetAxis("Mouse X"), transform.position.y + Input.GetAxis("Mouse Y"));
+        n.x = (n.x > boundaryStartX && n.x < boundaryStopX) ? n.x : transform.position.x;
+        n.y = (n.y > boundaryStartY && n.y < boundaryStopY) ? n.y : transform.position.y;
 
+        transform.position = n;
     }
 }

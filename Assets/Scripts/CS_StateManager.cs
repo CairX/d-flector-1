@@ -236,6 +236,17 @@ public class CS_StateManager : MonoBehaviour {
         Cursor.visible = true;
     }
 
+    public void LoadLevel(int level)
+    {
+        CS_WorldManager.Instance.level = level;
+        RestartGame();
+    }
+
+    public void Nextlevel()
+    {
+        LoadLevel(CS_WorldManager.Instance.level + 1);
+    }
+
     public void RestartGame()
     {
         CS_WorldManager.Instance.state = State.Playing;

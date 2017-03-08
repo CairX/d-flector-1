@@ -10,10 +10,10 @@ public class CS_Projectile_Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     private bool speedup = false;
+
     [Range(0, 360)]
     public float angle;
     public float speed;
-
 
     private float stickyAngle;
     private float stickySpeed;
@@ -26,21 +26,24 @@ public class CS_Projectile_Movement : MonoBehaviour
         CS_Notifications.Instance.Register(this, "Relese");
 
         UpdateRotation(angle);
-        rb.AddForce(direction * (speed * FORCE));
     }
+
     void Update()
     {
-        if ((CS_WorldManager.Instance.slowdown != 1  && speedup == false) || (CS_WorldManager.Instance.slowdown == 1 && speedup == true))
+        if ((CS_WorldManager.Instance.slowdown != 1  && speedup == false) ||
+            (CS_WorldManager.Instance.slowdown == 1 && speedup == true))
         {
             speedup = true;
             rb.velocity = Vector2.zero;
-            rb.AddForce(direction * ((speed * 100) / CS_WorldManager.Instance.slowdown));
-          if(CS_WorldManager.Instance.slowdown == 1)
+            rb.AddForce(direction * ((speed * FORCE) / CS_WorldManager.Instance.slowdown));
+
+            if(CS_WorldManager.Instance.slowdown == 1)
             {
                 speedup = false;
             }
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         UpdateRotation(CS_Utils.PointToDegree(rb.velocity.normalized));
@@ -67,14 +70,14 @@ public class CS_Projectile_Movement : MonoBehaviour
         newAngle = CS_Utils.Mod(newAngle + 180, 360);
 
         UpdateRotation(newAngle);
-        rb.velocity = direction * speed;
     }
 
-    private void UpdateRotation(float a)
+    public void UpdateRotation(float a)
     {
         angle = a;
         direction = CS_Utils.DegreeToPoint(a);
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, a - 90);
+        rb.velocity = direction * (speed / CS_WorldManager.Instance.slowdown);
     }
 
     public void Stick()
@@ -94,8 +97,7 @@ public class CS_Projectile_Movement : MonoBehaviour
             angle = stickyAngle;
             speed = stickySpeed;
             direction = stickyDirection;
-      UpdateRotation(angle);
-        rb.AddForce((direction * (speed * FORCE)) * -1);
+            UpdateRotation(angle);
         }
     }
 }

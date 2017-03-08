@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010959746214292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 1.2, z: 0}
+  m_LocalPosition: {x: 1, y: 0.4, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_Children:
   - {fileID: 4977111794078354}
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 114360880195198422, guid: b26753741ddb1ad45b4a988e21099aa9,
     type: 2}
-  projectileSpeed: 1
+  projectileSpeed: 2
   spawnLocation: {fileID: 4977111794078354}
   rotateObject: {fileID: 4199720685280716}
   spawnRate: 3
