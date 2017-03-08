@@ -42,6 +42,8 @@ public class CS_Projectile_Type_Homing : CS_Projectile_Type
             }
             else if (enemies.Length > 1)
             {
+                target = enemies[0];
+
                 foreach (GameObject enemy in enemies)
                 {
                     if (Vector3.Distance(transform.position, enemy.transform.position) <
