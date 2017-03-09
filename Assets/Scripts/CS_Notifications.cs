@@ -7,8 +7,7 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
     protected CS_Notifications() { }
 
     private Dictionary<string, HashSet<Component>> notifications = new Dictionary<string, HashSet<Component>>();
-    private Dictionary<string, HashSet<Component>> cacheRegister = new Dictionary<string, HashSet<Component>>();
-    private Dictionary<string, HashSet<Component>> cacheUnregister = new Dictionary<string, HashSet<Component>>();
+    private List<NotificationEvent> events = new List<NotificationEvent>();
 
     private static void InitKey(Dictionary<string, HashSet<Component>> dict, string key)
     {
@@ -20,27 +19,23 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
 
     private void UpdateCache()
     {
-        foreach (var pair in cacheRegister)
+        foreach (NotificationEvent ev in events)
         {
-            InitKey(notifications, pair.Key);
-            foreach (var observer in pair.Value)
+            switch (ev.action)
             {
-                notifications[pair.Key].Add(observer);
+                case Action.Register:
+                    InitKey(notifications, ev.method);
+                    notifications[ev.method].Add(ev.component);
+                    break;
+                case Action.Unregister:
+                    InitKey(notifications, ev.method);
+                    notifications[ev.method].Remove(ev.component);
+                    break;
+                default:
+                    break;
             }
         }
-        cacheRegister.Clear();
-
-        foreach (var pair in cacheUnregister)
-        {
-            foreach (var observer in pair.Value)
-            {
-                if (notifications.ContainsKey(pair.Key))
-                {
-                    notifications[pair.Key].Remove(observer);
-                }
-            }
-        }
-        cacheUnregister.Clear();
+        events.Clear();
     }
 
     public void Register(Component observer, string method)
@@ -51,8 +46,7 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
             return;
         }
 
-        InitKey(cacheRegister, method);
-        cacheRegister[method].Add(observer);
+        events.Add(new NotificationEvent(Action.Register, method, observer));
     }
 
     public void Unregister(Component observer, string method)
@@ -63,8 +57,7 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
             return;
         }
 
-        InitKey(cacheUnregister, method);
-        cacheUnregister[method].Add(observer);
+        events.Add(new NotificationEvent(Action.Unregister, method, observer));
     }
 
     public void Post(Component sender, string method)
@@ -98,6 +91,22 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
         foreach (Component observer in remove)
         {
             notifications[method].Remove(observer);
+        }
+    }
+
+    private enum Action { Register, Unregister }
+
+    private class NotificationEvent
+    {
+        public Action action;
+        public string method;
+        public Component component;
+
+        public NotificationEvent(Action action, string method, Component component)
+        {
+            this.action = action;
+            this.method = method;
+            this.component = component;
         }
     }
 }
