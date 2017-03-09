@@ -34,7 +34,10 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
         {
             foreach (var observer in pair.Value)
             {
-                notifications[pair.Key].Remove(observer);
+                if (notifications.ContainsKey(pair.Key))
+                {
+                    notifications[pair.Key].Remove(observer);
+                }
             }
         }
         cacheUnregister.Clear();
