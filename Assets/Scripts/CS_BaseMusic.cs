@@ -116,22 +116,25 @@ public class CS_BaseMusic : MonoBehaviour
         
         if (stage == 1)
         {
+            //speaker.loop = false;
             speaker.PlayOneShot(intro);
-            speaker.loop = false;
+            
             stage = 2;
         }
         else if (stage == 2)
-        {
-            speaker.PlayOneShot(curentloop);
+        {         
+            speaker.clip = curentloop;
+            speaker.Play();
             speaker.loop = true;
             stage = 3;
+            Debug.Log("Yes");
         }
-        else if (stage == 3)
+        else if (stage == 3 && speaker.loop == false)
         {
+            Debug.Log("Noooo!");
             speaker.PlayOneShot(end);
             speaker.loop = false;
         }
-        Debug.Log("Wakey Wakey mother fucker, is it looping : " + speaker.loop);
         /*
         else if (stage == 4)
         {
