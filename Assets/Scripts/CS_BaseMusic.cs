@@ -27,6 +27,10 @@ public class CS_BaseMusic : MonoBehaviour
     public GameObject vicktory;
     public GameObject failure;
 
+    public GameObject lv1;
+    public GameObject lv2;
+    public GameObject lv3;
+
     public GameObject Menu;
 
     public float transitionTime;
@@ -41,6 +45,22 @@ public class CS_BaseMusic : MonoBehaviour
         speaker = GetComponent<AudioSource>();
         speaker.volume = 0.2f;
         DiffrentLevel(3);
+        if (Menu.activeSelf)
+        {
+
+        }
+        else if (lv1.activeSelf)
+        {
+            DiffrentLevel(1);
+        }
+        else if (lv2.activeSelf)
+        {
+            DiffrentLevel(2);
+        }
+        else if (lv3.activeSelf)
+        {
+            DiffrentLevel(3);
+        }
     }
 
     // Update is called once per frame
@@ -70,7 +90,7 @@ public class CS_BaseMusic : MonoBehaviour
             speaker.Stop();
             okay = false;
         }
-        if (okay && speaker.isPlaying == false && speaker.loop == false)
+        else if (okay && speaker.isPlaying == false && speaker.loop == false)
         {
             Nextstep();
         }
