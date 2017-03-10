@@ -59,7 +59,20 @@ public class CS_Avatar_Health : MonoBehaviour {
     {
         GameObject cgo = collision.gameObject;
 
-        if (cgo.tag == "Enemy" || (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy()))
+        if (cgo.tag == "Enemy")
+        {
+            foreach (HealthPoint hp in healthPoints)
+            {
+                hp.hud.SetActive(false);
+            }
+
+            spriteRenderer.sprite = healthPoints[healthPoints.Length -1].avatar;
+            changeSprite = false;
+
+            CS_Notifications.Instance.Post(this, "OnGameOver");
+        }
+
+        if (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isEnemy())
         {
             OnAvatarDamage();
         }
