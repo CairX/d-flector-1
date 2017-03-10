@@ -22,7 +22,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
         rb = this.GetComponent<Rigidbody2D>();
         randomX = Random.Range(2.0f, 3.0f);
         randomY = Random.Range(-2.0f, 2.0f);
-        randomSpin = Random.Range(-5f,5f);
+        randomSpin = Random.Range(-3f,3f);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -31,21 +31,11 @@ public class CS_Enemy_Collision : MonoBehaviour {
         {
             dead = true;
             diedThisFrame = true;
-            float randomValue = Random.Range(1.0f,12.0f);
+            float randomValue = Random.Range(1.0f,8.0f);
             if (randomValue >= 1.0f && randomValue < 2.0f)
             {
                 twinShieldPowerUp.transform.position = transform.position;
                 Instantiate(twinShieldPowerUp);
-            }
-            else if(randomValue >= 2.0f && randomValue < 3.0f)
-            {
-                slowMotionPowerUp.transform.position = transform.position;
-              Instantiate(slowMotionPowerUp);
-            }
-            else if (randomValue >= 3.0f && randomValue < 4.0f)
-            {
-                stickyBombPowerUp.transform.position = transform.position;
-                Instantiate(stickyBombPowerUp);
             }
 
             CS_Notifications.Instance.Post(this, "EnemyDead");
