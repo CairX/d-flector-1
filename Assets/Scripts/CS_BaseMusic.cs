@@ -20,6 +20,8 @@ public class CS_BaseMusic : MonoBehaviour
 
     public AudioClip end;
 
+    public AudioClip menuMusic;
+
 
     private AudioClip curentstart;
     private AudioClip curentloop;
@@ -47,7 +49,9 @@ public class CS_BaseMusic : MonoBehaviour
         DiffrentLevel(3);
         if (Menu.activeSelf)
         {
-
+            speaker.clip = menuMusic;
+            speaker.Play();
+            speaker.loop = true;
         }
         else if (lv1.activeSelf)
         {
