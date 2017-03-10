@@ -20,6 +20,8 @@ public class CS_BaseMusic : MonoBehaviour
 
     public AudioClip end;
 
+
+    private AudioClip curentstart;
     private AudioClip curentloop;
 
     public GameObject vicktory;
@@ -38,7 +40,7 @@ public class CS_BaseMusic : MonoBehaviour
     {
         speaker = GetComponent<AudioSource>();
         speaker.volume = 0.2f;
-        curentloop = loop1;
+        DiffrentLevel(3);
     }
 
     // Update is called once per frame
@@ -97,14 +99,17 @@ public class CS_BaseMusic : MonoBehaviour
         if (i == 1)
         {
             curentloop = loop1;
+            curentstart = intro;
         }
         if (i == 2)
         {
             curentloop = loop2;
+            curentstart = transistion1;
         }
         if (i == 3)
         {
             curentloop = loop3;
+            curentstart = transistion2;
         }
     }
     public void StopLoop()
@@ -117,7 +122,7 @@ public class CS_BaseMusic : MonoBehaviour
         if (stage == 1)
         {
             //speaker.loop = false;
-            speaker.PlayOneShot(intro);
+            speaker.PlayOneShot(curentstart);
             
             stage = 2;
         }
