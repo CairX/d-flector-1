@@ -299,6 +299,8 @@ public class CS_StateManager : MonoBehaviour {
     }
     public void levelSelectScreen()
     {
-
+        CS_WorldManager.Instance.state = State.Tutorial;
+        DisableAllStates();
+        levelSelect.SetActive(true);
     }
 }

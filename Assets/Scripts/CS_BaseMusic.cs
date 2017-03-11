@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CS_BaseMusic : MonoBehaviour
 {
+
+    public Slider SoundSlider;
 
     private AudioSource speaker;
 
