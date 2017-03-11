@@ -32,7 +32,7 @@ public class CS_BaseMusic : MonoBehaviour
     public GameObject lv1;
     public GameObject lv2;
     public GameObject lv3;
-
+    public GameObject pause;
     public GameObject Menu;
 
     private float volume;
@@ -79,20 +79,10 @@ public class CS_BaseMusic : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (speaker.isPlaying == true)
-            {
-                speaker.Pause();
-                okay = false;
-            }
-            else
-            {
-                speaker.UnPause();
-                okay = true;
-            }
+            PauseScreen();
         }
         if (Menu.activeSelf)
         {
-            speaker.Pause();
             okay = false;
         }
 
@@ -103,18 +93,22 @@ public class CS_BaseMusic : MonoBehaviour
         }
         else if (lv1.activeSelf && test == false)
         {
+            speaker.Stop();
             DiffrentLevel(1);
         }
         else if (lv2.activeSelf && test == false)
         {
+            speaker.Stop();
             DiffrentLevel(2);
         }
         else if (lv3.activeSelf && test == false)
         {
+            speaker.Stop();
             DiffrentLevel(3);
         }
         else if (okay && speaker.isPlaying == false && speaker.loop == false)
         {
+            speaker.Stop();
             Debug.Log("How Did i get here?");
             Nextstep();
         }
@@ -162,6 +156,19 @@ public class CS_BaseMusic : MonoBehaviour
     public void StopLoop()
     {
         speaker.loop = false;
+    }
+    public void PauseScreen()
+    {
+        if (speaker.isPlaying == true)
+        {
+            speaker.Pause();
+            okay = false;
+        }
+        else
+        {
+            speaker.UnPause();
+            okay = true;
+        }
     }
     public void Nextstep()
     {

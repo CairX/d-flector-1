@@ -30,8 +30,15 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     void Update()
     {
+
+        if (speedup == false || speedup == true)
+        {
+            speedup = true;
             rb.velocity = Vector2.zero;
             rb.AddForce(direction * (speed * FORCE));
+
+            speedup = false;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
