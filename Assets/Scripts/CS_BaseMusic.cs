@@ -53,18 +53,18 @@ public class CS_BaseMusic : MonoBehaviour
             speaker.Play();
             speaker.loop = true;
         }
-        else if (lv1.activeSelf)
-        {
-            DiffrentLevel(1);
-        }
-        else if (lv2.activeSelf)
-        {
-            DiffrentLevel(2);
-        }
-        else if (lv3.activeSelf)
-        {
-            DiffrentLevel(3);
-        }
+        //else if (lv1.activeSelf)
+        //{
+        //    DiffrentLevel(1);
+        //}
+        //else if (lv2.activeSelf)
+        //{
+        //    DiffrentLevel(2);
+        //}
+        //else if (lv3.activeSelf)
+        //{
+        //    DiffrentLevel(3);
+        //}
     }
 
     // Update is called once per frame
