@@ -35,34 +35,41 @@ public class CS_BaseMusic : MonoBehaviour
 
     public GameObject Menu;
 
-    public float transitionTime;
+    private float volume;
 
     private int stage = 1;
 
     private bool okay = true;
 
+    private bool test = false;
+
     // Use this for initialization
     private void Start()
     {
         speaker = GetComponent<AudioSource>();
-        speaker.volume = 0.2f;
-        DiffrentLevel(3);
+        //speaker.volume = 0.2f;
+        speaker.Stop();
         if (Menu.activeSelf)
         {
+            Debug.Log("Menu");
+
             speaker.clip = menuMusic;
             speaker.Play();
             speaker.loop = true;
         }
         else if (lv1.activeSelf)
         {
+            Debug.Log("Level 1");
             DiffrentLevel(1);
         }
         else if (lv2.activeSelf)
         {
+            Debug.Log("Level 2");
             DiffrentLevel(2);
         }
         else if (lv3.activeSelf)
         {
+            Debug.Log("Level 3");
             DiffrentLevel(3);
         }
     }
@@ -94,8 +101,21 @@ public class CS_BaseMusic : MonoBehaviour
             speaker.Stop();
             okay = false;
         }
+        else if (lv1.activeSelf && test == false)
+        {
+            DiffrentLevel(1);
+        }
+        else if (lv2.activeSelf && test == false)
+        {
+            DiffrentLevel(2);
+        }
+        else if (lv3.activeSelf && test == false)
+        {
+            DiffrentLevel(3);
+        }
         else if (okay && speaker.isPlaying == false && speaker.loop == false)
         {
+            Debug.Log("How Did i get here?");
             Nextstep();
         }
     }
@@ -135,6 +155,9 @@ public class CS_BaseMusic : MonoBehaviour
             curentloop = loop3;
             curentstart = transistion2;
         }
+        Debug.Log("Got Here");
+        speaker.loop = false;
+        test = true;
     }
     public void StopLoop()
     {
@@ -156,7 +179,7 @@ public class CS_BaseMusic : MonoBehaviour
             speaker.Play();
             speaker.loop = true;
             stage = 3;
-            Debug.Log("Yes");
+            Debug.Log("Huh");
         }
         else if (stage == 3 && speaker.loop == false)
         {
