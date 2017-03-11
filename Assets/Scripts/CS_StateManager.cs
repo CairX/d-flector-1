@@ -13,6 +13,7 @@ public class CS_StateManager : MonoBehaviour {
         VictoryMenu,
         GameOverMenu,
         Playing,
+        LevelSelect,
         Tutorial
     }
 
@@ -34,6 +35,8 @@ public class CS_StateManager : MonoBehaviour {
                 return State.Playing;
             case "Tutorial":
                 return State.Tutorial;
+            case "LevelSelect":
+                return State.LevelSelect;
             default:
                 return State.StartMenu;
         }
@@ -46,6 +49,7 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject gameOverMenu;
     public GameObject playing;
     public GameObject tutorialScreen;
+    public GameObject levelSelect;
 
     private State previousState;
 
@@ -114,6 +118,9 @@ public class CS_StateManager : MonoBehaviour {
             case State.Tutorial:
                 GoToTutorial();
                 break;
+            case State.LevelSelect:
+                levelSelectScreen();
+                break;
             default:
                 break;
         }
@@ -137,6 +144,8 @@ public class CS_StateManager : MonoBehaviour {
                 return playing;
             case State.Tutorial:
                 return tutorialScreen;
+            case State.LevelSelect:
+                return levelSelect;
             default:
                 throw new System.Exception("No GameObject matched with State.");
         }
@@ -171,6 +180,10 @@ public class CS_StateManager : MonoBehaviour {
         if (tutorialScreen != null)
         {
             tutorialScreen.SetActive(false);
+        }
+        if(levelSelect != null)
+        {
+            levelSelect.SetActive(false);
         }
 
         RestoreCursor();
@@ -283,5 +296,9 @@ public class CS_StateManager : MonoBehaviour {
     public void QuitApplication()
     {
         Application.Quit();
+    }
+    public void levelSelectScreen()
+    {
+
     }
 }
