@@ -7,9 +7,6 @@ public class CS_BaseMusic : MonoBehaviour
 
     private AudioSource speaker;
 
-    public AudioClip musik;
-
-
     public AudioClip intro;
 
     public AudioClip loop1;

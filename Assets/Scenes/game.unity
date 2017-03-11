@@ -14148,16 +14148,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251bf4b963b110746ba6856f79d9ca0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musik: {fileID: 8300000, guid: 8ddb32d003f4cac479d9318097b69258, type: 3}
-  intro: {fileID: 8300000, guid: 9d1f3631e6915d148a6788268c852257, type: 3}
-  loop1: {fileID: 8300000, guid: d18e2828c3706e144b3f0d81bb510ff3, type: 3}
-  transistion1: {fileID: 8300000, guid: 5fcbda964a57f974793544caa1cb1c1a, type: 3}
-  loop2: {fileID: 8300000, guid: 044f9287ca4e39c43ad946887e417e1d, type: 3}
-  transistion2: {fileID: 8300000, guid: d103afbdd393fe141874183ad962676c, type: 3}
-  loop3: {fileID: 8300000, guid: db50b6dfa77c34a439060c8765c4a3da, type: 3}
+  intro: {fileID: 8300000, guid: 72d5579ffbc5ebc488a05795954eea86, type: 3}
+  loop1: {fileID: 8300000, guid: 5bd5f02cb0393d04181ef02b3b35341e, type: 3}
+  transistion1: {fileID: 8300000, guid: 98757dde22e3b4440aafe8cc43e286a6, type: 3}
+  loop2: {fileID: 8300000, guid: 7c6451da90d90924c9c1dc548f2dbe88, type: 3}
+  transistion2: {fileID: 8300000, guid: 87c13ed958fbd7c4480d000db622239b, type: 3}
+  loop3: {fileID: 8300000, guid: ef7ab2f4f0117d24aab7312f7085355a, type: 3}
   end: {fileID: 8300000, guid: b38cab76ddcf63148a617534d4e692e8, type: 3}
+  menuMusic: {fileID: 8300000, guid: b92855b2b4aaf064bb9f0addf860d298, type: 3}
   vicktory: {fileID: 1480017448}
   failure: {fileID: 695428800}
+  lv1: {fileID: 1853057661}
+  lv2: {fileID: 1290165440}
+  lv3: {fileID: 697242174}
   Menu: {fileID: 534882986}
   transitionTime: 0
 --- !u!82 &1892473385
@@ -14169,7 +14172,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8ddb32d003f4cac479d9318097b69258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 72d5579ffbc5ebc488a05795954eea86, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -14253,7 +14256,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14329,11 +14332,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 044f9287ca4e39c43ad946887e417e1d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b92855b2b4aaf064bb9f0addf860d298, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14409,11 +14412,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d18e2828c3706e144b3f0d81bb510ff3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 87c13ed958fbd7c4480d000db622239b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14489,11 +14492,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d103afbdd393fe141874183ad962676c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98757dde22e3b4440aafe8cc43e286a6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14569,11 +14572,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5fcbda964a57f974793544caa1cb1c1a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ef7ab2f4f0117d24aab7312f7085355a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14649,11 +14652,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9d1f3631e6915d148a6788268c852257, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7c6451da90d90924c9c1dc548f2dbe88, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14729,7 +14732,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b38cab76ddcf63148a617534d4e692e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5bd5f02cb0393d04181ef02b3b35341e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
