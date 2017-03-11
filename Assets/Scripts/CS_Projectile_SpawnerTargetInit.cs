@@ -12,7 +12,6 @@ public class CS_Projectile_SpawnerTargetInit : MonoBehaviour
     public Transform rotateObject;
     public float spawnRate = 0.0f;
     private float timer;
-    private int delay = 1;
 
     private Transform target;
     private Transform parent;
@@ -26,9 +25,6 @@ public class CS_Projectile_SpawnerTargetInit : MonoBehaviour
 
     void Update()
     {
-        //not happy
-        if(delay >= CS_WorldManager.Instance.slowdown * 2)
-        { 
             float angle = CS_Utils.PointToDegree(target.position - rotateObject.position);
             if (rotateObject)
             {
@@ -42,12 +38,5 @@ public class CS_Projectile_SpawnerTargetInit : MonoBehaviour
                 i.speed = projectileSpeed;
                 timer = spawnRate;
             }
-
-            delay = 1;
-        }
-        else
-        {
-            delay++;
-        }
     }
 }

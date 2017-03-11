@@ -30,18 +30,8 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     void Update()
     {
-        if ((CS_WorldManager.Instance.slowdown != 1  && speedup == false) ||
-            (CS_WorldManager.Instance.slowdown == 1 && speedup == true))
-        {
-            speedup = true;
             rb.velocity = Vector2.zero;
-            rb.AddForce(direction * ((speed * FORCE) / CS_WorldManager.Instance.slowdown));
-
-            if(CS_WorldManager.Instance.slowdown == 1)
-            {
-                speedup = false;
-            }
-        }
+            rb.AddForce(direction * (speed * FORCE));
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -77,7 +67,7 @@ public class CS_Projectile_Movement : MonoBehaviour
         angle = a;
         direction = CS_Utils.DegreeToPoint(a);
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, a - 90);
-        rb.velocity = direction * (speed / CS_WorldManager.Instance.slowdown);
+        rb.velocity = direction * speed;
     }
 
     public void Stick()

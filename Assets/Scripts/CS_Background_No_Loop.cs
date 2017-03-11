@@ -19,7 +19,7 @@ public class CS_Background_No_Loop : MonoBehaviour {
     {
         if (Time.timeScale <= 0) { return; }
 
-        transform.position = new Vector3(transform.position.x + (movementX / CS_WorldManager.Instance.slowdown), transform.position.y + (movementY / CS_WorldManager.Instance.slowdown), transform.position.z);
+        transform.position = new Vector3(transform.position.x + movementX, transform.position.y + movementY, transform.position.z);
 
 
 
