@@ -124,10 +124,6 @@ public class CS_BaseMusic : MonoBehaviour
         speaker.Pause();
         okay = true;
     }
-    public void MusicVolume(float v)
-    {
-        speaker.volume = v;
-    }
     public void RestartMusic()
     {
         speaker.UnPause();
@@ -197,5 +193,11 @@ public class CS_BaseMusic : MonoBehaviour
             speaker.PlayOneShot(end);
             speaker.loop = false;
         }
+    }
+
+    public void OnValueChanged()
+    {
+        speaker.volume = SoundSlider.value;
+        Debug.Log("new volume is " + speaker.volume);
     }
 }

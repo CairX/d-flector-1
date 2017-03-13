@@ -234,4 +234,9 @@ public class CS_MasterAudio : MonoBehaviour
 
     }
     //dosent sem to work
+    public void OnValueChanged()
+    {
+        speaker.volume = SoundSlider.value;
+        Debug.Log("new volume is " + speaker.volume);
     }
+}
