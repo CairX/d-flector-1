@@ -18221,7 +18221,7 @@ MonoBehaviour:
       enemy: 0
       enemyObject: {fileID: 0}
       spawnDeley: 1
-      spawnPosition: 2
+      spawnPosition: 7
       spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
       movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
