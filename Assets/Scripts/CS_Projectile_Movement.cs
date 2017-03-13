@@ -9,7 +9,6 @@ public class CS_Projectile_Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 direction;
-    private bool speedup = false;
 
     [Range(0, 360)]
     public float angle;
@@ -26,19 +25,6 @@ public class CS_Projectile_Movement : MonoBehaviour
         CS_Notifications.Instance.Register(this, "Relese");
 
         UpdateRotation(angle);
-    }
-
-    void Update()
-    {
-
-        if (speedup == false || speedup == true)
-        {
-            speedup = true;
-            rb.velocity = Vector2.zero;
-            rb.AddForce(direction * (speed * FORCE));
-
-            speedup = false;
-        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
