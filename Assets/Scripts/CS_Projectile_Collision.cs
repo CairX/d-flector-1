@@ -13,7 +13,7 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     private static float COLLISION_COOLDOWN = 0.16f;
 
-    private int healthPointIndex = 0;
+    private int healthPointIndex = -1;
     public List<ProjectileHealthPoint> healthPoints = new List<ProjectileHealthPoint>();
 
     private Owner owner = Owner.Enemy;
