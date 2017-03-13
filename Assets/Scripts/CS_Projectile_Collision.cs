@@ -59,6 +59,8 @@ public class CS_Projectile_Collision : MonoBehaviour
 
         //GameObject paro = Instantiate(avatarParticle, transform.position, transform.rotation);
         Rigidbody2D trb = GetComponent<Rigidbody2D>();
+        var orthogonalVector = col.contacts[0].point - transform.position;
+        var collisionAngle = Vector3.Angle(orthogonalVector, rigidbody.velocity);
         Quaternion qr = Quaternion.LookRotation(trb.velocity);
         qr.eulerAngles = new Vector3(0, 0, CS_Utils.PointToDegree(trb.velocity * -1));
         float angle = CS_Utils.PointToDegree(collision.contacts[0].normal);
