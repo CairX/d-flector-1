@@ -19,9 +19,10 @@ public class CS_Projectile_Collision : MonoBehaviour
     private Owner owner = Owner.Enemy;
 
     public GameObject avatarVisuals;
-    public GameObject avatarParticle;
+    public GameObject avatarParticles;
+
     public GameObject enemyVisuals;
-    public GameObject enemyParticle;
+    public GameObject enemyParticles;
 
     public GameObject stickyParent;
 
@@ -29,16 +30,21 @@ public class CS_Projectile_Collision : MonoBehaviour
     private CS_Projectile_Type projectileType;
     private CS_Projectile_Movement movement;
 
+    private Rigidbody2D rb;
+    private float previousAngle = 0.0f;
+
     void Start ()
     {
         collisionTimer = COLLISION_COOLDOWN;
 
         projectileType = GetComponent<CS_Projectile_Type>();
         movement = GetComponent<CS_Projectile_Movement>();
+        rb = GetComponent<Rigidbody2D>();
 
         ChangeOwner(owner);
-    }
 
+        StartCoroutine(PreviousAngle());
+    }
 
     private void Update()
     {
@@ -56,50 +62,51 @@ public class CS_Projectile_Collision : MonoBehaviour
 
         UpdateHealth();
         RouteOnCollisionEnter2D(collision);
+        FireCollisionParticle(collision);
 
-        //GameObject paro = Instantiate(avatarParticle, transform.position, transform.rotation);
-        Rigidbody2D trb = GetComponent<Rigidbody2D>();
-        var orthogonalVector = col.contacts[0].point - transform.position;
-        var collisionAngle = Vector3.Angle(orthogonalVector, rigidbody.velocity);
-        Quaternion qr = Quaternion.LookRotation(trb.velocity);
-        qr.eulerAngles = new Vector3(0, 0, CS_Utils.PointToDegree(trb.velocity * -1));
-        float angle = CS_Utils.PointToDegree(collision.contacts[0].normal);
-        Debug.Log(qr.eulerAngles);
-        //Quaternion q = Quaternion.LookRotation();
-        //GameObject paro = Instantiate(avatarParticle, collision.contacts[0].point, new Quaternion());
-        Quaternion q = transform.rotation;
-        GameObject paro = Instantiate(avatarParticle, collision.contacts[0].point, qr);
-        ParticleSystem par = paro.GetComponent<ParticleSystem>();
-        par.Play();
-
-        Destroy(paro, par.main.duration);
-        //Debug.Log(avatarParticle);
-        //Transform part = enemyVisuals.transform.GetChild(1);
-        //part.Rotate(transform.rotation.eulerAngles);
-        //GetComponent<Rigidbody2D>().velocity.normalized * -1;
-        //part.RotateAround(transform.position, Vector3.forward, CS_Utils.PointToDegree(GetComponent<Rigidbody2D>().velocity.normalized));
-        //part.GetComponent<ParticleSystem>().Play();
-        //avatarParticle.Play();
-        //avatarParticle.Emit(100);
-
-        if (projectileType && healthPointIndex > 0)
+        if (projectileType && isAlive())
         {
             projectileType.SpecialCollision(collision);
         }
+
+        StartCoroutine(PreviousAngle());
     }
 
     private void UpdateHealth()
     {
         healthPointIndex++;
-        if (healthPointIndex >= healthPoints.Count)
-        {
-            Destroy(gameObject);
-        }
-        else
+        if (isAlive())
         {
             avatarVisuals.GetComponent<SpriteRenderer>().sprite = healthPoints[healthPointIndex].avatar;
             enemyVisuals.GetComponent<SpriteRenderer>().sprite = healthPoints[healthPointIndex].enemy;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private bool isAlive() {
+        return (healthPointIndex < healthPoints.Count);
+    }
+
+    private void FireCollisionParticle(Collision2D collision)
+    {
+        Quaternion quaternion = new Quaternion();
+        quaternion.eulerAngles = new Vector3(0, 0, previousAngle);
+
+        GameObject prefab;
+        if (isAvatar())
+        {
+            prefab = avatarParticles;
+        } else
+        {
+            prefab = enemyParticles;
+        }
+
+        GameObject pararticles = Instantiate(prefab, collision.contacts[0].point, quaternion);
+        ParticleSystem par = pararticles.GetComponent<ParticleSystem>();
+        Destroy(pararticles, par.main.duration);
     }
 
     private void RouteOnCollisionEnter2D(Collision2D collision)
@@ -166,7 +173,12 @@ public class CS_Projectile_Collision : MonoBehaviour
         {
             ChangeOwner(Owner.Avatar);
         }
+    }
 
+    private IEnumerator PreviousAngle()
+    {
+        yield return new WaitForEndOfFrame();
+        previousAngle = CS_Utils.PointToDegree(rb.velocity);
     }
 
     public bool isAvatar()
