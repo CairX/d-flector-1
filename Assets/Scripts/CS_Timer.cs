@@ -88,6 +88,7 @@ public class CS_Timer : MonoBehaviour
     public void OnVictory()
     {
         TimerPause();
+        Debug.Log("You completed the game in: " + timer);
     }
 
     private void OnGameOver()
