@@ -54,7 +54,7 @@ public class CS_MasterAudio : MonoBehaviour
     {
 
         speaker = GetComponent<AudioSource>();
-
+        SoundSlider.value = CS_WorldManager.Instance.volumeSoundEfeckt;
         //SoundSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
@@ -236,6 +236,7 @@ public class CS_MasterAudio : MonoBehaviour
     //dosent sem to work
     public void OnValueChanged()
     {
+        CS_WorldManager.Instance.volumeMusic = SoundSlider.value;
         speaker.volume = SoundSlider.value;
         Debug.Log("new volume is " + speaker.volume);
     }

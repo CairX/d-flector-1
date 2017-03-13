@@ -72,7 +72,9 @@ public class CS_BaseMusic : MonoBehaviour
             Debug.Log("Level 3");
             DiffrentLevel(3);
         }
-    }
+        SoundSlider.value = CS_WorldManager.Instance.volumeMusic;
+
+        }
 
     // Update is called once per frame
     private void Update()
@@ -197,6 +199,7 @@ public class CS_BaseMusic : MonoBehaviour
 
     public void OnValueChanged()
     {
+        CS_WorldManager.Instance.volumeMusic = SoundSlider.value;
         speaker.volume = SoundSlider.value;
         Debug.Log("new volume is " + speaker.volume);
     }
