@@ -15,7 +15,7 @@ public class CS_Projectile_SpawnerRandom : MonoBehaviour {
 
 	void Start () {
         parent = GameObject.FindWithTag("Playing").transform;
-        timer = spawnRate;
+        timer = 0.0f;
 	}
 	
 	void Update () {

@@ -20,7 +20,7 @@ public class CS_Projectile_SpawnerRotating : MonoBehaviour
     void Start()
     {
         parent = GameObject.FindWithTag("Playing").transform;
-        timer = spawnRate;
+        timer = 0.0f;
     }
 
     void Update()
