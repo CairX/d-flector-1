@@ -121,7 +121,7 @@ public class CS_Projectile_Collision : MonoBehaviour
             prefab = enemyParticles;
         }
 
-        GameObject pararticles = Instantiate(prefab, collision.contacts[0].point, quaternion);
+        GameObject pararticles = Instantiate(prefab, collision.contacts[0].point, quaternion, transform.parent);
         ParticleSystem par = pararticles.GetComponent<ParticleSystem>();
         Destroy(pararticles, par.main.duration);
     }
