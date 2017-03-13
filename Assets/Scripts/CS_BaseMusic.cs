@@ -34,7 +34,6 @@ public class CS_BaseMusic : MonoBehaviour
     public GameObject lv3;
     public GameObject pause;
     public GameObject Menu;
-
     private int stage = 1;
 
     private bool okay = true;
@@ -172,8 +171,8 @@ public class CS_BaseMusic : MonoBehaviour
         if (stage == 1)
         {
             Debug.Log("intro");
-            speaker.PlayOneShot(curentstart);           
-            stage = 2;
+            speaker.PlayOneShot(curentstart);
+            stage++;
         }
         else if (stage == 2)
         {
@@ -181,16 +180,16 @@ public class CS_BaseMusic : MonoBehaviour
             speaker.clip = curentloop;
             speaker.Play();
             speaker.loop = true;
-            stage = 3;
-            Debug.Log("Huh");
+            stage++;
         }
         else if (stage == 3 && speaker.loop == false)
         {
             Debug.Log("outro");
             speaker.PlayOneShot(end);
-            speaker.loop = false;
+            Debug.Log(speaker.loop);
+            stage++;
         }
-        else if (stage == 4 && speaker.loop == false)
+        else if (stage == 4)
         {
             CS_Notifications.Instance.Post(this, "OnVictory");
         }
@@ -205,6 +204,8 @@ public class CS_BaseMusic : MonoBehaviour
     }
     private void OnSoundV()
     {
+        Debug.Log("okay");
+        Debug.Log(speaker.loop);
         speaker.loop = false;
     }
 }
