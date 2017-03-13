@@ -34,8 +34,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
             float randomValue = Random.Range(1.0f,8.0f);
             if (randomValue >= 1.0f && randomValue < 2.0f)
             {
-                twinShieldPowerUp.transform.position = transform.position;
-                Instantiate(twinShieldPowerUp);
+                Instantiate(twinShieldPowerUp, transform.position, new Quaternion(), transform.parent);
             }
 
             CS_Notifications.Instance.Post(this, "EnemyDead");
