@@ -19,7 +19,9 @@ public class CS_Projectile_Collision : MonoBehaviour
     private Owner owner = Owner.Enemy;
 
     public GameObject avatarVisuals;
+    public GameObject avatarParticle;
     public GameObject enemyVisuals;
+    public GameObject enemyParticle;
 
     public GameObject stickyParent;
 
@@ -54,6 +56,29 @@ public class CS_Projectile_Collision : MonoBehaviour
 
         UpdateHealth();
         RouteOnCollisionEnter2D(collision);
+
+        //GameObject paro = Instantiate(avatarParticle, transform.position, transform.rotation);
+        Rigidbody2D trb = GetComponent<Rigidbody2D>();
+        Quaternion qr = Quaternion.LookRotation(trb.velocity);
+        qr.eulerAngles = new Vector3(0, 0, CS_Utils.PointToDegree(trb.velocity * -1));
+        float angle = CS_Utils.PointToDegree(collision.contacts[0].normal);
+        Debug.Log(qr.eulerAngles);
+        //Quaternion q = Quaternion.LookRotation();
+        //GameObject paro = Instantiate(avatarParticle, collision.contacts[0].point, new Quaternion());
+        Quaternion q = transform.rotation;
+        GameObject paro = Instantiate(avatarParticle, collision.contacts[0].point, qr);
+        ParticleSystem par = paro.GetComponent<ParticleSystem>();
+        par.Play();
+
+        Destroy(paro, par.main.duration);
+        //Debug.Log(avatarParticle);
+        //Transform part = enemyVisuals.transform.GetChild(1);
+        //part.Rotate(transform.rotation.eulerAngles);
+        //GetComponent<Rigidbody2D>().velocity.normalized * -1;
+        //part.RotateAround(transform.position, Vector3.forward, CS_Utils.PointToDegree(GetComponent<Rigidbody2D>().velocity.normalized));
+        //part.GetComponent<ParticleSystem>().Play();
+        //avatarParticle.Play();
+        //avatarParticle.Emit(100);
 
         if (projectileType && healthPointIndex > 0)
         {
