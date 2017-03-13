@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CS_Projectile_Movement : MonoBehaviour
 {
-    // Arbitary force multiplier, that exists simply to move the speed value down.
-    public static int FORCE = 100;
-
     private Rigidbody2D rb;
     private Vector2 direction;
 
