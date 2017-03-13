@@ -29,29 +29,6 @@ public class CS_Projectile_Movement : MonoBehaviour
         UpdateRotation(CS_Utils.PointToDegree(rb.velocity.normalized));
     }
 
-    // Not currently in use. Alternative to bounce material.
-    private void Bounce(Collision2D collision)
-    {
-        ContactPoint2D contact = collision.contacts[0];
-        float contactAngle = CS_Utils.GetCollisionAngle(transform, contact.point);
-
-        // Scope between intervals to make sure that it matches perfectly.
-        contactAngle = CS_Utils.AngleRound(contactAngle);
-        // Transform "motion" into "collision" angle using 90 offset.
-        float offset = CS_Utils.Mod(contactAngle + 90, 360);
-
-        // Reset angle to be based on zero.
-        float newAngle = angle - offset;
-        // Invert in order to reflect.
-        newAngle *= -1;
-        // Get reflection angle.
-        newAngle = offset + newAngle;
-        // Rotate 180 degrees to travle in opposite direction.
-        newAngle = CS_Utils.Mod(newAngle + 180, 360);
-
-        UpdateRotation(newAngle);
-    }
-
     public void UpdateRotation(float a)
     {
         angle = a;
