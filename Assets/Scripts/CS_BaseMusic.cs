@@ -112,6 +112,7 @@ public class CS_BaseMusic : MonoBehaviour
             Debug.Log("How Did i get here?");
             Nextstep();
         }
+       
     }
     public void PlayMusic()
     {
@@ -140,7 +141,7 @@ public class CS_BaseMusic : MonoBehaviour
             curentstart = intro;
         }
         if (i == 2)
-        {
+        { 
             curentloop = loop2;
             curentstart = transistion1;
         }
@@ -150,6 +151,8 @@ public class CS_BaseMusic : MonoBehaviour
             curentstart = transistion2;
         }
         Debug.Log("Got Here");
+        Debug.Log(i);
+        stage = 1;
         speaker.loop = false;
         test = true;
     }
@@ -172,16 +175,16 @@ public class CS_BaseMusic : MonoBehaviour
     }
     public void Nextstep()
     {
-        
+        Debug.Log(stage);
         if (stage == 1)
         {
-            //speaker.loop = false;
-            speaker.PlayOneShot(curentstart);
-            
+            Debug.Log("intro");
+            speaker.PlayOneShot(curentstart);           
             stage = 2;
         }
         else if (stage == 2)
-        {         
+        {
+            Debug.Log("loop");
             speaker.clip = curentloop;
             speaker.Play();
             speaker.loop = true;
@@ -190,27 +193,9 @@ public class CS_BaseMusic : MonoBehaviour
         }
         else if (stage == 3 && speaker.loop == false)
         {
-            Debug.Log("Noooo!");
+            Debug.Log("outro");
             speaker.PlayOneShot(end);
             speaker.loop = false;
         }
-        /*
-        else if (stage == 4)
-        {
-            stage = 5;
-        }
-        else if (stage == 5)
-        {
-            stage = 6;
-        }
-        else if (stage == 6)
-        {
-            stage = 7;
-        }
-        else if (stage == 7)
-        {
-            
-        }
-        */
     }
 }
