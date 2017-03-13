@@ -32,7 +32,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
         {
             if (currenWave + 1 == waves.Length)
             {
-                CS_Notifications.Instance.Post(this, "OnVictory");
+                CS_Notifications.Instance.Post(this, "OnSoundV");
             }
             else
             {

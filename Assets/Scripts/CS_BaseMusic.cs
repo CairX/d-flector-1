@@ -35,8 +35,6 @@ public class CS_BaseMusic : MonoBehaviour
     public GameObject pause;
     public GameObject Menu;
 
-    private float volume;
-
     private int stage = 1;
 
     private bool okay = true;
@@ -46,6 +44,7 @@ public class CS_BaseMusic : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
+        CS_Notifications.Instance.Register(this, "OnSoundV");
         speaker = GetComponent<AudioSource>();
         //speaker.volume = 0.2f;
         speaker.Stop();
@@ -154,10 +153,6 @@ public class CS_BaseMusic : MonoBehaviour
         speaker.loop = false;
         test = true;
     }
-    public void StopLoop()
-    {
-        speaker.loop = false;
-    }
     public void PauseScreen()
     {
         if (speaker.isPlaying == true)
@@ -195,6 +190,11 @@ public class CS_BaseMusic : MonoBehaviour
             speaker.PlayOneShot(end);
             speaker.loop = false;
         }
+        else if (stage == 4 && speaker.loop == false)
+        {
+            CS_Notifications.Instance.Post(this, "OnVictory");
+        }
+
     }
 
     public void OnValueChanged()
@@ -202,5 +202,9 @@ public class CS_BaseMusic : MonoBehaviour
         CS_WorldManager.Instance.volumeMusic = SoundSlider.value;
         speaker.volume = SoundSlider.value;
         Debug.Log("new volume is " + speaker.volume);
+    }
+    private void OnSoundV()
+    {
+        speaker.loop = false;
     }
 }
