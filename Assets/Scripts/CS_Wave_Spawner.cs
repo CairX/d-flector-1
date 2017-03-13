@@ -13,7 +13,6 @@ public class CS_Wave_Spawner : MonoBehaviour {
     public GameObject basic;
     public GameObject bolar;
     public GameObject howlar;
-    public GameObject shotgun;
 
     void Start () {
         CS_Notifications.Instance.Register(this, "EnemyDead");
@@ -21,7 +20,6 @@ public class CS_Wave_Spawner : MonoBehaviour {
         CS_Enemy_Holder.Instance.basic = basic;
         CS_Enemy_Holder.Instance.bolar = bolar;
         CS_Enemy_Holder.Instance.howlar = howlar;
-        CS_Enemy_Holder.Instance.shotgun = shotgun;
     }
 
     void Update () {
@@ -160,10 +158,6 @@ public class WaveProp
         else if (enemy == EnemyType.HOWLAL)
         {
             enemyObject = CS_Enemy_Holder.Instance.howlar;
-        }
-        else if (enemy == EnemyType.SHOTGUN)
-        {
-            enemyObject = CS_Enemy_Holder.Instance.shotgun;
         }
 
         if (spawnPosition == SpawnPos.A1)
