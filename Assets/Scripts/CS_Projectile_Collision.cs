@@ -32,6 +32,7 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     private Rigidbody2D rb;
     private float previousAngle = 0.0f;
+    private IEnumerator previousAngleEnumerator;
 
     void Start ()
     {
@@ -42,8 +43,21 @@ public class CS_Projectile_Collision : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         ChangeOwner(owner);
+    }
 
-        StartCoroutine(PreviousAngle());
+    private void OnEnable()
+    {
+        if (previousAngleEnumerator == null)
+        {
+            previousAngleEnumerator = PreviousAngle();
+        }
+        StartCoroutine(previousAngleEnumerator);
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(previousAngleEnumerator);
+        StopAllCoroutines();
     }
 
     private void Update()
@@ -69,7 +83,10 @@ public class CS_Projectile_Collision : MonoBehaviour
             projectileType.SpecialCollision(collision);
         }
 
-        StartCoroutine(PreviousAngle());
+        if (isActiveAndEnabled)
+        {
+            StartCoroutine(previousAngleEnumerator);
+        }
     }
 
     private void UpdateHealth()
