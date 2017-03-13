@@ -13,14 +13,13 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     private static float COLLISION_COOLDOWN = 0.16f;
 
-    public int health;
+    private int healthPointIndex = 0;
+    public List<ProjectileHealthPoint> healthPoints = new List<ProjectileHealthPoint>();
 
     private Owner owner = Owner.Enemy;
 
     public GameObject avatarVisuals;
     public GameObject enemyVisuals;
-
-    private TextMesh text;
 
     public GameObject stickyParent;
 
@@ -28,10 +27,8 @@ public class CS_Projectile_Collision : MonoBehaviour
     private CS_Projectile_Type projectileType;
     private CS_Projectile_Movement movement;
 
-    void Start () {
-
-        text = transform.GetChild(0).GetComponent<TextMesh>();
-        text.text = health.ToString();
+    void Start ()
+    {
         collisionTimer = COLLISION_COOLDOWN;
 
         projectileType = GetComponent<CS_Projectile_Type>();
@@ -58,7 +55,7 @@ public class CS_Projectile_Collision : MonoBehaviour
         UpdateHealth();
         RouteOnCollisionEnter2D(collision);
 
-        if (projectileType && health > 0)
+        if (projectileType && healthPointIndex > 0)
         {
             projectileType.SpecialCollision(collision);
         }
@@ -66,12 +63,15 @@ public class CS_Projectile_Collision : MonoBehaviour
 
     private void UpdateHealth()
     {
-        health--;
-        text.text = health.ToString();
-
-        if (health <= 0)
+        healthPointIndex++;
+        if (healthPointIndex >= healthPoints.Count)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            avatarVisuals.GetComponent<SpriteRenderer>().sprite = healthPoints[healthPointIndex].avatar;
+            enemyVisuals.GetComponent<SpriteRenderer>().sprite = healthPoints[healthPointIndex].enemy;
         }
     }
 
@@ -129,7 +129,7 @@ public class CS_Projectile_Collision : MonoBehaviour
 
         CS_All_Audio.Instance.ProjectileVsShield();
     }
-    //here
+
     private void onStickySheildCollisionEnter2D(Collision2D collision)
     {
         movement.Stick();
@@ -176,4 +176,11 @@ public class CS_Projectile_Collision : MonoBehaviour
     {
         return owner;
     }
+}
+
+[System.Serializable]
+public class ProjectileHealthPoint
+{
+    public Sprite avatar;
+    public Sprite enemy;
 }
