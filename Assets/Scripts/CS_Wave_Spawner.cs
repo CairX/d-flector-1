@@ -107,7 +107,10 @@ public class Wave
                     }
                     else
                     {
-                        amountOfEnemies[index].enemyObject.transform.position = Vector3.MoveTowards(amountOfEnemies[index].enemyObject.transform.position, amountOfEnemies[index].spawnPos,Time.deltaTime * 1f);
+                        if (!amountOfEnemies[index].enemyObject.GetComponent<CS_Enemy_Collision>().dead)
+                        {
+                            amountOfEnemies[index].enemyObject.transform.position = Vector3.MoveTowards(amountOfEnemies[index].enemyObject.transform.position, amountOfEnemies[index].spawnPos, Time.deltaTime * 1f);
+                        }
                     }
                 }
             }
@@ -118,9 +121,6 @@ public class Wave
             waveDone = true;
         }
     }
-
-
-
 }
 
 
