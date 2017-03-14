@@ -11,7 +11,7 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
     private float time = 0;
     private Image timerImage;
 
-    private bool powerUpShieldActivated;
+    private bool powerupActivated;
 
     private void Start()
     {
@@ -21,15 +21,15 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
 
     private void Update()
     {
-        if (powerUpShieldActivated == true)
+        if (powerupActivated == true)
         {
             UpdateTimer();
 
             if (time <= 0)
             {
+                CS_WorldManager.Instance.powerupExists = false;
+                powerupActivated = false;
                 powerUpTwinShield.SetActive(false);
-                powerUpShieldActivated = false;
-                time = 0;
             }
         }
     }
@@ -38,26 +38,17 @@ public class CS_Avatar_CheckPowerUp : MonoBehaviour {
     {
         if (collision.gameObject.tag == "TwinSheildPowerUp")
         {
-            RemoveAllPickupExcept(collision.gameObject.tag);
+            ChangeActivePowerup(collision.gameObject.tag);
             CS_All_Audio.Instance.PickupSound(1);
             Destroy(collision.gameObject);
+            ResetTimer();
         }
-
     }
-    private void RemoveAllPickupExcept(string p)
-    {
-        ResetTimer();
 
-        if (p != "TwinSheildPowerUp")
-        {
-            powerUpShieldActivated = false;
-            powerUpTwinShield.SetActive(false);
-        }
-        else
-        {
-            powerUpShieldActivated = true;
-            powerUpTwinShield.SetActive(true);
-        }
+    private void ChangeActivePowerup(string powerup)
+    {
+        powerupActivated = true;
+        powerUpTwinShield.SetActive((powerup == "TwinSheildPowerUp"));
     }
 
     private void UpdateTimer()

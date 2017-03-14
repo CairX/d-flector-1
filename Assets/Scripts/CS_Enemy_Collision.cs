@@ -29,10 +29,10 @@ public class CS_Enemy_Collision : MonoBehaviour {
         {
             dead = true;
             diedThisFrame = true;
-            float randomValue = Random.Range(1.0f,8.0f);
-            if (randomValue >= 1.0f && randomValue < 2.0f)
+            if (!CS_WorldManager.Instance.powerupExists && Random.Range(0.0f, 1.0f) <= 0.2f)
             {
                 Instantiate(twinShieldPowerUp, transform.position, new Quaternion(), transform.parent);
+                CS_WorldManager.Instance.powerupExists = true;
             }
 
             CS_Notifications.Instance.Post(this, "EnemyDead");
