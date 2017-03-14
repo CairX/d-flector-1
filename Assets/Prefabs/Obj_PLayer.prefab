@@ -640,14 +640,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8084e27148a9ae64b8761896e0d945c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invulnerableSprite: {fileID: 21300000, guid: 73624b4c75d16c648a3474a24baf51bf, type: 3}
   invulnerableTime: 1
   healthPoints:
   - avatar: {fileID: 21300000, guid: 52fa144f66a718f4e8c048af32a4a45e, type: 3}
+    invulnerable: {fileID: 21300000, guid: e38c68ad0a2650846a3089e2e598fa4a, type: 3}
     hud: {fileID: 0}
   - avatar: {fileID: 21300000, guid: fbdab09abcfe3834e90f72d7bf8d90e5, type: 3}
+    invulnerable: {fileID: 21300000, guid: 4953b9d43303aad46b56f447254c9233, type: 3}
     hud: {fileID: 0}
   - avatar: {fileID: 21300000, guid: 73624b4c75d16c648a3474a24baf51bf, type: 3}
+    invulnerable: {fileID: 21300000, guid: 73624b4c75d16c648a3474a24baf51bf, type: 3}
     hud: {fileID: 0}
 --- !u!114 &114863976601079128
 MonoBehaviour:

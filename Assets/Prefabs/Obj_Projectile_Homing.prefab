@@ -172,7 +172,11 @@ MonoBehaviour:
   - avatar: {fileID: 21300000, guid: aa7c7b60a0df0354dac3a21c538e3cbc, type: 3}
     enemy: {fileID: 21300000, guid: cc9c3da0a0684104da59b3695ff2c9ca, type: 3}
   avatarVisuals: {fileID: 1994483404514304}
+  avatarParticles: {fileID: 1296634208663256, guid: bff4b8bd3dda45241b7ce2ce5941df42,
+    type: 2}
   enemyVisuals: {fileID: 1868346988299286}
+  enemyParticles: {fileID: 1981235263849666, guid: d567f9626e731944a9900df5d656e523,
+    type: 2}
   stickyParent: {fileID: 1517809785823646, guid: 20be7f4ccbed10c458406a9caf638f6d,
     type: 2}
 --- !u!114 &114780363619370390

@@ -908,6 +908,24 @@ Prefab:
       propertyPath: healthPoints.Array.data[2].hud
       value: 
       objectReference: {fileID: 1744549881}
+    - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: healthPoints.Array.data[0].invulnerable
+      value: 
+      objectReference: {fileID: 21300000, guid: e38c68ad0a2650846a3089e2e598fa4a,
+        type: 3}
+    - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: healthPoints.Array.data[1].invulnerable
+      value: 
+      objectReference: {fileID: 21300000, guid: 4953b9d43303aad46b56f447254c9233,
+        type: 3}
+    - target: {fileID: 114477820407280832, guid: 20be7f4ccbed10c458406a9caf638f6d,
+        type: 2}
+      propertyPath: healthPoints.Array.data[2].invulnerable
+      value: 
+      objectReference: {fileID: 21300000, guid: 73624b4c75d16c648a3474a24baf51bf,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20be7f4ccbed10c458406a9caf638f6d, type: 2}
   m_IsPrefabParent: 0

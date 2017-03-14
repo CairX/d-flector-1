@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class CS_Avatar_Health : MonoBehaviour {
 
-    public Sprite invulnerableSprite;
     public float invulnerableTime;
     private float invulnerableIimer;
 
-    private int invincibleLayer;
+    private int invulnerableLayer;
     private int originalLayer;
 
     private bool changeSprite;
 
+    private int healthIndex;
     public HealthPoint[] healthPoints;
     private SpriteRenderer spriteRenderer;
-    private int index;
 
     private void OnEnable()
     {
@@ -38,11 +37,11 @@ public class CS_Avatar_Health : MonoBehaviour {
 
     private void Start ()
     {
-        invincibleLayer = LayerMask.NameToLayer("Void");
+        invulnerableLayer = LayerMask.NameToLayer("Void");
         originalLayer = transform.parent.gameObject.layer;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        index = 0;
+        healthIndex = 0;
     }
 
     private void Update ()
@@ -81,14 +80,14 @@ public class CS_Avatar_Health : MonoBehaviour {
     {
         CS_All_Audio.Instance.AvaterLoseHealth(healthPoints.Length - 1);
         CS_Medals.Instance.TookDamage();
-        if (invulnerableIimer <= 0 && index < healthPoints.Length - 1)
+        if (invulnerableIimer <= 0 && healthIndex < healthPoints.Length - 1)
         {
             BecomeInvulnerable();
         }
-        else if (invulnerableIimer <= 0 && index == healthPoints.Length - 1)
+        else if (invulnerableIimer <= 0 && healthIndex == healthPoints.Length - 1)
         {
-            healthPoints[index].hud.SetActive(false);
-            spriteRenderer.sprite = healthPoints[index].avatar;
+            healthPoints[healthIndex].hud.SetActive(false);
+            spriteRenderer.sprite = healthPoints[healthIndex].avatar;
             changeSprite = false;
 
             CS_Notifications.Instance.Post(this, "OnGameOver");
@@ -98,12 +97,9 @@ public class CS_Avatar_Health : MonoBehaviour {
     private void BecomeInvulnerable()
     {
         invulnerableIimer = invulnerableTime;
-        spriteRenderer.sprite = invulnerableSprite;
-        Color color = spriteRenderer.color;
-        color.a = 0.8f;
-        spriteRenderer.color = color;
+        spriteRenderer.sprite = healthPoints[healthIndex].invulnerable;
 
-        SetLayerRecursively(transform.parent.gameObject, invincibleLayer);
+        SetLayerRecursively(transform.parent.gameObject, invulnerableLayer);
 
         changeSprite = true;
         CS_Notifications.Instance.Post(this, "OnAvatarInvulnerable");
@@ -111,17 +107,13 @@ public class CS_Avatar_Health : MonoBehaviour {
 
     private void BecomeVulnerable()
     {
-        spriteRenderer.sprite = healthPoints[index].avatar;
-        Color color = spriteRenderer.color;
-        color.a = 1.0f;
-        spriteRenderer.color = color;
-
-        healthPoints[index].hud.SetActive(false);
+        spriteRenderer.sprite = healthPoints[healthIndex].avatar;
+        healthPoints[healthIndex].hud.SetActive(false);
 
         SetLayerRecursively(transform.parent.gameObject, originalLayer);
 
         changeSprite = false;
-        index++;
+        healthIndex++;
         CS_Notifications.Instance.Post(this, "OnAvatarVulnerable");
     }
 
@@ -139,5 +131,6 @@ public class CS_Avatar_Health : MonoBehaviour {
 public class HealthPoint
 {
     public Sprite avatar;
+    public Sprite invulnerable;
     public GameObject hud;
 }
