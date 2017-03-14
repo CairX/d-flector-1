@@ -49,6 +49,8 @@ public class CS_Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(timer % 60);
         text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+        CS_Medals.Instance.timer = timer;
+
         if (timer >= 106)
         {
             CS_Medals.Instance.Time();

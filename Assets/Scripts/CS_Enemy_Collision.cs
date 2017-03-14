@@ -5,8 +5,6 @@ using UnityEngine;
 public class CS_Enemy_Collision : MonoBehaviour {
 
     public GameObject twinShieldPowerUp;
-    public GameObject slowMotionPowerUp;
-    public GameObject stickyBombPowerUp;
 
     private bool dead = false;
     private bool diedThisFrame = false;

@@ -8,6 +8,8 @@ public class CS_Medals : CS_Singleton<CS_Medals> {
     public bool noDamage = true;
     public bool speedRun = true;
 
+    public float timer;
+
     protected CS_Medals() { }
 
     public void LevelStart()

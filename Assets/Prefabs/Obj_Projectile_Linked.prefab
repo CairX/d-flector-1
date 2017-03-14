@@ -293,9 +293,12 @@ MonoBehaviour:
   - avatar: {fileID: 21300000, guid: 0f97fb59d2d1eb64e85425a17b8c86af, type: 3}
     enemy: {fileID: 21300000, guid: 00aa613ceffed204ea5574b8ea8b53f4, type: 3}
   avatarVisuals: {fileID: 1869328625147348}
-  enemyVisuals: {fileID: 1456056766850676}
-  stickyParent: {fileID: 1517809785823646, guid: 20be7f4ccbed10c458406a9caf638f6d,
+  avatarParticles: {fileID: 1296634208663256, guid: bff4b8bd3dda45241b7ce2ce5941df42,
     type: 2}
+  enemyVisuals: {fileID: 1456056766850676}
+  enemyParticles: {fileID: 1981235263849666, guid: d567f9626e731944a9900df5d656e523,
+    type: 2}
+  stickyParent: {fileID: 0}
 --- !u!198 &198279761199700948
 ParticleSystem:
   m_ObjectHideFlags: 1
