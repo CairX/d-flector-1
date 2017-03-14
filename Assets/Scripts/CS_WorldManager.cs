@@ -9,4 +9,5 @@ public class CS_WorldManager : CS_Singleton<CS_WorldManager> {
     public int level = 0;
     public float volumeMusic = 0.2f;
     public float volumeSoundEfeckt = 0.5f;
+    public bool powerupExists = false;
 }
