@@ -6,50 +6,58 @@ public class CS_Enemy_Collision : MonoBehaviour {
 
     public GameObject twinShieldPowerUp;
 
-    private bool dead = false;
-    private bool diedThisFrame = false;
+    public bool dead { get; private set; }
     private Rigidbody2D rb;
-    private float randomX;
-    private float randomY;
-    private float randomSpin;
-    private float timer = 2;
+    private float timer = 5.0f;
 
 
     private void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
-        randomX = Random.Range(2.0f, 3.0f);
-        randomY = Random.Range(-2.0f, 2.0f);
-        randomSpin = Random.Range(-3f,3f);
+        dead = false;
+        rb = GetComponent<Rigidbody2D>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject cgo = collision.gameObject;
-        if (cgo.tag == "Projectile" && cgo.GetComponent<CS_Projectile_Collision>().isAvatar())
+        if (cgo.tag == "Projectile")
         {
-            dead = true;
-            diedThisFrame = true;
-            if (!CS_WorldManager.Instance.powerupExists && Random.Range(0.0f, 1.0f) <= 0.2f)
+            CS_Projectile_Collision projectileCollision = cgo.GetComponent<CS_Projectile_Collision>();
+            if (projectileCollision.isAvatar())
             {
-                Instantiate(twinShieldPowerUp, transform.position, new Quaternion(), transform.parent);
-                CS_WorldManager.Instance.powerupExists = true;
-            }
+                if (!CS_WorldManager.Instance.powerupExists && Random.Range(0.0f, 1.0f) <= 0.2f)
+                {
+                    Instantiate(twinShieldPowerUp, transform.position, new Quaternion(), transform.parent);
+                    CS_WorldManager.Instance.powerupExists = true;
+                }
 
-            CS_Notifications.Instance.Post(this, "EnemyDead");
+                
+                Vector3 dir = collision.contacts[0].point - (Vector2)transform.position;
+                dir = -dir.normalized;
+                OnDeath(dir);
+            }
         }
-        if (cgo.tag == "Shield")
+        else if (cgo.tag == "Shield")
         {
-            dead = true;
-            diedThisFrame = true;
-            CS_Notifications.Instance.Post(this, "EnemyDead");
             CS_Notifications.Instance.Post(this, "OnAvatarDamage");
+            OnDeath(collision.contacts[0].normal);
         }
-        if (cgo.tag == "Player")
+        else if (cgo.tag == "Player")
         {
-            dead = true;
-            diedThisFrame = true;
-            CS_Notifications.Instance.Post(this, "EnemyDead");
+            OnDeath(collision.contacts[0].normal);
         }
+    }
+
+    public void OnDeath(Vector2 direction)
+    {
+        dead = true;
+        CS_Notifications.Instance.Post(this, "EnemyDead");
+
+        GetComponent<CS_Projectile_SpawnerTargetInit>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<CS_Enemy_Movement>().enabled = false;
+
+        transform.Rotate(Vector3.forward, Random.Range(-3f, 3f), 0);
+        rb.velocity = direction;
     }
 
     private void Update()
@@ -58,24 +66,11 @@ public class CS_Enemy_Collision : MonoBehaviour {
 
         if (dead == true)
         {
-            if (diedThisFrame == true)
-            {
-                CS_Projectile_SpawnerTargetInit targetScript = this.GetComponent<CS_Projectile_SpawnerTargetInit>();
-                targetScript.enabled = false;
-                PolygonCollider2D collider = this.GetComponent<PolygonCollider2D>();
-                collider.enabled = false;
-                CS_Enemy_Movement movmentScript = this.GetComponent<CS_Enemy_Movement>();
-                movmentScript.enabled = false;
-                diedThisFrame = false;
-                
-            }
-            this.transform.Rotate(Vector3.forward, randomSpin, 0);
-            rb.velocity = new Vector2(randomX,randomY);
             timer -= Time.deltaTime;
 
             if (timer <= 0)
             {
-                Destroy(this.gameObject);
+                Destroy(gameObject);
             }
         }
     }

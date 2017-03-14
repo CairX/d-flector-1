@@ -31,7 +31,7 @@ public class CS_Projectile_Collision : MonoBehaviour
     private CS_Projectile_Movement movement;
 
     private Rigidbody2D rb;
-    private float previousAngle = 0.0f;
+    public float previousAngle { get; private set; }
     private IEnumerator previousAngleEnumerator;
 
     void Start ()
@@ -43,13 +43,14 @@ public class CS_Projectile_Collision : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         ChangeOwner(owner);
+        previousAngle = 0.0f;
     }
 
     private void OnEnable()
     {
         if (previousAngleEnumerator == null)
         {
-            previousAngleEnumerator = PreviousAngle();
+            previousAngleEnumerator = UpdatePreviousAngle();
         }
         StartCoroutine(previousAngleEnumerator);
     }
@@ -192,7 +193,7 @@ public class CS_Projectile_Collision : MonoBehaviour
         }
     }
 
-    private IEnumerator PreviousAngle()
+    private IEnumerator UpdatePreviousAngle()
     {
         yield return new WaitForEndOfFrame();
         previousAngle = CS_Utils.PointToDegree(rb.velocity);
