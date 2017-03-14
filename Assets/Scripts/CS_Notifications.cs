@@ -75,6 +75,11 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
             return;
         }
 
+        if (!notifications.ContainsKey(method))
+        {
+            return;
+        }
+
         List<Component> remove = new List<Component>();
 
         foreach (Component observer in notifications[method])
