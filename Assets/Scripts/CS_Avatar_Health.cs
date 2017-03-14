@@ -106,6 +106,7 @@ public class CS_Avatar_Health : MonoBehaviour {
         SetLayerRecursively(transform.parent.gameObject, invincibleLayer);
 
         changeSprite = true;
+        CS_Notifications.Instance.Post(this, "OnAvatarInvulnerable");
     }
 
     private void BecomeVulnerable()
@@ -121,6 +122,7 @@ public class CS_Avatar_Health : MonoBehaviour {
 
         changeSprite = false;
         index++;
+        CS_Notifications.Instance.Post(this, "OnAvatarVulnerable");
     }
 
     private static void SetLayerRecursively(GameObject parent, int layer)
