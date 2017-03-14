@@ -336,10 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   twinShieldPowerUp: {fileID: 1993075815452806, guid: 8dc811dc91d319a4e9fc12569461c2ed,
     type: 2}
-  slowMotionPowerUp: {fileID: 1131583066854122, guid: 385e93da0fad7dc4ba4d7f2ee7ee9367,
-    type: 2}
-  stickyBombPowerUp: {fileID: 1339675245557918, guid: 387100f8d5a652b40b2b7cb4c4c3e40a,
-    type: 2}
+  deathsprite: {fileID: 21300000, guid: cd81298414eb3714286ca3008a83e32c, type: 3}
+  altColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &114383178894388716
 MonoBehaviour:
   m_ObjectHideFlags: 1

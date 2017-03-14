@@ -9,12 +9,16 @@ public class CS_Enemy_Collision : MonoBehaviour {
     public bool dead { get; private set; }
     private Rigidbody2D rb;
     private float timer = 5.0f;
+    public Sprite deathsprite;
+    private SpriteRenderer spriteRenderer;
 
+    private Color tmp;
 
     private void Start()
     {
         dead = false;
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -55,13 +59,14 @@ public class CS_Enemy_Collision : MonoBehaviour {
         GetComponent<CS_Projectile_SpawnerTargetInit>().enabled = false;
         GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<CS_Enemy_Movement>().enabled = false;
-
         transform.Rotate(Vector3.forward, Random.Range(-3f, 3f), 0);
         rb.velocity = direction;
+        spriteRenderer.sprite = deathsprite;
     }
 
     private void Update()
     {
+       
         if (Time.timeScale <= 0) { return; }
 
         if (dead == true)

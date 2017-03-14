@@ -43,6 +43,7 @@ public class CS_BaseMusic : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
+        Debug.Log("im on");
         CS_Notifications.Instance.Register(this, "OnSoundV");
         speaker = GetComponent<AudioSource>();
         //speaker.volume = 0.2f;
