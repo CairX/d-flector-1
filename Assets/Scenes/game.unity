@@ -3563,7 +3563,7 @@ MonoBehaviour:
       spawnPosition: 12
       spawnPos: {x: 0, y: 0, z: 0}
       spawned: 0
-      movementPattern: {fileID: 4606037733560476, guid: b815281f7fd9cf54cba12995de478f0c,
+      movementPattern: {fileID: 4143923543987498, guid: 82b10a816cf5215458744efaa0bdd306,
         type: 2}
       movmentScript: {fileID: 0}
       startPos: {x: 6, y: 0, z: 0}
