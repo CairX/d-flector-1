@@ -260,8 +260,15 @@ public class CS_StateManager : MonoBehaviour {
 
     public void LoadLevel(int level)
     {
-        CS_WorldManager.Instance.level = level;
-        RestartGame();
+        CS_Wave_Spawner_Loader loader = playing.GetComponent<CS_Wave_Spawner_Loader>();
+        if (level < loader.levels.Count)
+        {
+            CS_WorldManager.Instance.level = level;
+            RestartGame();
+        } else
+        {
+            levelSelectScreen();
+        }
     }
 
     public void Nextlevel()
