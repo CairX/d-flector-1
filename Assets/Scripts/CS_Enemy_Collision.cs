@@ -61,7 +61,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
         GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<CS_Enemy_Movement>().enabled = false;
         
-        rb.velocity = direction;
+        rb.velocity = (direction * 1.5f);
         spriteRenderer.sprite = deathsprite;
     }
 
