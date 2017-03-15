@@ -11,7 +11,7 @@ public class CS_VictoryScreen_ShowTimer : MonoBehaviour {
     private float timer = 0.0f;
 
     void Start () {
-        textObject = transform.GetChild(15);
+        textObject = transform.GetChild(14);
         text = textObject.GetComponent<Text>();
         timer = CS_Medals.Instance.timer;
     }
