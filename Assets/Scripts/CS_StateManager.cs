@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CS_StateManager : MonoBehaviour {
 
@@ -52,6 +53,10 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject levelSelect;
 
     private State previousState;
+
+    public Slider eSlider;
+    public Slider mSlider;
+
 
     private void Start()
     {
@@ -153,6 +158,10 @@ public class CS_StateManager : MonoBehaviour {
 
     private void DisableAllStates()
     {
+        eSlider.value = CS_WorldManager.Instance.volumeSoundEfeckt;
+        mSlider.value = CS_WorldManager.Instance.volumeMusic;
+        Debug.Log(CS_WorldManager.Instance.volumeSoundEfeckt + " " + eSlider.value);
+        Debug.Log(CS_WorldManager.Instance.volumeMusic + " " + mSlider.value);
         if (startMenu != null)
         {
             startMenu.SetActive(false);

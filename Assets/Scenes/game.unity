@@ -1352,6 +1352,8 @@ MonoBehaviour:
   playing: {fileID: 1722229204}
   tutorialScreen: {fileID: 35537105}
   levelSelect: {fileID: 910641605}
+  eSlider: {fileID: 1077630353}
+  mSlider: {fileID: 485203721}
 --- !u!4 &354051363
 Transform:
   m_ObjectHideFlags: 0
@@ -5221,7 +5223,7 @@ MonoBehaviour:
   shieldhit6: {fileID: 8300000, guid: 2aad977053e625849b8d6fab2399492b, type: 3}
   shieldhit7: {fileID: 8300000, guid: eeaf65c99c7f69840893ed34f8217763, type: 3}
   shieldhit8: {fileID: 8300000, guid: 29dc40ea19781f04cad67fab0a6c50f7, type: 3}
-  winSound: {fileID: 8300000, guid: 249471245a2e4df4e8fc505cbbaa12e5, type: 3}
+  winSound: {fileID: 8300000, guid: b92855b2b4aaf064bb9f0addf860d298, type: 3}
   loseSound: {fileID: 8300000, guid: 72c37790cf729f840af65f0ff39d8477, type: 3}
   menuOut: {fileID: 8300000, guid: fb52ebc8a64f16f46971f6ee1dcd2fec, type: 3}
   menuIn: {fileID: 8300000, guid: b85a15a073144cd4995d61b780dea572, type: 3}
@@ -6376,7 +6378,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 249471245a2e4df4e8fc505cbbaa12e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b92855b2b4aaf064bb9f0addf860d298, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8578,7 +8580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1106188157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12976,7 +12978,7 @@ MonoBehaviour:
   transistion2: {fileID: 8300000, guid: 87c13ed958fbd7c4480d000db622239b, type: 3}
   loop3: {fileID: 8300000, guid: ef7ab2f4f0117d24aab7312f7085355a, type: 3}
   end: {fileID: 8300000, guid: b92855b2b4aaf064bb9f0addf860d298, type: 3}
-  menuMusic: {fileID: 8300000, guid: 78709a681b436f84792ca9d34a2d38fe, type: 3}
+  menuMusic: {fileID: 8300000, guid: de03c79f2045bcc429f911fff7165de9, type: 3}
   vicktory: {fileID: 1106188156}
   failure: {fileID: 706689919}
   lv1: {fileID: 1853057661}
@@ -13073,7 +13075,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 78709a681b436f84792ca9d34a2d38fe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: de03c79f2045bcc429f911fff7165de9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -66,6 +66,7 @@ public class CS_BaseMusic : MonoBehaviour
             DiffrentLevel(3);
         }
         SoundSlider.value = CS_WorldManager.Instance.volumeMusic;
+        speaker.volume = CS_WorldManager.Instance.volumeMusic;
     }
 
     private void Update()
