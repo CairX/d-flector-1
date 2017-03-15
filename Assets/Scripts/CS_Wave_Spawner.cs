@@ -16,7 +16,6 @@ public class CS_Wave_Spawner : MonoBehaviour {
 
     void Start() {
         CS_Notifications.Instance.Register(this, "EnemyDead");
-        waves[currenWave].start();
         CS_Enemy_Holder.Instance.basic = basic;
         CS_Enemy_Holder.Instance.bolar = bolar;
         CS_Enemy_Holder.Instance.howlar = howlar;
@@ -25,7 +24,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
     void Update() {
         if (spawnNextWave == true)
         {
-            waves[currenWave].start();
+            waves[currenWave].start(this);
             spawnNextWave = false;
         }
         if (waves[currenWave].waveDone == true)
@@ -60,7 +59,6 @@ public class CS_Wave_Spawner : MonoBehaviour {
 public class Wave
 {
     public string name = "Wave";
-    private float time;
     [HideInInspector]
     public bool waveDone = false;
     public WaveProp[] amountOfEnemies;
@@ -69,7 +67,7 @@ public class Wave
     public Quaternion rotation;
     public Transform parent;
 
-    public void start()
+    public void start(MonoBehaviour something)
     {
         rotation = new Quaternion();
         rotation.eulerAngles = new Vector3(0, 0, 270);
@@ -80,27 +78,40 @@ public class Wave
         {
             amountOfEnemies[index].LoadEnemy();
         }
+
+        Dictionary<int, List<WaveProp>> timeSplit = new Dictionary<int, List<WaveProp>>();
+        for (int index = 0; index < amountOfEnemies.Length; index++)
+        {
+            int time = amountOfEnemies[index].spawnDeley;
+            if (!timeSplit.ContainsKey(time))
+            {
+                timeSplit[time] = new List<WaveProp>();
+            }
+            timeSplit[time].Add(amountOfEnemies[index]);
+        }
+
+        foreach (var wave in timeSplit)
+        {
+            something.StartCoroutine(SpawnWave(wave.Key, wave.Value));
+        }
+    }
+
+    public IEnumerator SpawnWave(float delay, List<WaveProp> wave)
+    {
+        yield return new WaitForSeconds(delay);
+        foreach (WaveProp item in wave)
+        {
+            Debug.Log(item);
+            GameObject enemy = MonoBehaviour.Instantiate(item.enemyObject, item.startPos, rotation, parent);
+            enemy.GetComponent<CS_Enemy_Movement_Init>().target = item.spawnPos;
+            enemy.GetComponent<CS_Enemy_Movement>().path = item.movementPattern;
+            item.enemyObject = enemy;
+            item.spawned = true;
+        }
     }
 
     public void Update()
     {
-        time += Time.deltaTime;
-
-        for (int index = 0; index < amountOfEnemies.Length; index++)
-        {
-            if (amountOfEnemies[index].spawnDeley <= time)
-            {
-                if (amountOfEnemies[index].spawned == false)
-                {
-                    GameObject enemy = MonoBehaviour.Instantiate(amountOfEnemies[index].enemyObject, amountOfEnemies[index].startPos, rotation, parent);
-                    enemy.GetComponent<CS_Enemy_Movement_Init>().target = amountOfEnemies[index].spawnPos;
-                    enemy.GetComponent<CS_Enemy_Movement>().path = amountOfEnemies[index].movementPattern;
-                    amountOfEnemies[index].enemyObject = enemy;
-                    amountOfEnemies[index].spawned = true;
-                }
-            }
-        }
-
         if (enemies == 0)
         {
             waveDone = true;
