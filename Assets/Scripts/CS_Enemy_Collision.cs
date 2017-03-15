@@ -48,8 +48,12 @@ public class CS_Enemy_Collision : MonoBehaviour {
         {
             if (!CS_WorldManager.Instance.powerupExists && UnityEngine.Random.Range(0.0f, 1.0f) <= 0.2f)
             {
-                Instantiate(twinShieldPowerUp, transform.position, new Quaternion(), transform.parent);
-                CS_WorldManager.Instance.powerupExists = true;
+                if (transform.position.x > -4.4)
+                {
+                    Instantiate(twinShieldPowerUp, transform.position, new Quaternion(), transform.parent);
+                    CS_WorldManager.Instance.powerupExists = true;
+                }  
+
             }
 
             Vector3 dir = collision.contacts[0].point - (Vector2)transform.position;
