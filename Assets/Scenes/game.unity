@@ -4930,7 +4930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: completion Medal
+  m_Text: Level completion
 --- !u!222 &910758507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8578,7 +8578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1106188157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9768,7 +9768,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Take no damage medal
+  m_Text: No damage taken
 --- !u!222 &1273195583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10702,7 +10702,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Time Medal
+  m_Text: Fast time
 --- !u!222 &1411113948
 CanvasRenderer:
   m_ObjectHideFlags: 0
