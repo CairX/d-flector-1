@@ -67,7 +67,7 @@ public class CS_Timer : MonoBehaviour
         }
         else if (CS_WorldManager.Instance.level == 2)
         {
-            if (timer >= 106)
+            if (timer >= 111)
             {
                 CS_Medals.Instance.Time();
             }
