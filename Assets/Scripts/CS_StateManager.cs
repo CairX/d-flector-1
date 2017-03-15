@@ -287,6 +287,7 @@ public class CS_StateManager : MonoBehaviour {
         DisableAllStates();
 
         CS_WorldManager.Instance.state = State.Playing;
+        CS_WorldManager.Instance.powerupExists = false;
         Time.timeScale = 1;
         playing.SetActive(true);
         CS_Medals.Instance.LevelStart();
