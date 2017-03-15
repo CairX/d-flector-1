@@ -75,7 +75,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
         CS_Notifications.Instance.Post(this, "EnemyDead");
 
         GetComponent<CS_Projectile_SpawnerTargetInit>().enabled = false;
-        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<CS_Enemy_Movement>().enabled = false;
         
         rb.velocity = (direction * 1.5f);
