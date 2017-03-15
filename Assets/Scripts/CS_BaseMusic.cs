@@ -22,7 +22,6 @@ public class CS_BaseMusic : MonoBehaviour
 
     public AudioClip menuMusic;
 
-
     private AudioClip curentstart;
     private AudioClip curentloop;
 
@@ -82,8 +81,14 @@ public class CS_BaseMusic : MonoBehaviour
         if (Menu.activeSelf)
         {
             okay = false;
+            if (speaker.isPlaying == false)
+            {
+                speaker.clip = menuMusic;
+                speaker.Play();
+                speaker.loop = true;
+            }
         }
-
+        
         if (vicktory.activeSelf || failure.activeSelf)
         {
             speaker.Stop();
