@@ -52,6 +52,8 @@ public class CS_StateManager : MonoBehaviour {
     public GameObject tutorialScreen;
     public GameObject levelSelect;
 
+    public GameObject gUI;
+
     private State previousState;
 
     public Slider eSlider;
@@ -158,10 +160,6 @@ public class CS_StateManager : MonoBehaviour {
 
     private void DisableAllStates()
     {
-        eSlider.value = CS_WorldManager.Instance.volumeSoundEfeckt;
-        mSlider.value = CS_WorldManager.Instance.volumeMusic;
-        Debug.Log(CS_WorldManager.Instance.volumeSoundEfeckt + " " + eSlider.value);
-        Debug.Log(CS_WorldManager.Instance.volumeMusic + " " + mSlider.value);
         if (startMenu != null)
         {
             startMenu.SetActive(false);
@@ -258,12 +256,20 @@ public class CS_StateManager : MonoBehaviour {
         CS_WorldManager.Instance.state = State.OptionsMenu;
         GetStateObject(previousState).SetActive(false);
         optionsMenu.SetActive(true);
+        gUI.SetActive(false);
+
+        eSlider.value = CS_WorldManager.Instance.volumeSoundEfeckt;
+        mSlider.value = CS_WorldManager.Instance.volumeMusic;
     }
     public void ReturnFromOptions()
     {
         RestoreCursor();
 
         CS_WorldManager.Instance.state = previousState;
+        if(pauseMenu != null)
+        {
+            gUI.SetActive(true);
+        }
         optionsMenu.SetActive(false);
         GetStateObject(previousState).SetActive(true);
     }
