@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 50442043763660880}
   - component: {fileID: 60009400771149702}
   - component: {fileID: 114328959784184160}
+  - component: {fileID: 114905867966346990}
   m_Layer: 13
   m_Name: Obj_Enemy_Bolas
   m_TagString: Enemy
@@ -315,14 +316,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645990146927904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34fdda4ba890fbb4892974ffb62fe05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
   path: {fileID: 0}
-  inPos: 0
 --- !u!114 &114365516055913086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,7 +337,6 @@ MonoBehaviour:
   twinShieldPowerUp: {fileID: 1993075815452806, guid: 8dc811dc91d319a4e9fc12569461c2ed,
     type: 2}
   deathsprite: {fileID: 21300000, guid: cd81298414eb3714286ca3008a83e32c, type: 3}
-  altColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &114383178894388716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,6 +354,19 @@ MonoBehaviour:
   spawnLocation: {fileID: 4652001924942500}
   rotateObject: {fileID: 4139158373470484}
   spawnRate: 3
+--- !u!114 &114905867966346990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645990146927904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6948b64243fb5894a9f5c413304457d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  target: {x: 1, y: 2, z: 0}
 --- !u!198 &198300055210542738
 ParticleSystem:
   m_ObjectHideFlags: 1

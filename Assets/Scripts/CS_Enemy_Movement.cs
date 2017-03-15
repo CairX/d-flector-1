@@ -6,18 +6,11 @@ public class CS_Enemy_Movement : MonoBehaviour
 {
     public float speed = 1.0f;
     public Transform path;
-    public bool inPos = false;
 
     private int current = 0;
     private List<Vector3> targets = new List<Vector3>();
 
-    void Start()
-    {
-
-         
-    }
-
-    public void InStartPos()
+    public void OnEnable()
     {
         if (path != null)
         {
@@ -28,21 +21,15 @@ public class CS_Enemy_Movement : MonoBehaviour
         }
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if (path != null)
+        if (path == null || targets.Count == 0) { return; }
+
+        if (transform.position == targets[current])
         {
-            if (targets.Count == 0)
-            {
-                return;
-            }
-
-            if (transform.position == targets[current])
-            {
-                current = CS_Utils.Mod(current + 1, targets.Count);
-            }
-
-            transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime * speed);
+            current = CS_Utils.Mod(current + 1, targets.Count);
         }
+
+        transform.position = Vector3.MoveTowards(transform.position, targets[current], Time.deltaTime * speed);
     }
 }

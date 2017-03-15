@@ -14,7 +14,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
     public GameObject bolar;
     public GameObject howlar;
 
-    void Start () {
+    void Start() {
         CS_Notifications.Instance.Register(this, "EnemyDead");
         waves[currenWave].start();
         CS_Enemy_Holder.Instance.basic = basic;
@@ -22,11 +22,11 @@ public class CS_Wave_Spawner : MonoBehaviour {
         CS_Enemy_Holder.Instance.howlar = howlar;
     }
 
-    void Update () {
+    void Update() {
         if (spawnNextWave == true)
         {
             waves[currenWave].start();
-            spawnNextWave = false;         
+            spawnNextWave = false;
         }
         if (waves[currenWave].waveDone == true)
         {
@@ -48,7 +48,7 @@ public class CS_Wave_Spawner : MonoBehaviour {
         {
             waves[currenWave].Update();
         }
-	}
+    }
 
     void EnemyDead()
     {
@@ -66,9 +66,15 @@ public class Wave
     public WaveProp[] amountOfEnemies;
     [HideInInspector]
     public int enemies;
+    public Quaternion rotation;
+    public Transform parent;
 
     public void start()
     {
+        rotation = new Quaternion();
+        rotation.eulerAngles = new Vector3(0, 0, 270);
+        parent = GameObject.FindWithTag("Playing").transform;
+
         enemies = amountOfEnemies.Length;
         for (int index = 0; index < amountOfEnemies.Length; index++)
         {
@@ -86,32 +92,11 @@ public class Wave
             {
                 if (amountOfEnemies[index].spawned == false)
                 {
-                    amountOfEnemies[index].enemyObject.transform.position = amountOfEnemies[index].startPos;          
-                    amountOfEnemies[index].enemyObject = MonoBehaviour.Instantiate(amountOfEnemies[index].enemyObject, GameObject.FindWithTag("Playing").transform);
-                    amountOfEnemies[index].movmentScript = amountOfEnemies[index].enemyObject.GetComponent<CS_Enemy_Movement>();
-                    amountOfEnemies[index].movmentScript.path = amountOfEnemies[index].movementPattern;
+                    GameObject enemy = MonoBehaviour.Instantiate(amountOfEnemies[index].enemyObject, amountOfEnemies[index].startPos, rotation, parent);
+                    enemy.GetComponent<CS_Enemy_Movement_Init>().target = amountOfEnemies[index].spawnPos;
+                    enemy.GetComponent<CS_Enemy_Movement>().path = amountOfEnemies[index].movementPattern;
+                    amountOfEnemies[index].enemyObject = enemy;
                     amountOfEnemies[index].spawned = true;
-                }
-            }
-
-            if (amountOfEnemies[index].movmentScript != null)
-            {
-                if (amountOfEnemies[index].movmentScript.inPos == false)
-                {
-                    if (amountOfEnemies[index].enemyObject.transform.position == amountOfEnemies[index].spawnPos)
-                    {
-                        amountOfEnemies[index].movmentScript.inPos = true;
-                        amountOfEnemies[index].movmentScript.InStartPos();
-                        CS_Projectile_SpawnerTargetInit script = amountOfEnemies[index].enemyObject.GetComponent<CS_Projectile_SpawnerTargetInit>();
-                        script.enabled = true;
-                    }
-                    else
-                    {
-                        if (!amountOfEnemies[index].enemyObject.GetComponent<CS_Enemy_Collision>().dead)
-                        {
-                            amountOfEnemies[index].enemyObject.transform.position = Vector3.MoveTowards(amountOfEnemies[index].enemyObject.transform.position, amountOfEnemies[index].spawnPos, Time.deltaTime * 1f);
-                        }
-                    }
                 }
             }
         }

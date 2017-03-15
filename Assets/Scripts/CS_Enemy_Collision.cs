@@ -88,7 +88,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Time.timeScale <= 0) { return; }
 
