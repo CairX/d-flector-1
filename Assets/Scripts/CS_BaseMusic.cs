@@ -34,6 +34,10 @@ public class CS_BaseMusic : MonoBehaviour
     public GameObject lv3;
     public GameObject pause;
     public GameObject Menu;
+
+    public GameObject gUI;
+    public GameObject game;
+
     private int stage = 1;
 
     private bool okay = true;
@@ -71,7 +75,7 @@ public class CS_BaseMusic : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && gUI.activeSelf && game.activeSelf)
         {
             PauseScreen();
         }
