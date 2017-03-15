@@ -43,39 +43,31 @@ public class CS_BaseMusic : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        Debug.Log("im on");
         CS_Notifications.Instance.Register(this, "OnSoundV");
         speaker = GetComponent<AudioSource>();
         //speaker.volume = 0.2f;
         speaker.Stop();
         if (Menu.activeSelf)
         {
-            Debug.Log("Menu");
-
             speaker.clip = menuMusic;
             speaker.Play();
             speaker.loop = true;
         }
         else if (lv1.activeSelf)
         {
-            Debug.Log("Level 1");
             DiffrentLevel(1);
         }
         else if (lv2.activeSelf)
         {
-            Debug.Log("Level 2");
             DiffrentLevel(2);
         }
         else if (lv3.activeSelf)
         {
-            Debug.Log("Level 3");
             DiffrentLevel(3);
         }
         SoundSlider.value = CS_WorldManager.Instance.volumeMusic;
+    }
 
-        }
-
-    // Update is called once per frame
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -110,7 +102,6 @@ public class CS_BaseMusic : MonoBehaviour
         else if (okay && speaker.isPlaying == false && speaker.loop == false)
         {
             speaker.Stop();
-            Debug.Log("How Did i get here?");
             Nextstep();
         }
        
@@ -147,8 +138,6 @@ public class CS_BaseMusic : MonoBehaviour
             curentloop = loop3;
             curentstart = transistion2;
         }
-        Debug.Log("Got Here");
-        Debug.Log(i);
         stage = 1;
         speaker.loop = false;
         test = true;
@@ -168,16 +157,13 @@ public class CS_BaseMusic : MonoBehaviour
     }
     public void Nextstep()
     {
-        Debug.Log(stage);
         if (stage == 1)
         {
-            Debug.Log("intro");
             speaker.PlayOneShot(curentstart);
             stage++;
         }
         else if (stage == 2)
         {
-            Debug.Log("loop");
             speaker.clip = curentloop;
             speaker.Play();
             speaker.loop = true;
@@ -185,9 +171,7 @@ public class CS_BaseMusic : MonoBehaviour
         }
         else if (stage == 3 && speaker.loop == false)
         {
-            Debug.Log("outro");
             speaker.PlayOneShot(end);
-            Debug.Log(speaker.loop);
             stage++;
         }
         else if (stage == 4)
@@ -201,12 +185,9 @@ public class CS_BaseMusic : MonoBehaviour
     {
         CS_WorldManager.Instance.volumeMusic = SoundSlider.value;
         speaker.volume = SoundSlider.value;
-        Debug.Log("new volume is " + speaker.volume);
     }
     private void OnSoundV()
     {
-        Debug.Log("okay");
-        Debug.Log(speaker.loop);
         speaker.loop = false;
     }
 }

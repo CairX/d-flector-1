@@ -238,6 +238,5 @@ public class CS_MasterAudio : MonoBehaviour
     {
         CS_WorldManager.Instance.volumeMusic = SoundSlider.value;
         speaker.volume = SoundSlider.value;
-        Debug.Log("new volume is " + speaker.volume);
     }
 }

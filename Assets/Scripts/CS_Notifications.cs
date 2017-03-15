@@ -40,22 +40,14 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
 
     public void Register(Component observer, string method)
     {
-        if (string.IsNullOrEmpty(method))
-        {
-            Debug.Log("Can't register method that is null or empty.");
-            return;
-        }
+        if (string.IsNullOrEmpty(method)) { return; }
 
         events.Add(new NotificationEvent(Action.Register, method, observer));
     }
 
     public void Unregister(Component observer, string method)
     {
-        if (string.IsNullOrEmpty(method))
-        {
-            Debug.Log("Can't unregister method that is null or empty.");
-            return;
-        }
+        if (string.IsNullOrEmpty(method)) { return; }
 
         events.Add(new NotificationEvent(Action.Unregister, method, observer));
     }
@@ -69,16 +61,9 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
     {
         UpdateCache();
 
-        if (string.IsNullOrEmpty(method))
-        {
-            Debug.Log("Can't post method that is null or empty.");
-            return;
-        }
+        if (string.IsNullOrEmpty(method)) { return; }
 
-        if (!notifications.ContainsKey(method))
-        {
-            return;
-        }
+        if (!notifications.ContainsKey(method)) { return; }
 
         List<Component> remove = new List<Component>();
 
