@@ -51,9 +51,26 @@ public class CS_Timer : MonoBehaviour
 
         CS_Medals.Instance.timer = timer;
 
-        if (timer >= 106)
+        if (CS_WorldManager.Instance.level == 0)
         {
-            CS_Medals.Instance.Time();
+            if (timer >= 106)
+            {
+                CS_Medals.Instance.Time();
+            }
+        }
+        else if (CS_WorldManager.Instance.level == 1)
+        {
+            if (timer >= 123)
+            {
+                CS_Medals.Instance.Time();
+            }
+        }
+        else if (CS_WorldManager.Instance.level == 2)
+        {
+            if (timer >= 106)
+            {
+                CS_Medals.Instance.Time();
+            }
         }
     }
 

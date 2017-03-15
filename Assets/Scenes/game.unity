@@ -3866,11 +3866,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4051074136817160, guid: 641fce9f37dd8eb4a83266f9fdc25096, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4243616610117596, guid: 641fce9f37dd8eb4a83266f9fdc25096, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 641fce9f37dd8eb4a83266f9fdc25096, type: 2}
