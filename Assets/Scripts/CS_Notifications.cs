@@ -54,14 +54,16 @@ public class CS_Notifications : CS_Singleton<CS_Notifications> {
 
     public void Post(Component sender, string method)
     {
-        Post(sender, method, null);
+        Post(sender, method, new Dictionary<string, Component>());
     }
 
-    public void Post(Component sender, string method, Hashtable data)
+    public void Post(Component sender, string method, Dictionary<string, Component> data)
     {
         UpdateCache();
 
         if (string.IsNullOrEmpty(method)) { return; }
+
+        data.Add("sender", sender);
 
         if (!notifications.ContainsKey(method)) { return; }
 
