@@ -29,6 +29,7 @@ public class CS_Projectile_Type_Homing : CS_Projectile_Type
     {
         CS_Notifications.Instance.Register(this, "OnAvatarVulnerable");
         CS_Notifications.Instance.Register(this, "OnAvatarInvulnerable");
+        CS_Notifications.Instance.Register(this, "EnemyDead");
     }
 
     private void OnDisable()
@@ -37,6 +38,7 @@ public class CS_Projectile_Type_Homing : CS_Projectile_Type
         {
             CS_Notifications.Instance.Unregister(this, "OnAvatarVulnerable");
             CS_Notifications.Instance.Unregister(this, "OnAvatarInvulnerable");
+            CS_Notifications.Instance.Unregister(this, "EnemyDead");
         }
         catch (System.NullReferenceException)
         {
@@ -62,16 +64,29 @@ public class CS_Projectile_Type_Homing : CS_Projectile_Type
         }
     }
 
+    private void EnemyDead(Dictionary<string, Component> data)
+    {
+        if (target &&
+            target.transform.tag == "Enemy" &&
+            target == data["sender"].gameObject)
+        {
+            target = null;
+        }
+    }
+
     public override void SpecialCollision(Collision2D collision)
     {
         if (collision.transform.tag == "Shield")
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemies.Length == 1)
+            target = null;
+            List<GameObject> enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+            enemies.RemoveAll( e => e.GetComponent<CS_Enemy_Collision>().dead);
+
+            if (enemies.Count == 1)
             {
                 target = enemies[0];
             }
-            else if (enemies.Length > 1)
+            else if (enemies.Count > 1)
             {
                 target = enemies[0];
 
