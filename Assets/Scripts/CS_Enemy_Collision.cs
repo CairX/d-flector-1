@@ -8,7 +8,8 @@ public class CS_Enemy_Collision : MonoBehaviour {
 
     public bool dead { get; private set; }
     private Rigidbody2D rb;
-    private float timer = 5.0f;
+    private float timer = 10.0f;
+    private float randomSpin;
     public Sprite deathsprite;
     private SpriteRenderer spriteRenderer;
 
@@ -17,6 +18,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
     private void Start()
     {
         dead = false;
+        randomSpin = Random.Range(-3f, 3f);
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -34,7 +36,6 @@ public class CS_Enemy_Collision : MonoBehaviour {
                     CS_WorldManager.Instance.powerupExists = true;
                 }
 
-                
                 Vector3 dir = collision.contacts[0].point - (Vector2)transform.position;
                 dir = -dir.normalized;
                 OnDeath(dir);
@@ -59,7 +60,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
         GetComponent<CS_Projectile_SpawnerTargetInit>().enabled = false;
         GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<CS_Enemy_Movement>().enabled = false;
-        transform.Rotate(Vector3.forward, Random.Range(-3f, 3f), 0);
+        
         rb.velocity = direction;
         spriteRenderer.sprite = deathsprite;
     }
@@ -72,6 +73,7 @@ public class CS_Enemy_Collision : MonoBehaviour {
         if (dead == true)
         {
             timer -= Time.deltaTime;
+            transform.Rotate(Vector3.forward, randomSpin, 0);
 
             if (timer <= 0)
             {
