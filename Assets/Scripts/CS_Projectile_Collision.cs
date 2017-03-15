@@ -143,9 +143,6 @@ public class CS_Projectile_Collision : MonoBehaviour
             case "net":
                 OnNetCollisionEnter2D(collision);
                 break;
-            case "StickySheild":
-                onStickySheildCollisionEnter2D(collision);
-                break;
             default:
                 break;
         }
@@ -180,17 +177,6 @@ public class CS_Projectile_Collision : MonoBehaviour
         }
 
         CS_All_Audio.Instance.ProjectileVsShield();
-    }
-
-    private void onStickySheildCollisionEnter2D(Collision2D collision)
-    {
-        movement.Stick();
-        this.transform.SetParent(collision.transform);
-        
-        if (owner == Owner.Enemy)
-        {
-            ChangeOwner(Owner.Avatar);
-        }
     }
 
     private IEnumerator UpdatePreviousAngle()
