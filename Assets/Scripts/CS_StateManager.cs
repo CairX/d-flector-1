@@ -220,6 +220,7 @@ public class CS_StateManager : MonoBehaviour {
 
         CS_WorldManager.Instance.state = State.StartMenu;
         startMenu.SetActive(true);
+        Time.timeScale = 1;
 
         CS_Notifications.Instance.Post(this, "OnStartMenu");
     }
