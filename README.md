@@ -3,6 +3,27 @@ A project where we as a team of five members convert a game concept document int
 
 The project is an assignment for the course [Game Design 2: Game Development (5SD064)](http://www.uu.se/en/admissions/master/selma/kursplan/?kpid=33553) at [Uppsala University](http://www.uu.se/en).
 
+## Screenshots of the Final Assignment Version
+
+### Main Menu
+![Screenshot of the main menu](Documentation/Screenshots/Screenshot_MainMenu.jpg)
+
+### Level Selection
+![Screenshot of the level selection menu](Documentation/Screenshots/Screenshot_LevelSelection.jpg)
+
+### Tutorial
+![Screenshot of the tutorial](Documentation/Screenshots/Screenshot_Tutorial.jpg)
+
+### Playing
+![Screenshot of game play](Documentation/Screenshots/Screenshot_GamePlay.jpg)
+
+### Pause
+![Screenshot of the pause menu](Documentation/Screenshots/Screenshot_Pause.jpg)
+
+### Options
+![Screenshot of the options menu](Documentation/Screenshots/Screenshot_Options.jpg)
+
+
 ## Conventions
 
 ### Naming
